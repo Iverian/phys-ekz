@@ -3,7 +3,6 @@
 # Compiled pdfs
 *.pdf
 !/img/*.pdf
-latexmkrc
 
 # *.svg directory
 svg/
