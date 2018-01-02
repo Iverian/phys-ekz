@@ -5,6 +5,98 @@
 \qtitle{С}{02}
 Определите характер зависимости от температуры электрической восприимчивости диэлектрика, состоящего из полярных молекул.\\ 
 
+\textbf{Резюме:} диэлектрическая восприимчивость $\kappa$ зависит от температуры диэлектрика следующим образом:
+\begin{gather}
+	\Delta\kappa = -\frac{8\pi\varepsilon_0 C_E}{E^2}\left( T_1\ln T_1 - T_0\ln T_0 + \Delta T \right),
+\end{gather}
+где $C_E$ -- теплоемкость диэлектрика при постоянной напряженности электрического поля $E$.\\
+
+Рассмотрим диэлектрик во внешнем электрическом поле, создаваемом одиночным проводником с зарядом $q$ и 4-х вектором потенциала $A^\mu=(\varphi,\vec{A})$,где $\varphi$ -- скалярный потенциал. Положим, что поле не меняется со временем (стационарно), т.е. $\partial_t A^\mu=0$. Для того, чтобы увеличить его заряд на бесконечно малую величину $\delta q$, необходима работа:
+\begin{gather}
+	\delta R = \varphi\delta q,\llabel{eq:work}
+\end{gather}
+выразим $\delta A$ через значения поля в окружающем проводник пространстве, заполненной диэлектриком. Положим
+\begin{gather}
+	D_n = (\vec{D},\vec{n}),
+\end{gather}
+где $\vec{D}$ -- \emph{вектор электрической индукции}, а $\vec{n}$ -- \emph{нормаль к поверхности проводника, внешней по отношению к диэлектрику}. Тогда для заряда $q$ получим:
+\begin{gather}
+	q = -\frac{1}{4\pi\varepsilon_0}\oiint\limits_{S}D_n d\sigma,\llabel{eq:q}
+\end{gather}
+согласно (\lref{eq:work}) и (\lref{eq:q}), и т.к. $\varphi=const$:
+\begin{gather}
+	\delta R = \varphi\delta q =
+	-\frac{1}{4\pi\varepsilon_0}\oiint\limits_{S}\varphi(\delta\vec{D},\vec{n})d\sigma =
+	-\frac{1}{4\pi\varepsilon_0}\iiint\limits_{V}\nabla(\varphi\delta\vec{D})dV, \llabel{eq:workq}
+\end{gather}
+где $V$ -- объем вне проводника.
+
+Согласно одному из уравнений поля в диэлектрике: $\nabla{\vec{D}}=0$, то и $\nabla{\delta\vec{D}}=0$, тогда для $\nabla(\varphi\vec{D})$ получим:
+\begin{gather}
+	\nabla(\varphi\delta\vec{D}) =
+	\varphi\nabla\delta\vec{D} + \delta\vec{D}\nabla\varphi = -\vec{E}\delta\vec{D},\llabel{eq:mansy}
+\end{gather}
+где $\vec{E}=-\nabla\varphi$ (определение вектора электрической напряженности для стационарных полей). Тогда из (\lref{eq:workq}) и (\lref{eq:mansy}) получим:
+\begin{gather}
+	\delta R = \frac{1}{4\pi\varepsilon_0}\iiint\limits_{V}(\vec{E},\delta\vec{D})dV,
+	\llabel{eq:final-work}
+\end{gather}
+Тогда бесконечное малое изменение полной энергии тела $\delta\mathfrak{U}$ примет вид:
+\begin{gather}
+	\delta\mathfrak{U} = T\delta\mathfrak{S} + \delta R,
+\end{gather}
+где $\mathfrak{S}$ -- энтропия тела. Тогда для изменения внутренней энергии единицы объема тела $dU$ получим:
+\begin{gather}
+	dU = TdS + \mu dN + \frac{1}{4\pi\varepsilon_0}(\vec{E},d\vec{D}),
+	\llabel{eq:du-final}
+\end{gather}
+где $S, N$ -- энтропия и количество частиц в единице объема тела, $\mu$ -- химический потенциал молекулы. Рассмотрим эти соотношения для постоянного количества молекул $N$:
+\begin{gather}
+	dU = TdS + \frac{1}{4\pi\varepsilon_0}EdD
+\end{gather}
+
+Введем термодинамическую функцию $\Phi = U - TS - \frac{1}{4\pi\varepsilon_0}ED$ -- термодинамический потеницал, получим для $d\Phi$:
+\begin{gather}
+	d\Phi = -SdT - \frac{1}{4\pi\varepsilon_0}DdE,
+	\llabel{eq:memes}
+\end{gather}
+
+теперь рассмотрим случай квазистатического адиабатического процесса, проводимого над однородным диэлектриком, тогда (а) $S=const$, (б) плотность вещества диэлектрика $\rho=const$. Из (а) запишем энтропию как функцию $S(E,T)$:
+\begin{gather}
+	\left(\frac{\partial S}{\partial T}\right)_E dT + \left(\frac{\partial S}{\partial E}\right)_T dE = 0,
+\end{gather}
+где
+\begin{gather}
+	\left(\frac{\partial S}{\partial T}\right)_E =
+	\frac{1}{T}\left(\frac{T\partial S}{\partial T}\right)_E =
+	\left(\frac{\delta Q}{\partial T}\right)_E =
+	\frac{C_E}{T},
+\end{gather}
+где $C_E$ -- теплоемкость диэлектрика при постоянной напряженности электрического поля $E$. Теперь из (\lref{eq:memes}) получим:
+\begin{gather}
+	\left(\frac{\partial S}{\partial E}\right)_T =
+	\frac{1}{4\pi\varepsilon_0}\left(\frac{\partial D}{\partial T}\right)_E =
+	\frac{E}{4\pi\varepsilon_0}\frac{\partial \varepsilon}{\partial T}.
+\end{gather}
+
+Таким образом для \emph{электрической восприимчивости} $\kappa=\varepsilon-1$:
+\begin{flalign}
+	&
+	dT = - \frac{TE}{4\pi\varepsilon_0C_E}\frac{\partial\varepsilon}{\partial T}dE
+	\Longleftrightarrow\\
+	\Longleftrightarrow
+	&
+	dT = - \frac{TE}{4\pi\varepsilon_0C_E}\frac{\partial\kappa}{\partial T}dE
+	\Longleftrightarrow\\
+	\Longleftrightarrow
+	&
+	\frac{\partial\kappa}{\partial T} = -8\pi\varepsilon_0C_E\frac{\ln T}{E^2}
+	\Longleftrightarrow\\
+	\Longleftrightarrow
+	&
+	\Delta\kappa = -\frac{8\pi\varepsilon_0 C_E}{E^2}\left( T_1\ln T_1 - T_0\ln T_0 + \Delta T \right).
+\end{flalign}
+величина $\frac{\partial\kappa}{\partial T}$ обычно отрицательна.
 %%
 
 \end{document}
