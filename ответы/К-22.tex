@@ -3,29 +3,65 @@
 \begin{document}
 
 \qtitle{К}{22}
-Продемонстрируйте сохранение квадрата нормы волновой функции во времени. Вектор плотности тока вероятности. Получите уравнение непрерывности для плотности вероятности.\\ 
+Продемонстрируйте сохранение квадрата нормы волновой функции во времени. Вектор плотности тока вероятности. Получите уравнение непрерывности для плотности вероятности.\\
 
- У нас имеется уравнение Шрёдингера: $\hat\mathcal{H}\;\Psi(t,\vec r)=i\hbar\frac{\partial}{\partial t}\Psi(t,\vec r).$ Мы делаем допущение, что потенциальная энергия в операторе Гамильтона $\hat{\mathcal H}$ не зависит явно от времени, и получаем возможность использовать метод разделения переменных Фурье для нахождения функции $\Psi$. В состоянии типа стационарного :
+У нас имеется уравнение Шрёдингера: $\hat\mathcal{H}\left[\Psi(t,\vec{r})\right]=i\hbar\partial_{t}\Psi(t,\vec{r})$. Мы делаем допущение, что потенциальная энергия в операторе Гамильтона $\hat{\mathcal{H}}$ не зависит явно от времени, и получаем возможность использовать метод разделения переменных Фурье для нахождения функции $\Psi$. В состоянии типа стационарного:
 \begin{gather*}
-\Psi(t,\vec r)=e^{-\frac{i}{\hbar}\varepsilon t}\cdot \psi(\vec r)
+    \Psi(t,\vec r)
+    =
+    \exp\left(-\frac{i}{\hbar}\varepsilon t\right)\psi(\vec{r})
 \end{gather*}
 квадрат нормы пси-функции не зависит от времени: $\Vert\Psi\Vert^2=1\cdot\Vert\psi(\vec r)\Vert^2.$
+\begin{flalign*}
+    &
+    \partial_t\Vert\Psi\Vert^2
+    =
+    \partial_t\left(\Psi,\Psi\right)
+    =
+    \left(\partial_t\Psi,\Psi\right)+(\Psi,\partial_t\Psi)
+    =
+    \left|\partial_t\Psi=\frac{1}{i\hbar}\hat\mathcal{H}\Psi\right|
+    =\\
+    =
+    &
+    \left(\frac{1}{i\hbar}\hat\mathcal{H}\Psi,\Psi\right)+\left(\Psi,\frac{1}{i\hbar}\hat\mathcal{H}\Psi\right)
+    =
+    \frac{1}{i\hbar}\left[-(\Psi,\hat{\mathcal H}\Psi)+(\hat{\mathcal H}\Psi,\Psi)\right]
+    =\\
+    =
+    &
+    \frac{1}{i\hbar}\left[-(\hat{\mathcal H}^*\Psi,\Psi)+(\hat{\mathcal H}\Psi,\Psi)\right]
+    =
+    \left|\hat{\mathcal H}^*=\hat{\mathcal H}\right|
+    =\\
+    =
+    &
+    0.
+\end{flalign*}
+Получим вектор плотности тока вероятности $\vec{j}$:
+\begin{flalign*}
+    &
+    \partial_{t}\Psi^*\Psi
+    =
+    \partial_{t}\Psi^*\Psi+\Psi^*\partial_{t}\Psi
+    =
+    -\frac{1}{i\hbar}\hat{\mathcal H}\Psi^*\Psi+\Psi^*\frac{1}{i\hbar}\hat{\mathcal H}\Psi
+    =
+    \left|\hat{\mathcal H}=-\frac{\hbar^2}{2m}\Delta+U(\vec r)\right|
+    =\\
+    =
+    &
+    \frac{\hbar}{2im}\left(\Delta\Psi^*\Psi-\Psi^*\Delta\Psi\right)
+    =
+    -\nabla\operatorname{Re}\left(\Psi^*\frac{\hbar}{im}\nabla\Psi\right)
+    =\\
+    =
+    &
+    -\nabla\vec{j}(t,\vec{r}).
+\end{flalign*}
+Обозначим $\Psi^*(t,\vec r)\cdot\Psi(t,\vec r)=p(t,\vec r)$ -- плотность вероятности, тогда получим уравнение непрерывности:
 \begin{gather*}
-\partial_t\Vert\Psi\Vert^2=\partial_t\left(\Psi,\Psi\right)=\left(\partial_t\Psi,\Psi\right)+(\Psi,\partial_t\Psi)=\left[\partial_t\Psi=\frac{1}{i\hbar}\hat\mathcal{H}\Psi\right]=\\
-=\left(\frac{1}{i\hbar}\hat\mathcal{H}\Psi,\Psi\right)+\left(\Psi,\frac{1}{i\hbar}\hat\mathcal{H}\Psi\right)=\frac{1}{i\hbar}\left[-(\Psi,\hat{\mathcal H}\Psi)+(\hat{\mathcal H}\Psi,\Psi)\right]=\\
-=\frac{1}{i\hbar}\left[-(\hat{\mathcal H}^*\Psi,\Psi)+(\hat{\mathcal H}\Psi,\Psi)\right]=\left[\hat{\mathcal H}^*=\hat{\mathcal H}\right]=0
+    \partial_{t}p(t,\vec{r})+\nabla\vec{j}(t,\vec{r})=0.
 \end{gather*}
-\par
-Получим вектор плотности тока вероятности $j$:
-\begin{gather*}
-\partial_t\;\Psi^*\Psi=\partial_t\Psi^*\;\Psi+\Psi^*\partial_t\Psi=-\frac{1}{i\hbar}\hat{\mathcal H}\Psi^*\;\Psi+\Psi^*\frac{1}{i\hbar}\hat{\mathcal H}\Psi=\left[\hat{\mathcal H}=-\frac{\hbar^2}{2m}\Delta+U(\vec r)\right]=\\
-=\frac{\hbar}{2im}\left(\Delta\Psi^*\;\Psi-\Psi^*\Delta\Psi\right)=-\nabla Re\left(\Psi^*\frac{\hbar}{im}\nabla\Psi\right)=-\nabla\vec j(t,\vec r)
-\end{gather*}
-Обозначим $\Psi^*(t,\vec r)\cdot\Psi(t,\vec r)=p(t,\vec r)$ - плотность вероятности, тогда получим ур-е непрерывности:
-\begin{gather*}
-\partial_t p(t,\vec r)+\nabla\cdot\vec j(t,\vec r)=0.
-\end{gather*}
-
-%%
 
 \end{document}
