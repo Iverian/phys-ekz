@@ -5,6 +5,43 @@
 \qtitle{Э}{06}
 Переменный синусоидальный ток частоты $\omega$ течёт по обмотке прямого соленоида, радиус сечения которого $R$. Найдите отношение амплитудных значений электрической и магнитной энергий внутри соленоида.\\ 
 
-%%
+Магнитная энергия вычисляется по формуле:
+\begin{gather*}
+W_M = \int \frac{B^2}{2\mu_0}dV, \qquad B = \mu_0nI
+\end{gather*}
+Вычисляем интеграл и получаем:
+\begin{gather*}
+W_M = \frac{(\mu_0nI)^2}{2\mu_0}\cdot (\pi R^2h)=\dfrac{1}{2}\mu_0 n^2I^2\pi R^2 h 
+\end{gather*}
+Запишем формулу для вычисления электрической энергии:
+\begin{gather*}
+W_{\text{ЭЛ}}= \int\frac{\varepsilon_0E^2}{2}dV
+\end{gather*}
+Рассмотрим циркуляцию вектора $E$ по кругу радиуса $r<R$, параллельному боковой стороне соленоида:
+\begin{gather*}
+\int Edl = \frac{d}{dt}\int BdS \Longrightarrow 2\pi r E = \frac{d}{dt}\left(\mu_0nI\pi r^2\right)
+\end{gather*} 
+Пусть ток $I$ меняется по закону:
+\begin{gather*}
+I=I_0\sin{(\omega t)}
+\end{gather*}
+Тогда:
+\begin{gather*}
+E = \frac{\mu_0n\pi r^2 I_0 \omega \cos{(\omega t)}}{2\pi r} = \frac{1}{2}\mu_0nr\omega I_0 \cos{(\omega t)}
+\end{gather*}
+*примечание: в решебнике в этом месте вылезает минус -- не ебу, откуда. в принципе он на решение не влияет, но если тут ошибка, то тот кто будет править - присмотритесь пожалуйста:3\\
+
+Далее нам не помешает понять, а что же такое $dV$. Если мы вспомним, как выглядит соленоид, то поймем, что это будет такое цилиндрическое кольцо толщиной $dr$. Тогда:
+\begin{gather*}
+dV=\pi r^2h - \pi (r+dr)^2h=2\pi h r dr - \pi h (dr)^2 \approx 2\pi h r dr
+\end{gather*}
+Подставляем все полученное в интеграл выше и считаем:
+\begin{gather*}
+W_{\text{ЭЛ}}= \int\limits_0^R \frac{\varepsilon_0}{2}\left( \frac{1}{2}\mu_0nr\omega I_0 \cos{(\omega t)}\right)^2\cdot 2\pi h r dr = \frac{1}{16}R^4\varepsilon_0\mu_0^2n^2I_0^2\cos^2(\omega t)\omega^2\pi h
+\end{gather*}
+Да, выглядит хреново, но сейчас все поправим, ведь нам нужно лишь отношение максимальных значений этих энергий:
+\begin{gather*}
+\frac{W_{\text{ЭЛ}^{max}}}{W_M^{max}} = \frac{\frac{1}{16}R^4\varepsilon_0\mu_0^2n^2I_0^2\omega^2\pi h}{\dfrac{1}{2}\mu_0 n^2I_0^2\pi R^2 h } = \frac{1}{8}R^2\omega^2\varepsilon_0\mu_0
+\end{gather*}
 
 \end{document}
