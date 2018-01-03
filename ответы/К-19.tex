@@ -5,6 +5,162 @@
 \qtitle{К}{19}
 Квантовомеханическое среднее и его временная эволюция. Классические уравнения Гамильтона и теорема Эренфеста.\\ 
 
+По собственным функциям наблюдаемого оператора Вы можете разложить любую функцию из Гильбертова пространства, описывающую текущее состояние квантовой системы:
+
+\begin{gather*}
+	\psi (x) = \sum_nc_n\varphi_n(x)
+\end{gather*}
+
+Рассмотрим следующие выражения:
+\begin{enumerate}
+	\item $(\psi,\hat A \psi) = \left(\sum_mc_m\varphi_m,\sum_nc_na_n\varphi_n\right) = \sum_{mn}c_m^*c_na_n(\varphi_m,\varphi_n) = \sum_{mn}c_m^*c_na_n\delta_{mn} = \sum_m|c_m|^2a_m $
+	\item $(\psi,\psi) = \left(\sum_mc_m\varphi_m,\sum_nc_n\varphi_n\right) = \sum_{mn}c_m^*c_n(\varphi_m,\varphi_n) = \sum_{mn}c_m^*c_n\delta_{mn} = \sum_m|c_m|^2 $
+\end{enumerate}
+
+Квантовомеханическое среднее значение наблюдаемой A находится по формуле:
+\begin{gather*}
+	<A> = \sum_jP_{a_j}a_j = \frac{\sum_j|c_j|^2a_j}{\sum_p|c_p|^2} = \frac{(\psi,\hat{A}\psi)}{(\psi,\psi)}
+\end{gather*}
+Исследуем, как кв.мех. среднее эволюционирует во времени. Возьмем такую вектор функцию, которая нормирована на единицу,т.е
+\begin{gather*}
+	\vert\vert \psi(t_0,\vec{r})\vert\vert ^2 = 1 \Rightarrow\;  <A> = \frac{(\psi,\hat{A}\psi)}{(\psi,\psi)} = \frac{(\psi,\hat{A}\psi)}{\vert\vert\psi\vert\vert^2} = (\psi,\hat{A}\psi)
+\end{gather*}
+Теперь посмотрим как она эволюционирует во времени:
+\begin{gather*}
+	\frac{d}{dt}<A(t)> = \frac{d}{dt}\left(\psi(t,\vec{r}), \hat{A} \psi(t,\vec{r})\right) = \left(\frac{d}{dt}\psi,\hat{A}\psi\right)+\left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\left(\psi,\hat{A}\frac{d}{dt}\psi\right) = 
+\end{gather*}
+
+Вспомним, что  $\frac{d}{dt}\psi = \frac{1}{ih}\widehat{H}\psi$
+\begin{gather*}
+	= \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,\widehat{A}\widehat{H}\psi) - (\widehat{H}\psi,\widehat{A}\psi)\right] = 
+\end{gather*}
+Так как $\widehat{H}$ - эрмитов, то его можно переносить из ячейки в ячейку
+\begin{gather*}
+	= \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,\widehat{A}\widehat{H}\psi) - (\psi,\widehat{H}\widehat{A}\psi)\right] = \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}\left[(\psi,(\hat{A}\hat{H}-\hat{H}\hat{A})\psi)\right] =\\ = \left(\psi,\frac{d}{dt}(\hat{A})\psi\right)+\frac{1}{ih}(\psi,[\hat{A},\hat{H}]\psi)
+\end{gather*}
+Таким образом получаем:
+\begin{gather*}
+	\frac{d}{dt}<A(t)> = <\frac{d}{dt}\hat{A}>+\frac{1}{ih}<[\hat{A},\hat{H}]>
+\end{gather*}
+В случае если нет явной зависимости от времени, тогда
+\begin{gather*}
+	\frac{d}{dt}<A>=\frac{1}{ih}<[\hat{A},\hat{H}]>
+\end{gather*}
+Вдобавок заметим, если $[\hat{A},\hat{H}] = 0$ , то $\frac{d}{dt}<A> = 0 \Rightarrow \;\;<A>$ - интеграл движения
+
+\begin{definition}
+		\llabel{21-def-fullenergy}
+		Величина
+		\begin{gather*}
+		E = \sum_{\alpha=1}^{s}\frac{\partial{L}}{\partial{\dot{q}_\alpha}}\dot{q}_\alpha - L
+		\end{gather*}
+		называется обобщённой энергией
+	\end{definition}
+	
+	Основной величиной, определяющей механические свойства систем в формализме
+	Лагранжа, является функция Лагранжа $L(q,\dot{q},t)$. В рамках самой классической механики
+	эта функция не имеет непосредственного физического смысла. Для решения ряда задач
+	классической механики, а также при формулировке перехода к квантовой теории удобно
+	работать с величинами, более тесно связанными с механическими свойствами систем. Оказывается, что уравнения движения механики можно представить в виде, в котором роль
+	основной величины, определяющей механические свойства системы, играет обобщенная
+	энергия системы, а в качестве независимых переменных используются обобщенные координаты и обобщенные импульсы системы. Математически такой переход осуществляется
+	с помощью так называемого преобразования Лежандра
+	\begin{gather}
+	\llabel{21-fulldiffLagr}
+	dL(q,\dot{q},t) = \sum_{\alpha=1}^{s}\frac{\partial{L}}{\partial{q_\alpha}}	
+	\end{gather}
+	Величина $\frac{\partial{L}}{\partial{\dot{q}_\alpha}}$ есть, по определению, обобщенный импульс $p_{q_\alpha}$, соответствующий обобщенной координате $q_α$. Для краткости, обозначение pqα будет сокращаться ниже до $p_α$. С этим обозначением, а также с помощью уравнений Лагранжа равенство (5.1) можно
+	переписать так:
+	\begin{gather}
+	\llabel{21-fulldifflagr}
+	dL(q,\dot{q},t) = \sum_{\alpha=1}^{s}\dot{p}_\alpha dq_{\alpha} + \sum_{\alpha=1}^{s}p_\alpha d\dot{q}_\alpha + \frac{\partial{L}}{\partial{t}}.
+	\end{gather}
+	Правая часть уравнения \lref{21-fulldifflagr} содержит дифференциалы независимых переменных $q, \dot{q} и t$. Для того чтобы перейти от этого набора к новому набору независимых переменных $q, p, t$, напишем тождественно
+	
+	\begin{gather*}
+	p_\alpha d\dot{q}_\alpha = d(p_\alpha \dot{q}_\alpha) - \dot{q}_\alpha dp_\alpha,\space \alpha = 1,...,s
+	\end{gather*}
+	и представим уравнение $\lref{21-fulldifflagr}$ в виде:
+	\begin{gather}
+	\llabel{21-fulldifflagr1}
+	d\big(\sum_{\alpha=1}^{s}p_\alpha \dot{q}_\alpha - L(q, \dot{q}, t)\big) = -\sum_{\alpha=1}^{s}\dot{p}_\alpha dq_\alpha + \sum_{\alpha=1}^{s}\dot{q}_\alpha dp_\alpha - \frac{\partial{L}}{\partial{t}}dt.
+	\end{gather}
+	Тот факт, что правая часть этого тождества содержит дифференциалы переменных $q, p, t$ означает, что величина, стоящая в его левой части под знаком полного дифференциала, также может быть выражена как функция этого набора переменных. В соответствии с определением $\lref{21-def-fullenergy}$, эта величина численно совпадает с обобщенной энергией системы. Выраженная через обобщенные координаты и импульсы (и время), она называется функцией Гамильтона системы и обозначается через $H(q, p, t)$. Таким образом, по определению, при построении функции Гамильтона переменные $q, p$ рассматриваются как независимые переменные, аналогично тому, как в функции Лагранжа независимыми являются переменные $q, \dot{q}$. Для того чтобы получить эту функцию, следует разрешить определение $p=\frac{\partial{L}}{\partial{\dot{q}}}$ относительно $\dot{q}$ и подставить результат в функцию $E(q,\dot{q},t)$:
+	\begin{gather*}
+	H(q,p,\dot{q}) = \big(\sum_{\alpha=1}^{s}p_\alpha\dot{q}_\alpha - L(q,\dot{q},t)\big)\big|_{\dot{q}=\dot{q}(p,q)}
+	\end{gather*}
+	Расписав явно полный дифференциал функции $H(q, p, t)$ в левой части $\lref{21-fulldifflagr1}$, получим
+	\begin{gather}
+	\llabel{21-fulldiffH}
+	\sum_{\alpha=1}^{s}\frac{\partial{H}}{\partial{q_\alpha}}dq_\alpha + \sum_{\alpha=1}^{s}\frac{\partial{H}}{\partial{p_\alpha}}dp_\alpha + \frac{\partial{H}}{\partial{t}}dt = -\sum_{\alpha=1}^{s}\dot{p}_\alpha dq_\alpha + \sum_{\alpha=1}^{s}\dot{q}_\alpha dp_\alpha - \frac{\partial{L}}{\partial{t}}dt.
+	\end{gather}
+	Приравнивая коэффициенты при дифференциалах независимых переменных в этом тож-
+	дестве, находим следующие уравнения
+	\begin{gather}
+	\llabel{21-hamiltequat1}
+	\dot{p}_\alpha = -\frac{\partial{H}}{\partial{q_\alpha}}, \space \alpha = 1,...,s,
+	\end{gather}
+	\begin{gather}
+	\llabel{21-hamilequat2}
+	\dot{q}_\alpha = \frac{\partial{H}}{\partial{p_\alpha}}, \space \alpha = 1,...,s,
+	\end{gather}
+	\begin{gather}
+	\llabel{21-hamilequat3}
+	\frac{\partial{H}}{\partial{t}} = -\frac{\partial{L}}{\partial{t}}.
+	\end{gather}
+	Уравнения $\lref{21-fulldifflagr1}. \lref{21-hamilequat2}$ представляют собой систему $2s$ дифференциальных уравнений первого порядка для $2s$ функций $q_α(t)$, $p_α(t), α = 1, ..., s$. Эти уравнения называются уравнениями
+	Гамильтона или каноническими уравнениями.\\
+	
+	Теорема Эренфенста\\
+	
+	\begin{definition}
+		\llabel{21-def-wave}
+		Волновой пакет (цуг волн)— определённая совокупность волн, обладающих разными частотами, которые описывают обладающую волновыми свойствами формацию, в общем случае ограниченную во времени и пространстве. Так, в квантовой механике описание частицы в виде волновых пакетов (совокупности солитонов) способствовало принятию статистической интерпретации квадрата модуля волновой функции
+	\end{definition}
+	
+	Если потенциальная энергия пренебрежимо мало изменяется в области нахождения пакета, то движения волнового пакета будет аналогично движению соответсвующей классической частицы. И действительно, если под векторами "координаты" и "импульса" пакета понимать средние значения этих величин, то можно показать, что  классическое и квантовое движения всегда согласуются друг с другом. Компонентой "скорости" пакеа будет производная по времени от среднего значения соответствующей компоненты радиус-вектора; поскольку $<x>$ зависит только от времени, $а x$ в подынтегральном выражении 
+	\begin{gather*}
+	<\vec{r}>	= \int{rP(\vec{r},t)}d\tau = \int{\bar{\psi}(\vec{r},t)d\tau}
+	\end{gather*}
+	представляет собой переменную область интегрирования, то соотвествующая компонента "скорости" равна
+	\begin{gather*}
+	\frac{d}{dt}<x> = \frac{d}{dt}\int{\bar{\psi}x\psi}d\tau = \int{\bar{\psi}x\frac{\partial{\psi}}{\partial{t}}d\tau} + \int{\frac{\partial{\bar{\psi}}}{\partial{t}}x\psi d\tau}
+	\end{gather*}
+	Это выражения можно упростить, подставляя выражения производных по времени от $\psi$ и $\bar{\psi}$ из волнового уравнения Шрёдингера
+	\begin{gather*}
+	ih\frac{\partial{\psi}}{\partial{t}} = -\frac{\hbar^2}{2m}\nabla^2\psi + V(\vec{r},t)\psi
+	\end{gather*}
+	Члены, содержащие $V$, при этом взаимно уничтожаются:
+	\begin{gather*}
+	\frac{d}{dt}<x> = -\frac{i}{\hbar}\big[\int{\bar{\psi}x(-\frac{\hbar^2}{2m}\nabla^2\psi + V\psi)d\tau} - \int{(-\frac{\hbar^2}{2m}\nabla^2\bar{\psi} + V\psi)x\psi d\tau}\big] = \frac{ih}{2m}\int{[\bar{\psi}x(\nabla^2\psi)-(\nabla^2\bar{\psi})x\psi]d\tau} 
+	\end{gather*}
+	Второе слагаемое можно проинтегрировать по частям:
+	\begin{gather*}
+	\int{(\nabla^2\bar{\psi})x\psi d\tau} = -\int{(grad \bar{\psi})grad(x\psi)d\tau} + \int_{A}^{}{(x\psi grad \bar{\psi})_ndA}
+	\end{gather*}
+	Поскольку на больших расстояниях функция $\psi$, характеризующая волновой пакет, обращается в нуль, то равен нулю и интеграл от составляющей вектора $x\psi grad \bar{\psi}$ по нормали к элементу бесконечно удаленной граничной поверхности $A$. Вторично интегрируя по частям(и вновь замечая, что поверхностный интеграл равен нулю), получаем
+	\begin{gather*}
+	\int{(\nabla^2\bar{\psi})x\psi d\tau} = \int{\bar{\psi}\nabla^2(x\psi)d\tau}
+	\end{gather*} 
+	Таким образом,
+	\begin{gather}
+	\llabel{21-eren}
+	\frac{d}{dt}<x> = \frac{ih}{2m}\int{\psi[x\nabla^2\psi - \nabla^2(x\psi)]d\tau} = -\frac{iH}{m}\int{\bar{\psi}\frac{\partial{\psi}}{\partial{x}}d\tau} = \frac{1}{m}<p_x>
+	\end{gather}
+	Поскольку в силу
+	\begin{gather*}
+	<\vec{r}>	= \int{rP(\vec{r},t)}d\tau = \int{\bar{\psi}(\vec{r},t)d\tau}
+	\end{gather*}
+	величина $<x>$ всегда вещественна, из соотношения $\lref{21-eren}$ вытекает, между прочим, что вещественно и значение $<p_x>$. Это можно показать также с помощью  формулы $<\vec{p}> = \int{\bar{\psi}(-ih)grad\psi d\tau}$, если произвести в ней интегрирование по частям и принять во внимание, что функция $\psi$ описывает волновой пакет.\\
+	Подобным же образом можно вычислить производную по времени от компоненты "импульса" частицы. Снова пользуясь волновым уравнением и дважды интегрируя по частям, получим
+	\begin{gather}
+\llabel{21-eren2}
+\frac{d}{dt}<p_x> = -ih\frac{d}{dt}\int{\bar{\psi}\frac{\partial{\psi}}{\partial{x}}d\tau} = -ih\big(\int{\bar{\psi}\frac{\partial}{\partial{x}}\frac{\partial{\psi}}{\partial{t}}d\tau} + \int{\frac{\partial{\bar{\psi}}}{\partial{t}}\frac{\partial{\psi}}{\partial{x}}d\tau}\big) =\\ -\int{\bar{\psi}\frac{\partial}{\partial{x}}\big(-\frac{\hbar^2}{2m}\nabla^2\psi + V\psi\big)d\tau} + \int{\big(-\frac{\hbar^2}{2m}\nabla^2\bar{\psi} + V\bar{\psi}\big)\frac{\partial{\psi}}{\partial{x}}d\tau} = -\int{\bar{\psi}\big[\frac{\partial}{\partial{x}}(V\psi)-V\frac{\partial{\psi}}{\partial{x}}\big]d\tau} =\\ -\int{\bar{\psi}\frac{\partial{V}}{\partial{x}\psi}d\tau} = <-\frac{\partial{V}}{\partial{x}}>
+	\end{gather}
+	Уравнения $\lref{21-eren} и \lref{21-eren2}$(вместе с уравнениями для других компонент) аналогичны классическим уравнениям движения
+	\begin{gather*}
+	\frac{d\tau}{dt}= \frac{\vec{p}}{m},\space \frac{dp}{dt} = -grad V.
+	\end{gather*}	
 %%
 
 \end{document}
