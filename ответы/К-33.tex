@@ -5,6 +5,28 @@
 \qtitle{К}{33}
 Получите с помощью формулы Планка приближённые выражения для объёмной спектральной плотности излучения в области (а) $\hbar\omega\ll k_{B}T$, (б) $\hbar\omega\ll k_{B}T$. Преобразуйте формулу Планка для объемной спектральной плотности излучения $u_{\omega}(T)$ от переменной $\omega$ к переменной $\lambda$.\\ 
 
-%%
+\begin{definition}
+	Формула Планка — выражение для спектральной плотности мощности излучения (спектральной плотности энергетической светимости) абсолютно чёрного тела, которое было получено Максом Планком для плотности энергии излучения $u(\omega,T)$ 
+\end{definition}
+\begin{flalign}
+u(\omega,T)=\frac{\hbar \omega^3}{4 \pi^2 c^2} \cdot \frac{1}{e^\frac{\hbar\omega}{k_{B} T}-1}
+\end{flalign}
+
+где $k_B$ - это постоянная Больцмана.\\
+
+\textbf{Примечание: пункты (а) и (б) в задании абсолютно идентичны, поэтому пишу только для (а)}
+
+Так как $\hbar\omega \ll \k_{B}T$, то из разложения Тейлора следует, что $e^{\frac{\hbar\omega}{kT}} \approx 1 + \frac{\hbar \omega}{k_{B}T}$. Таким образом, путем замены из формулы Планка легко выводится формула Рэлея-Джинса:
+
+$$u(\omega, T) = k_{B}T\frac{\omega^2}{4\pi^2 c^2}$$
+
+Чтобы преобразовать формулу Планка от переменной $\omega$ к $\lambda$, воспользуемся тем, что:
+
+$$\int_0^{\infty} u(\omega, T) d\omega = \int_0^{\infty} u(\lambda, T) d\lambda$$
+
+Так как $\omega = \frac{2\pi c}{\lambda}$, $u(\omega, T)d\omega = -u(\lambda,T)d\lambda$, $\frac{d\omega}{d\lambda} = -\frac{2\pi c}{\lambda^2}$ и учитывая $\hbar = \frac{h}{2\pi}$, то
+получаем, что:
+
+$$u(\lambda, T) = \frac{2\pi c}{\lambda^2} u(\omega, T) = \frac{2\pi h c^2}{\lambda^5} \cdot \frac{1}{e^\frac{hc}{k_B T \lambda} - 1}$$
 
 \end{document}

@@ -5,6 +5,40 @@
 \qtitle{К}{06}
 Вычислите коммутаторы $\hat{x}$, $\hat{p}_x$, $\left[\hat{L}_z,\hat{L}^2\right]$. Прокомментируйте результаты.\\ 
 
-%%
+Рассмотрим оператор $\hat{x}$ такой, что 
+$$
+\hat{x}\psi(x)=x\psi(x).
+$$
+Также рассмотрим оператор $\hat{p}_x$:
+$$
+\hat{p}_x\psi(x)=\frac{\hbar}{i}\dfrac{\partial}{\partial x}\psi (x)
+$$
+Вычислим коммутатор этих операторов:
+$$
+[\hat{x}, \hat{p}_x]\psi(x)=(\hat{x}\hat{p}_x-\hat{p}_x\hat{x})\psi(x)=\frac{\hbar}{i}(x\frac{\partial}{\partial x}-\frac{\partial}{\partial x}x)\psi(x)=-\frac{\hbar}{i}\psi(x)=\hbar i \psi(x) \Longrightarrow [\hat{x}, \hat{p}_x]=\hbar i
+$$
+Этот коммутатор не равен нулю, из чего следует, что эти переменные являются несовместными, то есть, их нельзя одновременно точно измерить в один и тот же момент времени.\\
+
+Определим оператор квадрата момента импульса:
+$$
+\hat{L}^2=\hat{L}_x^2+\hat{L}_y^2+\hat{L}_z^2.
+$$
+Посчитаем коммутатор $\left[\hat{L}_z,\hat{L}^2\right]$:
+$$
+\left[\hat{L}_z,\hat{L}^2\right] = \left[\hat{L}_z,\hat{L}^2_x\right] + \left[\hat{L}_z,\hat{L}^2_y\right]+\left[\hat{L}_z,\hat{L}^2_z\right];
+$$
+$$
+\left[\hat{L}_z,\hat{L}^2_x\right]= \left[\hat{L}_z,\hat{L}_x\right]\hat{L}_x+\hat{L}_x\left[\hat{L}_z,\hat{L}_x\right]=i\hbar\hat{L}_y\hat{L}_x+\hat{L}_xi\hbar\hat{L}_y
+$$
+$$
+\left[\hat{L}_z,\hat{L}^2_y\right]= \left[\hat{L}_z,\hat{L}_y\right]\hat{L}_y+\hat{L}_y\left[\hat{L}_z,\hat{L}_y\right]=-i\hbar\hat{L}_x\hat{L}_y-\hat{L}_yi\hbar\hat{L}_x
+$$
+$$
+\left[\hat{L}_z,\hat{L}^2_x\right]= \left[\hat{L}_z,\hat{L}_z\right]\hat{L}_z+\hat{L}_z\left[\hat{L}_z,\hat{L}_z\right]=0
+$$
+$$
+\left[\hat{L}_z,\hat{L}^2\right] = i\hbar\hat{L}_y\hat{L}_x+\hat{L}_xi\hbar\hat{L}_y-i\hbar\hat{L}_x\hat{L}_y-\hat{L}_yi\hbar\hat{L}_x = 0
+$$
+Следовательно, эти величины могут быть одновременно измерены. Что примечательно, отдельные компоненты момента импульса не могут быть измерены одновременно, в то время как одну из компонент и квадрат момента импульса можно измерить в один и тот же момент времени.
 
 \end{document}
