@@ -5,6 +5,106 @@
 \qtitle{К}{28}
 Покажите, что операторы $\hat{p}_x$ и $\hat{L}_z=\hat{x}\hat{p}_y-\hat{y}\hat{p}_x$ эрмитовы. Вычислите коммутаторы $\left[\hat{x},\hat{p}_x\right]$ и $\left[\hat{L}_z,\hat{L}^2\right]$. Покажите, что собственные значения квадрата эрмитова оператора неотрицательны. Прокомментируйте результаты.\\ 
 
-%%
+\begin{definition}
+Оператор $\hat{A}$ называется эрмитовым (самосопряженным), если для любых волновых функций $\xi$ и $\eta$ выполняется $\left(\hat{A}\xi,\eta\right)=\left(\xi,\hat{A}\eta\right)$
+\end{definition}
+
+Покажем эрмитовость оператора $\hat{p}_{x}$:
+\begin{flalign*}
+\left(\hat{p}_{x}\xi,\eta\right)
+=
+&
+\int\limits_{-\infty}^{\infty}\left(-i\hbar\partial_{x}\xi\right)^*\eta{dx}
+=
+i\hbar\int\limits_{-\infty}^{\infty}\eta{d\xi^*}
+=\\
+=&
+i\hbar\left(\left.\xi^*\eta\right|_{-\infty}^{+\infty}-\int\limits_{-\infty}^{\infty}\xi^*{d\eta}\right)
+=
+\int\limits_{-\infty}^{\infty}\xi^*\left(-i\hbar\partial_{x}\eta\right)dx
+=\\
+=&
+\left(\xi,\hat{p}_{x}\eta\right)
+\end{flalign*}
+
+Рассмотрим оператор момента импульса $\hat{L}_z=\hat{x}\hat{p}_y-\hat{y}\hat{p}_x$: т.к. операторы координат и импульса эрмитовы, то:
+\begin{flalign*}
+\hat{L}_{z}^{+}
+=
+\left(\hat{x}\hat{p}_y-\hat{y}\hat{p}_x\right)^{+}
+=
+\hat{p}_{y}^{+}\hat{x}^{+}-\hat{p}_{x}^{+}\hat{y}^{+}
+=
+\hat{p}_y\hat{x}-\hat{p}_x\hat{y}
+=
+\hat{x}\hat{p}_{y}-\hat{y}\hat{p}_x,
+\end{flalign*}
+т.к. $[\hat{x},\hat{p}_y]=[\hat{y},\hat{p}_x]=0$
+
+\begin{definition}
+Коммутатором операторов $\hat{A}$ и $\hat{B}$ называют оператор $\left[\hat{A},\hat{B}\right]=\hat{A}\hat{B}-\hat{B}\hat{A}$.
+\end{definition}
+
+\textit{Вычислим коммутатор $[\hat{x},\hat{p}_x]$}: запишем $\hat{x}$ и $\hat{p}_x$ в координатном представлении $\left<x'\right|\hat{x}\left|x\right>=x$, $\left<x'\right|\hat{p}_x\left|x\right>=-i\hbar\partial_{x}$, тогда получим:
+
+\begin{flalign*}
+&
+\left[\hat{x},\hat{p}_x\right]\psi(x)
+=
+\left(\hat{x}\hat{p}_x - \hat{p}_x\hat{x}\right)\psi(x)
+=\\
+=&
+-i\hbar\left(x\partial_{x}-\partial_{x}x\right)\psi(x)
+=
+-i\hbar\left(x\partial_{x}\psi(x)-\partial_{x}\left(x\psi(x)\right)\right)
+=\\
+=&
+-i\hbar\left(x\psi'(x)-\psi(x)-x\psi'(x)\right)
+=
+i\hbar\psi(x)
+\Longrightarrow\\
+\Longrightarrow&
+\left[\hat{x},\hat{p}_x\right]
+=
+i\hbar
+\end{flalign*}
+
+\textit{Вычислим коммутатор $\left[\hat{L}_z,\hat{L}^2\right]$}, где $\hat{L}^2$ -- оператор квадрата момента импульса, $\hat{L}_z$ -- оператор компоненты $z$ вектора момента импульса. Воспользуемся свойством коммутатора $[\hat{A},\hat{B}\hat{C}]=[\hat{A},\hat{B}]\hat{C}+\hat{B}[\hat{A},\hat{C}]$. Т.к. $\hat{L}^2=\hat{L}_x^2+\hat{L}_y^2+\hat{L}_z^2$ получим:
+
+\begin{flalign*}
+&
+\left[\hat{L}_z,\hat{L}^2\right]
+=
+\left[\hat{L}_z,\hat{L}_x^2+\hat{L}_y^2+\hat{L}_z^2\right]
+=
+\left[\hat{L}_z,\hat{L}_x^2\right]
++
+\left[\hat{L}_z,\hat{L}_y^2\right]
++
+\left[\hat{L}_z,\hat{L}_z^2\right]
+\Longrightarrow\\
+\Longrightarrow&
+\begin{cases}
+\left[\hat{L}_z,\hat{L}_x^2\right]
+=
+\left[\hat{L}_z,\hat{L}_x\right]\hat{L}_x+\hat{L}_x\left[\hat{L}_z,\hat{L}_x\right]
+=
+i\hbar\left(\hat{L}_{y}\hat{L}_{x}+\hat{L}_{x}\hat{L}_{y}\right)
+\\
+\left[\hat{L}_z,\hat{L}_y^2\right]
+=
+\left[\hat{L}_z,\hat{L}_y\right]\hat{L}_y+\hat{L}_y\left[\hat{L}_z,\hat{L}_y\right]
+=
+-i\hbar\left(\hat{L}_{x}\hat{L}_{y}+\hat{L}_{y}\hat{L}_{x}\right)
+\\
+\left[\hat{L}_z,\hat{L}_z^2\right]=0
+\end{cases}
+\Longrightarrow\\
+\Longrightarrow&
+\left[\hat{L}_z,\hat{L}^2\right]=0,
+\end{flalign*}
+т.к. $\left[\hat{L}_z,\hat{L}_x\right]=i\hbar\hat{L}_y$ и $\left[\hat{L}_z,\hat{L}_y\right]=-i\hbar\hat{L}_x$.
+
+Следствием вышеперечисленного является то, что невозможно одновременно точно измерить $x$ и $p_x$, но при этом возможно измерить одновременно величину вектора момента импульса и какую-то одну его проекцию.
 
 \end{document}
