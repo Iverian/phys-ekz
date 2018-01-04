@@ -42,22 +42,24 @@ $$E^{(N)}(\varphi) = E^{(1)}(\varphi)\frac{e^{iN\delta}}{e^{i\delta}}\cdot \frac
 Для интенсивности:
 $$I^{(N)}(\varphi) = I^{(1)}(\varphi)\frac{\sin^2 N\delta}{\sin^2\delta}$$
 Если $\sin \delta$ в знаменателе дает 0, то и числитель равен 0. это случается, когда $\delta = m\pi \rightarrow kd\sin\varphi = 2m\pi$. Получаем условие для главного максимума:
-$$d\sin(\varphi^{max}_m) = m\lambda,$$
+$$\sin(\varphi^{max}_m)d = m\lambda,$$
 где $m = 0, \pm 1, \pm 2...$ - порядок главного максимума. Интенсивность в главном максимуме очень велика. Поскольку синус меньше единицы, число наблюдаемых главных максимумов удовлетворяет условию:
 $$m < \frac{d}{\lambda}$$
 Числитель дроби в формуле для интенсивности также может обращаться в 0 при $N\delta = p'\pi, $ но $\delta \neq m\pi$, $p' = \pm 1, p\pm 2, ...$, т.е. когда $d\sin(\varphi ^{min}_{p'} = \frac{p'}{N}\lambda, \frac{p'}{N} \neq m$  
 Это минимумы с нулевой интенсивностью, условия можно записать в более удобном виде. Если $p' = 0, $ то $m = 0$ и это максимум нулевого порядка. Далее годятся все $p' = \pm1, \pm2, ... , \pm(N-1). $ При $p' = \pm N$ получаются симметричные главные максимумы первого порядка. Далее отношение $\frac{p'}{N}$ можно записать как $1 + \frac{p}{N}, p =  \pm1, \pm2, ... , \pm(N-1)$. Далее появляются максимумы второго порядка. Продолжая это рассмотрение, приходим к условию минимумов:
 $$d \sin(\varphi^{min}_{m, p}) = (m + \frac{p}{N})\lambda$$
 Мы видим, что между ближайшими друг к другу максимумами находится $N - 1$ минимумов. Ясно, что минимумы отделены друг от друга максимумами, и если это не главные максимумы, то они называются второстепенными или побочными. В частности, для ближайших к $m$-му главному максимуму минимумов:
-$$d\sin(\varphi^{min}_{m, \pm1} = (m \pm \frac{1}{N})\lambda$$
+$$\sin(\varphi^{min}_{m, \pm1})d = (m \pm \frac{1}{N})\lambda$$
 Найдем угловую ширину главного масимума $\delta\varphi$ как угловое расстояние между ближайшими к нему минимумами:
 $$\delta\varphi = \varphi^{min}_{m, 1} - \varphi^{min}_{m, -1} $$
 Ясно, что 
 $$\varphi^{min}_{m, -1} = \varphi^{max}_{m} - \frac{\delta \varphi}{2}$$
 $$\varphi^{min}_{m, 1} = \varphi^{max}_{m} + \frac{\delta\varphi}{2}$$
-$$d(\sin(\varphi^{max}_{m} + \frac{\delta\varphi}{2}) - \sin(\varphi^{max}_{m} - \frac{\delta\varphi}{2})) = \frac{2\lambda}{N} $$
+$$
+d\left[\sin(\varphi^{max}_{m} + \frac{\delta\varphi}{2}) - \sin(\varphi^{max}_{m} - \frac{\delta\varphi}{2})\right] = \frac{2\lambda}{N}
+$$
 $$d\sin(\frac{\delta \varphi}{2} \cos(\varphi^{max}_m) = \frac{\lambda}{N}$$
-$$\delta\varphi << 1 \rightarrow \sin(\frac{\delta\varphi}{2} \approx \frac{\delta\varphi}{2}$$
+$$\delta\varphi\ll1 \rightarrow \sin\frac{\delta\varphi}{2} \approx \frac{\delta\varphi}{2}$$
 Для угловой ширины максимума получается следующая формула:
 $$\delta\varphi = \frac{2\lambda}{dNcos(\varphi^{max}_m)}$$
 Cпектр $n$-го порядка - по сути, второстепенные максимумы (радужки), расположенные между главными максимумами N и N+1 порядков.\\
