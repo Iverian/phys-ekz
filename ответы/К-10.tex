@@ -1,10 +1,91 @@
 \documentclass[__main__.tex]{subfiles}
-
 \begin{document}
-
-\qtitle{К}{10}
-Коммутационные соотношения и спектр операторов $\hat{J}^2$ и $\hat{J}_z$ ( $\hat{J}$ -- оператор полного момента импульса).\\ 
-
-%%
-
+	
+	\qtitle{К}{10}
+	Коммутационные соотношения и спектр операторов $\hat{J}^2$ и $\hat{J}_z$ ( $\hat{J}$ -- оператор полного момента импульса).\\ 
+	
+	Определим новый эрмитов оператор $\hat{J}$ с помощью одних лишь коммутационных соотношений
+	\begin{gather*}
+		\left[\hat{J}_x,\hat{J}_y\right] = i\hbar\hat{J}_z\\
+		\left[\hat{J}_y,\hat{J}_z\right] = i\hbar\hat{J}_x\\
+		\left[\hat{J}_z,\hat{J}_x\right] = i\hbar\hat{J}_y
+	\end{gather*}
+	\begin{definition}
+		$\hat{L}$ -  орбитальный момент импульса, $\hat{J}$ - полный момент импульса, $\hat{S}$ - \textbf{собственный момент импульса} или \textbf{спин}.
+	\end{definition}
+	Полный момент импульса потому и полный, что $\hat{J} = \hat{L}+\hat{S}$
+	\begin{gather*}
+		\hat{J}^2 = \hat{J}^2_x+\hat{J}^2_y+\hat{J}^2_z\\
+		\hat{J}_{-} = \hat{J}_x-i\hat{J}_y\\
+		\hat{J}_{+} = \hat{J}_x+i\hat{J}_y
+	\end{gather*}
+	\begin{theorem}
+		Собственные значения квадрата эрмитова оператора неотрицательны.
+	\end{theorem}
+	\begin{proof}
+		Пусть $|v>$ - собственный вектор оператора $\hat{A}^2$, отвечающий собственному значению $\alpha_v$: $\hat{A}^2|v> = \alpha_v|v>$\\
+		Учитывая, что $\hat{A}^{+} = \hat{A}$ имеем:
+		\begin{gather*}
+			0 \leq \left<v|\hat{A}^2|v\right> = \left<v|\hat{A}^{+}\hat{A}|v\right> = \left<v|\alpha_v|v\right> = \alpha_v\left<v|v\right> \geq 0\;\;\;\Rightarrow \alpha_v \geq 0
+		\end{gather*} 
+	\end{proof}
+	Т.к $\left[\hat{J}^2,\hat{J}_z\right] = 0$, то эти операторы обладают общей системой собственных векторов. Обозначим их $\left\{|jm>\right\}$
+	\begin{gather*}
+		\hat{J}^2|jm> = j(j+1)|jm>\\
+		\hat{J}_z|jm> = m|jm>
+	\end{gather*} 
+	\begin{enumerate}
+		\item Первый шаг в определении спектра операторов $\hat{J}^2$ и $\hat{J}_z$ нам позволит сделать факт неотрицательности нормы.
+			\begin{gather*}
+				\left<jm|\hat{J}_{+}\hat{J}_{-}|jm\right> = \left<jm\left|\left[\hat{J}^2-\hat{J}_z\left(\hat{J}_z-1\right)\right]\right|jm\right> = \left[j(j+1)-m(m-1)\right]\left<jm|jm\right>
+			\end{gather*}
+			Т.к $\left<jm|\hat{J}_{+}\hat{J}_{-}|jm\right> \geq 0$ и $\left<jm|jm\right> \geq 0$ имеем:
+			\begin{gather*}
+				\left[j(j+1)-m(m-1)\right] = (j+m)(j-m-1) \geq 0
+			\end{gather*}
+			\begin{equation*}
+				\begin{cases}
+					j+m \geq 0\\
+					j-m+1 \geq 0
+				\end{cases}
+			\end{equation*}
+			или
+			\begin{equation*}
+				\begin{cases}
+					j+m \leq 0\\
+					j-m+1 \leq 0
+				\end{cases}
+			\end{equation*}
+			Аналогично расписывая $	\left<jm|\hat{J}_{-}\hat{J}_{+}|jm\right>$ получим следующие ограничения на $j$ и $m$
+			\begin{equation*}
+				\begin{cases}
+					j-m \geq 0\\
+					j+m+1 \geq 0
+				\end{cases}
+			\end{equation*}
+			или
+			\begin{equation*}
+				\begin{cases}
+					j-m \leq 0\\
+					j+m+1 \leq 0
+				\end{cases}
+			\end{equation*}
+			В итоге получаем, что собственные значения $m$ записаны между $-j\leq m \leq +j$
+		\item Обобщенная формула
+			\begin{gather*}
+				\hat{J}^p_{-}|jm> \sim |jm-p>\\
+				\hat{J}^d_{+}|jm> \sim |jm+d>
+			\end{gather*}  	
+			где $p \geq 0$ - целое.\\
+			Величина $m-p$ ограничена снизу значением $-j$,т.е $\exists$ такое предельное значение $p$ при котором $m-p = -j$. Величина $m+d$ ограничена сверху значением $+j$,т.е $\exists$ такое предельное значение $d$ при котором $m+d = +j$.
+		\item Подводя итоги имеем
+			\begin{equation}
+				\label{k10-1}
+				\begin{cases}
+					m+d = +j\\
+					m-p = -j
+				\end{cases}
+			\end{equation}	
+			Из (\ref{k10-1}) получаем $j = \frac{d+p}{2}$. Учитывая, что $d,p \in N$ заключаем, что число возможных значений $m$, отвечающих заданному (фиксированному) значению $j$ равно $2j+1$
+	\end{enumerate}
 \end{document}
