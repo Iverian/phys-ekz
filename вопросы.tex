@@ -44,6 +44,7 @@
 }
 
 \newcommand{\ssection}[1]{%
+  \refstepcounter{section}%
   \addcontentsline{toc}{section}{#1}%
   \section*{#1}%
 }
@@ -52,7 +53,9 @@
 \begin{document}
 
 %
+%
 \ssection{П Теория поля}
+%
 %
 
 \qtitle{П}{1}
@@ -224,7 +227,9 @@
 \clearpage
 
 %
+%
 \ssection{Э Электричество и магнетизм}
+%
 %
 
 \qtitle{Э}{1}
