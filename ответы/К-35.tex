@@ -3,8 +3,70 @@
 \begin{document}
 
 \qtitle{К}{35}
-Получите формулу Планка. Сопоставьте вычисленную с её помощью объёмную спектральную плотность энергии равновесного теплового излучения с предсказанием Рэлея-Джинса. Прокомментируйте результат.\\ 
+Получите формулу Планка. Сопоставьте вычисленную с её помощью объёмную спектральную плотность энергии равновесного теплового излучения с предсказанием Рэлея-Джинса. Прокомментируйте результат.\\
 
-%%
+\begin{definition}
+    Закон Рэлея-Джинса -- закон излучения для спектральной плотности мощности излучения (спектральной плотности энергетической светимости) $u(\omega, T)$ абсолютно чёрного тела, полученный в рамках классической статистики.
+    \begin{flalign}
+        \llabel{k35:form}
+        u(\omega,T)=kT\cdot\frac{\omega^2}{\pi^2c^3},
+    \end{flalign}
+\end{definition}
+\begin{definition}
+    Формула Планка — выражение для спектральной плотности мощности излучения (спектральной плотности энергетической светимости) абсолютно чёрного тела, которое было получено Максом Планком для плотности энергии излучения $u(\omega,T)$
+\end{definition}
+Для получения формулы Планка положим, что излучение испускается в виде отдельных порций с энергией, пропорциональной частоте $\omega$:
+\begin{gather}
+    \varepsilon=\hbar\omega,
+\end{gather}
+тогда энергия излучения примет вид:
+\begin{gather}
+    \varepsilon_n=n\hbar\omega,
+\end{gather}
+где $n$ -- количество порций (\emph{квантов}). Согласно распределению Больцмана вероятность $P_n$ того, что энергия излучения равна $\varepsilon_n$ определяется как:
+\begin{gather}
+    P_n
+    =
+    A\exp\left(-\frac{\varepsilon_n}{kT}\right)
+\end{gather}
+где $A$ определим из условия нормировки $\sum_{n}P_n=1$:
+\begin{gather}
+    A=\frac{1}{\sum_{n}\exp\left(-\frac{\varepsilon_n}{kT}\right)},
+\end{gather}
+математическое ожидание энергии излучения $\overline\varepsilon$ тогда примет вид:
+\begin{flalign}
+    \overline{\varepsilon}
+    =&
+    \sum_{n}\varepsilon_{n}P_{n}
+    =
+    \left.
+    \frac{\sum_{n}n\hbar\omega\exp\left(-n\hbar\omega/kT\right)}{\sum_{n}\exp\left(-n\hbar\omega/kT\right)}
+    \right|_{x=\hbar\omega/kT}
+    =
+    \hbar\omega\frac{\sum_{n}n\exp(-nx)}{\sum_{n}\exp(-nx)}
+    =\\
+    =&
+    -\hbar\omega\frac{d}{dx}\ln\sum_{n}\exp(-nx)
+\end{flalign}
+По формуле суммы бесконечно убывающей геом. прогрессии (знаменатель $e^{-x}<1$):
+\begin{gather}
+    \sum_{n}\exp(-nx)=\frac{1}{1-e^{-x}},
+\end{gather}
+итого получим:
+\begin{gather}
+    \overline\varepsilon
+    =
+    -\hbar\omega{d_x}\ln\frac{1}{1-e^{-x}}
+    =
+    \frac{\hbar\omega}{e^{x}-1}
+    =
+    \frac{\hbar\omega}{\exp(\hbar\omega/kT) - 1}
+\end{gather}
+заметим, что при $\hbar\rightarrow{0}\colon\overline{\varepsilon}\rightarrow{kT}$, т.е. если энергия могла бы принимать непрерывный ряд значений (классический случай), то ее среднее значение имело бы вид $kT$, из этих соображений заменим $kT$ в (\lref{k35:form}) на полученное $\overline{\varepsilon}$ и получим формулу Планка
+\begin{flalign}
+    u(\omega,T)
+    =
+    \frac{\omega^2}{\pi^2c^3}\cdot\frac{\hbar\omega}{\exp(\hbar\omega/kT)-1}
+\end{flalign}
 
 \end{document}

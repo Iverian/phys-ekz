@@ -5,6 +5,33 @@
 \qtitle{Ч}{03}
 Докажите, что собственными значениями эрмитова оператора, квадрат которого равен тождественному оператору, могут быть только $\pm 1$. Покажите, что оператор перестановки частиц удовлетворяет вышеперечисленным требованиям.\\ 
 
-%%
+\begin{proof}
+\begin{gather*}
+\hat{A}|j\rangle = a_j|j\rangle\\
+\hat{1}|j\rangle =\hat{A}^2|j\rangle = a_j\hat{A}|j\rangle = (a_j)^2|j\rangle \Longrightarrow (a_j)^2=1 \Longrightarrow a_j=\pm 1
+\end{gather*}
+\end{proof}
 
+
+Рассмотрим систему из $N$ невзаимодействующих частиц, обладающих спином. Волновая функция такой системы имеет вид:
+\begin{gather*}
+\Psi(\vec{r_1}s_{z1}; \vec{r_2}s_{z2};...; \vec{r_N}s_{zN}) = \Psi(q_1, q_2, ..., q_N) \qquad \text{(Просто ввели небольшое переобозначение)}
+\end{gather*}
+Введем оператор $\hat{P}$ перестановки двух частиц местами:
+\begin{gather*}
+\hat{P}\Psi(q_1, q_2, ..., q_N)=\Psi(q_2, q_1, ..., q_N)
+\end{gather*}
+С другой стороны, по определению оператора:
+\begin{gather*}
+\hat{P}\Psi(q_1, q_2, ..., q_N)=\lambda \Psi(q_1, q_2, ..., q_N)
+\end{gather*}
+Если мы подействуем дважды оператором $\hat{P}$ на волновую функцию, то получим:
+\begin{gather*}
+\hat{P}^2\Psi(q_1, ..., q_N)=\Psi (q_1, ..., q_N) \Longrightarrow \hat{P}^2=\hat{1}
+\end{gather*}
+При этом:
+\begin{gather*}
+\hat{P}^2\Psi(q_1, q_2, ..., q_N)=\lambda^2 \Psi(q_1, q_2, ..., q_N)
+\end{gather*}
+Объединяя вышенаписанное, получаем, что $\lambda^2=1 \Longrightarrow \lambda=\pm 1$.
 \end{document}
