@@ -3,37 +3,37 @@
 \begin{document}
 
 \qtitle{К}{08}
-Сформулируйте теорему Эренфеста; прокомментируйте её на примере электрона в одномерном потенциале.\\ 
+Сформулируйте теорему Эренфеста; прокомментируйте её на примере электрона в одномерном потенциале.\\
 
 Для начала, пусть речь идёт об одиноком электрончике, движущемся в потенциале $U(x)$: его Гамильтониан $\widehat{H} = \frac{\widehat{p}^2_x}{2m} + \widehat{U}(x)$
 \begin{gather}
-\frac{d}{dt}<x> = \frac{1}{i\hbar}\big<[\widehat{x}, \widehat{H}]\big> = \frac{1}{i\hbar}\big<[x,\frac{\widehat{p}^2_x}{2m}] + [x, U(x)]\big>
+    \frac{d}{dt}<x> = \frac{1}{i\hbar}\big<[\widehat{x}, \widehat{H}]\big> = \frac{1}{i\hbar}\big<[x,\frac{\widehat{p}^2_x}{2m}] + [x, U(x)]\big>
 \end{gather}
 Чтобы  посчитать $[x, \widehat{p}^2_x]$ используем трюк:
 \begin{gather*}
-[\widehat{A},\widehat{B},\widehat{C}] = [\widehat{A},\widehat{B}]\widehat{C} + \widehat{B}[\widehat{A},\widehat{C}]\hspace{3mm} \widehat{A}\equiv x; \hspace{2mm} \widehat{B} = \widehat{C}\equiv \widehat{p}_x\\
-[\widehat{x},\widehat{p}^2_x] = [\widehat{x},\widehat{p}]\widehat{p} + \widehat{p}[\widehat{x},\widehat{p}] = 2i\hbar\widehat{p_x}
+    [\widehat{A},\widehat{B},\widehat{C}] = [\widehat{A},\widehat{B}]\widehat{C} + \widehat{B}[\widehat{A},\widehat{C}]\hspace{3mm} \widehat{A}\equiv x; \hspace{2mm} \widehat{B} = \widehat{C}\equiv \widehat{p}_x\\
+    [\widehat{x},\widehat{p}^2_x] = [\widehat{x},\widehat{p}]\widehat{p} + \widehat{p}[\widehat{x},\widehat{p}] = 2i\hbar\widehat{p_x}
 \end{gather*}
-Мораль $\frac{d}{dt}<x> = \frac{1}{i\hbar2m}\big<2i\hbar p_x\big> = \big<\frac{p_x}{m}\big>$\\
+Мораль $\frac{d}{dt}<x> = \frac{1}{i\hbar2m}\big<2i\hbar p_x\big> = \left< \frac{p_x}{m} \right>$\\
 Если б было как-то иначе, мы сразу бы заподозрили, что что-то не так со связью квантовой механики и классической механики.\\
 Временная эволюция нашего электрончика в квантовой механике задаётся нерелятивистким временным (в его лекциях "нерел.врем.") уравнением Шрёдингера, а в классической механике - уравнением Ньютона. Если мы можем из квантовой механики возпроизвести этот классический результат, то мы можем воспроизвести классическую механику и т.о. оправдаем себя за то, что проморгали кв.мех.эффекты!
 \begin{gather*}
-\frac{d}{dt}\big<p\big> = \frac{1}{i\hbar}\big<[\widehat{p}_x,\frac{\widehat{p}^2_x}{2m} + U(x)]\big>(на\hspace{1mm} этот\hspace{1mm} раз\hspace{1mm} важно\hspace{1mm} именно\hspace{1mm} U(x)) = \frac{1}{ih}\big<[\widehat{p}_x], U(x)\big>\\
-= \bigg|
-\frac{\hbar}{i}(\partial_xU(x) - U(x)\partial_x) = -i\hbar(U(x)\partial_x + \partial_x(U(x)) - U(x)\partial_x) = -i\hbar\frac{\partial{U(x)}}{\partial{x}} \bigg| = \big<-\frac{\partial{U(x)}}{\partial{x}}\big>
+    \frac{d}{dt}\left< p \right> = \frac{1}{i\hbar}\big<[\widehat{p}_x,\frac{\widehat{p}^2_x}{2m} + U(x)]\big>(на\hspace{1mm} этот\hspace{1mm} раз\hspace{1mm} важно\hspace{1mm} именно\hspace{1mm} U(x)) = \frac{1}{ih}\big<[\widehat{p}_x], U(x)\big>\\
+    = \bigg|
+    \frac{\hbar}{i}(\partial_xU(x) - U(x)\partial_x) = -i\hbar(U(x)\partial_x + \partial_x(U(x)) - U(x)\partial_x) = -i\hbar\frac{\partial{U(x)}}{\partial{x}} \bigg| = \left< -\frac{\partial{U(x)}}{\partial{x}} \right>
 \end{gather*}
 Обратите внимание, что если поставить в соответствие к классическому импульсу $p \rightarrow \widehat{p}_x = \frac{\hbar}{i}\partial_x$, то в пределе воспроизводится классическая физика. На данном этапе этого достаточно, чтобы подтвердить $p \rightarrow \widehat{p}_x = \frac{\hbar}{i}\partial_x$. Обратите внимание, что в квантовой механике нигде не используется сила - описание, использующее энергию, является более полезным.\\
 Напонмню, что в аналитической механике мы пользуемся уравнениями Гамильтона
 \begin{gather*}
-\frac{d}{dt}q_j = \frac{\partial{H}}{\partial{P_j}}; \hspace{3mm} \frac{d}{dt}P_j = -\frac{\partial{H}}{\partial{q_j}}
+    \frac{d}{dt}q_j = \frac{\partial{H}}{\partial{P_j}}; \hspace{3mm} \frac{d}{dt}P_j = -\frac{\partial{H}}{\partial{q_j}}
 \end{gather*}
 \begin{theorem}[Формулировка с вики]
-	В квантовой механике средние значения координат и импульсов частицы, а также силы, действующей на неё, связаны между собой уравнениями, аналогичными соответствующим уравнениям классической механики, то есть при движении частицы средние значения этих величин в квантовой механике изменяются так, как изменяются значения этих величин в классической механике.
+    В квантовой механике средние значения координат и импульсов частицы, а также силы, действующей на неё, связаны между собой уравнениями, аналогичными соответствующим уравнениям классической механики, то есть при движении частицы средние значения этих величин в квантовой механике изменяются так, как изменяются значения этих величин в классической механике.
 \end{theorem}
 Утверждение теоремы Эренфеста заключается в том, что кв. мех. средние удовлетворяют тем же уравнениям движения, что и соотвествующие классические переменные.\\
 Уравнение Эренфеста для среднего значения квантовой наблюдаемой гамильтоновой системы имеет вид:\\
 \begin{gather*}
-\frac{d}{dt}\big<A\big> = \frac{1}{i\hbar}\big<\big[A,H\big]\big> + \bigg<\frac{\partial{A}}{\partial{t}}\bigg>
+    \frac{d}{dt}\left< A \right> = \frac{1}{i\hbar}\left< \big[A,H\big] \right> + \left< \frac{\partial{A}}{\partial{t}} \right>
 \end{gather*}
 где $A$ - квантовая наблюдаемая, $H$ - оператор Гамильтон системы, угловые скобки - среднее значение, квадратные - коммутатор.
 
