@@ -4,8 +4,9 @@
 
 \qtitle{С}{05}
 Покажите, что (а) в неоднородном электростатическом поле на диполь действует сила $\vec{F}=\left<\vec{p}_e,\nabla\right>\vec{E}$, (б) момент сил, действующий на электрический диполь в однородном электростатическом поле $\vec{E}$ равен $\vec{M}=\vec{p}_e\times\vec{E}$, где $\vec{p}_e$ -- электрический дипольный момент.\\ 
+
+(А)Итак, для начала запишем выражение энергии электрического диполя:\\
 \includegraphics[scale = 0.5]{C5_1}\\
-Итак, для начала запишем выражение энергии электрического диполя:\\
 \begin{gather*}
 W = q\phi(\vec{r}+\vec{l})-q\phi(\vec{r}),\\
 \phi(\vec{r}+\vec{l}) = \phi(x+l_x,y+l_y,z+l_z)=\\
@@ -17,8 +18,8 @@ W = q\vec{l} \cdot \nabla \phi = \vec{p}_{e} \cdot (-\vec{E})
 \vec{F} = -\nabla W,\\
 F_i = -\frac{\partial W}{\partial x_i} = \frac{\partial}{\partial x_i}\vec{p}_{e}\vec{E}=\frac{\partial}{\partial x_i}\sum_{j=1}^{3}p_{ej}E_j = \frac{\partial}{\partial x_i} \sum_{j=1}^{3}p_{ej}\left(-\frac{\partial \phi}{\partial x_j}\right) = \\ = \sum_{j=1}^{3}\left(p_{ej}\frac{\partial}{\partial x_j}\right)\left(-\frac{\partial \phi}{\partial x_i}\right) \Longrightarrow \vec{F} = \left<\vec{p}_{e}, \nabla\right>\vec{E}
 \end{gather*}
-Момент силы, действующий на электрический диполь в однородном электростатическом поле (в однородном, значит, что $\vec{E} = const$):
+(Б)Если диполь поместить в однородное электрическое поле(в однородном, значит, что $\vec{E} = const$), образующие диполь заряды –q и +q окажутся под действием равных по величине, но противоположных по направлению сил $\vec{f}_1$ и $\vec{f}_2$. Эти силы образуют пару сил, плечо которой равно $l \cdot \sin \alpha$, т.е., зависит от ориентации диполя относительно поля. Модуль каждой из сил равен $qE$. Умножив его на плечо, получим значение момента пары сил, действующих на диполь:
 \begin{gather}
-\vec{M} = \vec{l} \times q\vec{E} = q\vec{l}\times\vec{E} = \vec{p}_{e}\times\vec{E}
+M =qEl\sin \alpha = p_eE\sin \alpha \Longrightarrow \vec{M} = \vec{p}_e \times \vec{E}
 \end{gather}
 \end{document}
