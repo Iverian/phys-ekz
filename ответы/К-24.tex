@@ -3,8 +3,72 @@
 \begin{document}
 
 \qtitle{К}{24}
-Покажите, что собственные значения оператора $\hat{J}_z$ принимают значения в интервале $-j\le m\le +j$, где $\hat{J}_z\left|jm\right>=\hbar m\left|jm\right>$, $\hat{J}^2\left|jm\right>=\hbar^2 j(j+1)\left|jm\right>$.\\ 
+Покажите, что собственные значения оператора $\hat{J}_z$ принимают значения в интервале $-j\le m\le +j$, где $\hat{J}_z\left|jm\right>=\hbar m\left|jm\right>$, $\hat{J}^2\left|jm\right>=\hbar^2 j(j+1)\left|jm\right>$.\\
 
-%%
+Определим новый эрмитов оператор $\hat{J}$ с помощью одних лишь коммутационных соотношений
+\begin{gather*}
+    \left[\hat{J}_x,\hat{J}_y\right] = i\hbar\hat{J}_z\\
+    \left[\hat{J}_y,\hat{J}_z\right] = i\hbar\hat{J}_x\\
+    \left[\hat{J}_z,\hat{J}_x\right] = i\hbar\hat{J}_y
+\end{gather*}
+
+\begin{gather*}
+    \hat{J}^2 = \hat{J}^2_x+\hat{J}^2_y+\hat{J}^2_z\\
+    \hat{J}_{-} = \hat{J}_x-i\hat{J}_y\\
+    \hat{J}_{+} = \hat{J}_x+i\hat{J}_y
+\end{gather*}
+
+\begin{theorem}
+    Собственные значения квадрата эрмитова оператора неотрицательны.
+\end{theorem}
+\begin{proof}
+    Пусть $|v>$ - собственный вектор оператора $\hat{A}^2$, отвечающий собственному значению $\alpha_v$: $\hat{A}^2|v> = \alpha_v|v>$\\
+    Учитывая, что $\hat{A}^{+} = \hat{A}$ имеем:
+    \begin{gather*}
+        0 \leq \left<v|\hat{A}^2|v\right> = \left<v|\hat{A}^{+}\hat{A}|v\right> = \left<v|\alpha_v|v\right> = \alpha_v\left<v|v\right> \geq 0\;\;\;\Rightarrow \alpha_v \geq 0
+    \end{gather*}
+\end{proof}
+Т.к $\left[\hat{J}^2,\hat{J}_z\right] = 0$, то эти операторы обладают общей системой собственных векторов. Обозначим их $\left\{\left|jm\right>\right\}$
+\begin{gather*}
+    \hat{J}^2\left|jm\right> = j(j+1)\left|jm\right>\\
+    \hat{J}_z\left|jm\right> = m\left|jm\right>
+\end{gather*}
+
+Первый шаг в определении спектра операторов $\hat{J}^2$ и $\hat{J}_z$ нам позволит сделать факт неотрицательности нормы.
+\begin{gather*}
+    \left<jm|\hat{J}_{+}\hat{J}_{-}|jm\right> = \left<jm\left|\left[\hat{J}^2-\hat{J}_z\left(\hat{J}_z-1\right)\right]\right|jm\right> = \left[j(j+1)-m(m-1)\right]\left<jm|jm\right>
+\end{gather*}
+Т.к $\left<jm|\hat{J}_{+}\hat{J}_{-}|jm\right> \geq 0$ и $\left<jm|jm\right> \geq 0$ имеем:
+\begin{gather*}
+    \left[j(j+1)-m(m-1)\right] = (j+m)(j-m-1) \geq 0
+\end{gather*}
+\begin{equation*}
+    \begin{cases}
+        j+m \geq 0 \\
+        j-m+1 \geq 0
+    \end{cases}
+\end{equation*}
+или
+\begin{equation*}
+    \begin{cases}
+        j+m \leq 0 \\
+        j-m+1 \leq 0
+    \end{cases}
+\end{equation*}
+Аналогично расписывая $   \left<jm|\hat{J}_{-}\hat{J}_{+}|jm\right>$ получим следующие ограничения на $j$ и $m$
+\begin{equation*}
+    \begin{cases}
+        j-m \geq 0 \\
+        j+m+1 \geq 0
+    \end{cases}
+\end{equation*}
+или
+\begin{equation*}
+    \begin{cases}
+        j-m \leq 0 \\
+        j+m+1 \leq 0
+    \end{cases}
+\end{equation*}
+В итоге получаем, что собственные значения $m$ записаны между $-j\leq m \leq +j$
 
 \end{document}

@@ -3,8 +3,56 @@
 \begin{document}
 
 \qtitle{К}{17}
-Получите матричные элементы оператора импульса в координатном представлении $\left<x'|\hat{p}|x\right>$ и оператора координаты в импульсном представлении $\left<p'|\hat{x}|p\right>$, прокомментируйте результаты.\\ 
+Получите матричные элементы оператора импульса в координатном представлении $\left<x'|\hat{p}|x\right>$ и оператора координаты в импульсном представлении $\left<p'|\hat{x}|p\right>$, прокомментируйте результаты.\\
 
-%%
+При переходе от одного представления вектора состояния к другим представлениям надо осуществить преобразование операторов.\\
+Матричный элемент оператора $\widehat{x}$ в $x-представлении$
+\begin{gather*}
+    \langle x'|\widehat{x}|x\rangle = \langle x'|x|x\rangle = x\langle x'|x\rangle = x\delta(x-x')
+\end{gather*}
+Матричный элемент оператора $\widehat{p}$ в $p-представлении$
+\begin{gather*}
+    \langle p'|\widehat{p}|p\rangle = \langle p'|p|p\rangle = p\langle p'|p\rangle = p\delta(p-p')
+\end{gather*}
+Попытаемся найти матричные элементы оператора импульса $\widehat{p}$
+\begin{gather*}
+    \langle x'|\widehat{p}|x\rangle = \langle x'|\widehat{1}\widehat{p}\widehat{1}|x\rangle =  \langle x'|\int{dp'|\rangle\langle p'|\widehat{p}\int{dp|p\rangle\langle p||x\rangle}}\rangle =\\ \int{dp'}\int{dp\langle x'|p'\rangle\langle p'|\widehat{p}|p\rangle\langle p|x\rangle} =\\ \frac{1}{\sqrt{2\pi\hbar}}\frac{1}{\sqrt{2\pi\hbar}}\int{dp}\int{dp'}e^{i\frac{p'}{\hbar}x'}p\delta(p - p')e^{-i\frac{p}{\hbar}x} = \frac{1}{2\pi\hbar}\int{dp}e^{i\frac{p}{\hbar}x'}pe^{-i\frac{p}{\hbar}x} = \frac{1}{2\pi\hbar}(-\frac{\hbar}{i}\frac{d}{dx})\int{dpe^{i\frac{p}{\hbar}(x' - x)}} =\\
+    \int{dpe^{i\frac{p}{\hbar}(x' - x)}} = 2\pi\delta(\frac{x' - x}{\hbar}) = 2\pi\hbar\delta(x'-x) = -\frac{h}{i}\frac{d}{dx}\delta(x' - x)
+\end{gather*}
+Хотя индексы $x' и x$ в $\langle x'|\widehat{p}|x\rangle$ меняются непрерывно, совокупность всех матричных элементов удобно рассматривать как матрицу бесконечного ранга, число столбцов которой несчётно. При таком толковании правую часть равенства
+\begin{gather*}
+    \underset{\Psi_w(x')}{\langle x'|w\rangle} = \int{dx\langle x'|\widehat{p}|x\rangle\underset{\Psi_v(x)}{\langle x|v\rangle}}
+\end{gather*}
+можно рассматривать, как произведение матриц, индексы которых меняются непрерывно: из-за этого суммирование заменяется интегрированием.\\
+Наша цель заключается в установлении правила интегрирования производной $\delta$-функции, помноженной на некоторую непрерывную функцию $f(x)$. Для это проинтегрируем по частям:
+\begin{gather*}
+    \int_{-\infty}^{+\infty}{\delta'(x)f(x)dx} = \big[\delta(x)f(x)\big]\bigg|_{-\infty}^{+\infty} - \int_{-\infty}^{+\infty}{\delta(x)f'(x)dx} = -f'(0)
+\end{gather*}
+Здесь я привёл формальное док-во. Давайте рассмотрим кет(кет-вектор $|x\rangle$ - так обозначается, можно представлять себе как вектор-столбец):
+\begin{gather*}
+    |w\rangle = \widehat{p}|v\rangle
+\end{gather*}
+в координатном представлении
+\begin{gather*}
+    \langle x'|w\rangle (=\Psi_w(x')) = \langle x'|\widehat{p}|v\rangle = \int{dx}\langle x'|\widehat{p}|x\rangle\langle x|v\rangle = \int{dx} - \frac{\hbar}{i}\frac{d\delta(x' - x)}{dx}\Psi_v(x) = \frac{\hbar}{i}\frac{d\Psi_v(x')}{dx'}
+\end{gather*}
+Мы видим, что в координатном представлении оператор $\widehat{p}$ действует как $\frac{h}{i}\frac{d}{dx}$ \\
+Теперь выясним, что представляют из себя матричные элементы оператора $\widehat{x}$ в имупльсном представлении. Вычислим
+\begin{gather*}
+    \langle p'|\widehat{x}|p\rangle = \langle p'|\widehat{1}\widehat{x}\widehat{1}|p\rangle = \langle p'|\int{dx'}|x'\rangle\langle x'|\widehat{x}\int{dx}|x\rangle\langle x||p\rangle = \\
+    \int{dx'}\int{dx}\langle p'|x'\rangle\langle x'|\widehat{x}|x\rangle\langle x|p\rangle = \\
+    \int{dx}\int{dx'}\varphi_{p'}^{*}(x')x\delta(x - x')\varphi_{p}(x) = \int{dx}\varphi_{p'}^{*}(x)x\varphi_{p(x)} =\\
+    \frac{1}{2\pi\hbar}\int{dx}e^{-i\frac{p'}{\hbar}x}xe^{i\frac{p}{\hbar}x} =\\
+    \frac{1}{2\pi\hbar}\frac{\hbar}{i}\frac{d}{dp}\int{dx}e^{i\frac{p - p'}{\hbar}x} = 2\pi\delta(\frac{p - p'}{\hbar}) = 2\pi\hbar\delta(p - p') = \frac{\hbar}{i}\frac{d}{dp}\delta(p - p')
+\end{gather*}
+Давайте рассмотрим кет
+\begin{gather*}
+    |w\rangle = \widehat{x}|v\rangle
+\end{gather*}
+в импульсном представлении
+\begin{gather*}
+    \langle p'|w\rangle = \langle p'|\widehat{x}|v\rangle = \int{dp}\langle p'|\widehat{x}|p\rangle\langle p|v\rangle =\\ \int{dp}\frac{\hbar}{i}\frac{d\delta(p - p')}{dp}\Psi_{v}(p) = -\frac{\hbar}{i}\frac{d\Psi_{v}(p')}{dp'}
+\end{gather*}
+В импульсном представлении оператор $\widehat{x}$ действует как $-\frac{\hbar}{i}\frac{d}{dp}$
 
 \end{document}
