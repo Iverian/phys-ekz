@@ -3,82 +3,96 @@
 \begin{document}
 
 \qtitle{П}{01}
-4-векторный потенциал и тензор Максвелла. Связь полей $\vec{E}$ и $\vec{B}$ с 4-векторным потенциалом $A^\mu$. Действие для электромагнитного поля. Преобразования полей при переходе из одной инерциальной системы отсчёта в другую. Релятивистские инварианты электромагнитного поля.\\ 
+4-векторный потенциал и тензор Максвелла. Связь полей $\vec{E}$ и $\vec{B}$ с 4-векторным потенциалом $A^\mu$. Действие для электромагнитного поля. Преобразования полей при переходе из одной инерциальной системы отсчёта в другую. Релятивистские инварианты электромагнитного поля.\\
 
 \begin{definition}
-	Свойства поля характеризуются 4-вектором $A_i$, так называемым 4-потенциалом, компоненты которого являются функциями координат и времени. Эти величины входят в действие ввиде члена:
-	$$-\frac{e}{c}\int_{a}^{b}A_idx^i$$
-	где $A_i$ берутся в точках мировой линии частицы. 
+    Свойства поля характеризуются 4-вектором $A_i$, так называемым 4-потенциалом, компоненты которого являются функциями координат и времени. Эти величины входят в действие ввиде члена:
+    $$-\frac{e}{c}\int_{a}^{b}A_idx^i$$
+    где $A_i$ берутся в точках мировой линии частицы.
 \end{definition}
-
 \begin{definition}
-	Тензором Максвелла называется: 
-	$$F_{\alpha\beta}=
-	\begin{pmatrix}
-	0 & -E_x & -E_y & -E_z\\
-	E_x & 0 & B_z & -B_y\\
-	E_y & -B_z & 0 & B_x\\
-	E_z & B_y & -B_y & 0
-	\end{pmatrix}$$
+    Тензором Максвелла называется:
+    $$F_{\alpha\beta}=
+        \begin{pmatrix}
+            0   & -E_x & -E_y & -E_z \\
+            E_x & 0    & B_z  & -B_y \\
+            E_y & -B_z & 0    & B_x  \\
+            E_z & B_y  & -B_y & 0
+        \end{pmatrix}$$
 \end{definition}
-
 где $\bar E$ - вектор напряжения электрического поля, а $\bar B$ - магнитного.
 Каждая компонента считается как:
 $$
-F_{\alpha\beta}=\frac{\partial A_\beta}{\partial x^{\alpha}}
--\frac{\partial A_\alpha}{\partial x^{\beta}},
+    F_{\alpha\beta}=\frac{\partial A_\beta}{\partial x^{\alpha}}
+    -\frac{\partial A_\alpha}{\partial x^{\beta}},
 $$
 где $A$ - действие.
 
-
-
-\textbf{Связь полей $\vec E$ и $\vec B$ с 4-векторным потенциалом $A^\mu$}\\
+\textbf{Связь полей $\vec E$ и $\vec B$ с 4-векторным потенциалом $A^\mu$}
 \begin{flalign*}
-	\left. \begin{matrix}
-		-E_x = F_{01} = \partial_0\mathcal A_1 - \partial_1 \mathcal A_0\\
-		-E_y = F_{02} = \partial_0\mathcal A_2 - \partial_2 \mathcal A_0\\
-		-E_z = F_{03} = \partial_0\mathcal A_3 - \partial_3 \mathcal A_0\\
-	\end{matrix}\right\}& \qquad \vec E = -\nabla\phi - \partial_t \vec \mathcal A\\
-	\left. \begin{matrix}
-		B_x = F_{23} = \partial_2\mathcal A_3 - \partial_3 \mathcal A_2\\
-		-B_y = F_{13} = \partial_1\mathcal A_3 - \partial_3 \mathcal A_1\\
-		B_z = F_{12} = \partial_1\mathcal A_2 - \partial_2 \mathcal A_1\\
-	\end{matrix}\right\}& \qquad \vec B = \nabla\times \vec \mathcal A
+    \left. \begin{matrix}
+        -E_x = F_{01} = \partial_0\mathcal A_1 - \partial_1 \mathcal A_0 \\
+        -E_y = F_{02} = \partial_0\mathcal A_2 - \partial_2 \mathcal A_0 \\
+        -E_z = F_{03} = \partial_0\mathcal A_3 - \partial_3 \mathcal A_0 \\
+    \end{matrix}\right\}& \qquad \vec E = -\nabla\phi - \partial_t \vec \mathcal A\\
+    \left. \begin{matrix}
+        B_x = F_{23} = \partial_2\mathcal A_3 - \partial_3 \mathcal A_2  \\
+        -B_y = F_{13} = \partial_1\mathcal A_3 - \partial_3 \mathcal A_1 \\
+        B_z = F_{12} = \partial_1\mathcal A_2 - \partial_2 \mathcal A_1  \\
+    \end{matrix}\right\}& \qquad \vec B = \nabla\times \vec \mathcal A
 \end{flalign*}
 \begin{gather*}
-	p_\alpha = (- \mathcal E, \vec p)
-	\frac{dp_\alpha}{dr} = qF_{\alpha\beta}\frac{dx^\beta}{dr};\\
-	dr = \sqrt{1-v^2}dt = \frac{dt}{\gamma} \rightarrow \gamma\frac{dp_\alpha}{dt} = qF_{\alpha\beta}\gamma\frac{dx^\beta}{dt} \rightarrow \frac{dp_\alpha}{dt} = qF_{\alpha\beta}\frac{dx^\beta}{dt};\\
-	\frac{d}{dt}\left(\begin{matrix}-\mathcal E\\ p_x\\p_y\\p_z\end{matrix}\right) = 
-	q\left(\begin{matrix}
-		0&-E_x&-E_y&-E_z\\
-		E_x&0&B_z&-B_y\\
-		E_y&-B_z&0&B_x\\
-		E_z&B_y&-B_x&0
-	\end{matrix}\right)\left(\begin{matrix}1\\v_x\\v_y\\v_z\end{matrix}\right)
+    p_\alpha = (- \mathcal E, \vec p)
+    \frac{dp_\alpha}{dr} = qF_{\alpha\beta}\frac{dx^\beta}{dr};\\
+    dr = \sqrt{1-v^2}dt = \frac{dt}{\gamma} \rightarrow \gamma\frac{dp_\alpha}{dt} = qF_{\alpha\beta}\gamma\frac{dx^\beta}{dt} \rightarrow \frac{dp_\alpha}{dt} = qF_{\alpha\beta}\frac{dx^\beta}{dt};\\
+    \frac{d}{dt}\left(\begin{matrix}-\mathcal E\\ p_x\\p_y\\p_z\end{matrix}\right) =
+    q\left(\begin{matrix}
+            0   & -E_x & -E_y & -E_z \\
+            E_x & 0    & B_z  & -B_y \\
+            E_y & -B_z & 0    & B_x  \\
+            E_z & B_y  & -B_x & 0
+        \end{matrix}\right)\left(\begin{matrix}1\\v_x\\v_y\\v_z\end{matrix}\right)
 \end{gather*}
 или:
 \begin{gather*}
-	\frac{d\mathcal E}{dt} = q\vec E\cdot \vec v\\
-	\frac{d\vec p}{dt} = q\vec E + q\vec v \times \vec B (\text{Сила Лоренца})
+    \frac{d\mathcal E}{dt} = q\vec E\cdot \vec v\\
+    \frac{d\vec p}{dt} = q\vec E + q\vec v \times \vec B (\text{Сила Лоренца})
 \end{gather*}
 \begin{definition}
-	действие для заряда в электромагнитном поле имеет вид:
-	$$S=\int_{a}^{b}(-mcds-\frac{e}{c}A_idx^i)$$
+    действие для заряда в электромагнитном поле имеет вид:
+    $$S=\int_{a}^{b}(-mcds-\frac{e}{c}A_idx^i)$$
 \end{definition}
+\textbf{Преобразование полей при переходе из одной инерциальной системы отсчёта в другую:} так как проекции векторов $\vec{E}$ и $\vec{B}$ связаны с компонентами тензора $F_{\alpha \beta}$, то формулы их преобразования при переходе из одной ИСО в другую могут быть найдены из общего правила преобразования тензорных величин:
 
-\textbf{Преобразование полей при переходе из одной инерциальной системы отсчёта в другую.}
+$$
+'F^{\alpha \beta} = {\Lambda^{\alpha}}_\beta {\Lambda^{\alpha}}_\beta  F^{\gamma \delta}
+$$
+где ${\Lambda^{\alpha}}_\beta$ - элементы матрицы преобразования Лоренца.
 
-Так как проекции векторов $\vec{E}$ и $\vec{B}$ связаны с компонентами тензора $F_{\alpha \beta}$, то формулы их преобразования при переходе из одной ИСО в другую могут быть найдены из общего правила преобразования тензорных величин:
-
-$$'F^{\alpha \beta} = {\Lambda^{\alpha}}_\beta {\Lambda^{\alpha}}_\beta  F^{\gamma \delta}$$
-
-где ${\Lambda^{\alpha}}_\beta$ - элементы матрицы преобразования Лоренца.\\
-
-\textbf{Релятивистские инварианты электромагнитного поля}\\
-
-$inv = F^2 \cdot \cdot \eta = F_{\mu\nu} e^\nu \otimes e^\mu \cdot F^{\rho\sigma} e_\rho \otimes e_\sigma \cdot \cdot \eta_{\alpha \beta} e^\alpha \otimes e^\beta = F_{\mu\nu} F^{\rho\sigma} \delta_{\rho}^{\nu} \delta_{\sigma}^{\alpha} \eta^{\mu\beta} \eta_{\alpha\beta} = F_{\mu\nu} F^{\nu\mu} = -2 F_{oj}F^{oj} - F_{jk}F^{jk} = 2\vec{E}\cdot\vec{E} - 2\vec{B}\cdot\vec{B} = 2(\vec{E}^2 - \vec{B}^2)$ 
-	
-$inv = det \; F_{\mu\nu} = \begin{vmatrix} 0 & -E_x & -E_y & -E_z \\ E_x & 0 & B_z & -B_y \\ E_y & -B_z & 0 & B_x \\ E_z & B_y & -B_x & 0 \end{vmatrix} = {(\vec{E} \cdot \vec{B})}^2$ 
+\textbf{Релятивистские инварианты электромагнитного поля.}
+\begin{flalign}
+\begin{split}
+    inv
+    =&
+    F^2 \cdot \cdot \eta
+    =
+    F_{\mu\nu} e^\nu \otimes e^\mu \cdot F^{\rho\sigma} e_\rho \otimes e_\sigma \cdot \cdot \eta_{\alpha \beta} e^\alpha \otimes e^\beta
+    =\\
+    =&
+    F_{\mu\nu} F^{\rho\sigma} \delta_{\rho}^{\nu} \delta_{\sigma}^{\alpha} \eta^{\mu\beta} \eta_{\alpha\beta}
+    =
+    F_{\mu\nu} F^{\nu\mu}
+    =
+    -2 F_{oj}F^{oj} - F_{jk}F^{jk}
+    =
+    2\vec{E}\cdot\vec{E} - 2\vec{B}\cdot\vec{B}
+    =\\
+    =&
+    2(\vec{E}^2 - \vec{B}^2)
+\end{split}
+\end{flalign}
+$$
+    inv = \operatorname{det}F_{\mu\nu} = \begin{vmatrix} 0 & -E_x & -E_y & -E_z \\ E_x & 0 & B_z & -B_y \\ E_y & -B_z & 0 & B_x \\ E_z & B_y & -B_x & 0 \end{vmatrix} = {(\vec{E} \cdot \vec{B})}^2
+$$
 
 \end{document}

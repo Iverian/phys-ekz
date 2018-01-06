@@ -5,6 +5,56 @@
 \qtitle{П}{03}
 Покажите, что канонический тензор энергии-импульса электромагнитного поля $T^{\mu\nu}=F^{\mu\lambda}\partial^{\nu}A_{\lambda}-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}$ не является калибровочно инвариантным в отличие от симметризованного тензора энергии-импульса электромагнитного поля $\Theta^{\mu\nu}=T^{\mu\nu}-F^{\mu\lambda}\partial_{\lambda}A^{\nu}$.\\ 
 
-%%
+\emph{Калибровочные преобразования} 4-вектора потенциала поля $A_\mu$ имеют вид $'A_\mu=A_\mu+\partial_{\mu}f$.
 
+Сначала покажем \emph{калибровочную инвариантность тензора Максвелла}:
+\begin{gather}
+{'F}_{\mu\nu}
+=
+\partial_\mu{A'_\nu}-\partial_\nu{A'_\mu}
+=
+\partial_\mu{A_\nu}+\partial_{\mu\nu}{f}-\partial_\nu{A_\mu}-\partial_{\nu\mu}{f}
+=
+F_{\mu\nu}
+\end{gather}
+
+Тогда для канонического тензора энергии - импульса получим:
+\begin{flalign}
+{'T}^{\mu\nu}
+=&
+F^{\mu\lambda}\partial^{\nu}\left(A_{\lambda}+\partial_{\lambda}f\right)
+-
+\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+=\\
+=&
+F^{\mu\lambda}\partial^{\nu}A_{\lambda}
+-
+\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
++
+F^{\mu\lambda}\partial\indices{^\nu_\lambda}{f}
+=\\
+=&
+T^{\mu\nu}+F^{\mu\lambda}\partial\indices{^\nu_\lambda}{f},
+\end{flalign}
+т.е. канонический тензор энергии - импульса не является \emph{канонически инвариантным}.
+
+Для симметризованного тензора энергии - импульса имеем:
+\begin{flalign}
+\begin{split}
+{'\Theta}^{\mu\nu}
+=&
+{'T}^{\mu\nu}-F^{\mu\lambda}\partial_{\lambda}(A^\nu+\partial^{\nu}f)
+=\\
+=&
+T^{\mu\nu}+F^{\mu\lambda}\partial\indices{^\nu_\lambda}{f}
+-
+F^{\mu\lambda}\partial_{\lambda}A^\nu-F^{\mu\lambda}\partial\indices{^\nu_\lambda}f
+=\\
+=&
+T^{\mu\nu}-F^{\mu\lambda}\partial_{\lambda}A^\nu
+=\\
+=&
+\Theta^{\mu\nu}
+\end{split}
+\end{flalign}
 \end{document}

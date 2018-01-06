@@ -5,6 +5,35 @@
 \qtitle{К}{20}
 Для квантовомеханического гармонического осциллятора, состояние которого задаётся кет-вектором $\left|n\right>$, вычислите $\Delta{x}\Delta{p_x}$, прокомментируйте результат.\\ 
 
-%%
+Для того, чтобы найти это произведение, нам потребуются некоторые вспомогательные средства. Рассмотрим два эрмитово сопряжённых оператора $\hat{b}$ и $\hat{b}^+: \left[\hat{b},\hat{b}^+\right]=1 \Leftrightarrow \hat{b}\hat{b}^+-\hat{b}^+\hat{b}=1.$ Введём оператор $\hat{N}=\hat{b}^+\hat{b}.$ Важно отметить, что СЗ этого оператора - целые и неотрицательные числа.
+Представим операторы $\hat{b}\;and\;\hat{b}^+$ в виде:
+\begin{gather*}
+\hat{b}=\alpha\hat{x}+i\beta\hat{p},\quad
+\hat{b}^+=\alpha\hat{x}-i\beta\hat{p}.\; Тогда:\\
+\hat{x}=\frac{\hat{b}+\hat{b}^+}{2\alpha},\quad
+\hat{p}=i\alpha\hbar\left(\hat{b}^+-\hat{b}\right).
+\end{gather*}
+Из равенства коммутатора 1 можно получить, что $2\alpha\beta\hbar=1.$ Далее, для того чтобы в дальнейших вычислениях исчезли произведения вида $\hat{b}\hat{b}\;and\;\hat{b}^+\hat{b}^+$ находят соответствующие значения $α$ и $β$:
+\begin{gather*}
+\alpha=\sqrt{\frac{m\omega}{2\hbar}},\quad\beta=\sqrt{\frac{1}{2m\omega\hbar}};\quad\sqsupset x_0=\sqrt{\frac{\hbar}{m\omega}}\Rightarrow\\
+\hat{x}=\frac{x_0}{\sqrt{2}}\left(\hat b^++\hat b\right),\quad \hat p=\frac{i\hbar}{\sqrt{2}x_0}\left(\hat b^+-\hat b\right).
+\end{gather*}
+Приступим к нахождению квантовомеханических средних для получения соотношения неопределенности:
+\begin{gather*}
+\Delta x=\sqrt{\left<\hat x^2\right>-\left<\hat x\right>^2},\quad
+\Delta p=\sqrt{\left<\hat p^2\right>-\left<\hat p\right>^2}.
+\end{gather*}
+Напомню, что $\left<\hat A\right>=\frac{\left(\varphi_n,\hat A\varphi_n\right)}{\left(\varphi_n,\varphi_n\right)}=\left(\varphi_n,\hat A\varphi_n\right).$ Так получается, что наши операторы переводят функцию $\varphi_n$ в ортогональную ей функцию, поэтому $(\varphi_n,\hat b\varphi_n)=(\varphi_n,\hat b^+\varphi_n)=(\varphi_n,\hat b\hat b\varphi_n)=(\varphi_n,\hat b^+\hat b^+\varphi_n)=0,$ поэтому $\left<\hat x\right>=\left<\hat p\right>=0.$ Дело за малым:
+\begin{gather*}
+\left<\hat x^2\right>=\frac{x_0^2}{2}(\varphi_n,(\hat b^++\hat b)^2\varphi_n)=\frac{x_0^2}{2}(\varphi_n,(\hat b^+\hat b+\hat b\hat b^+)\varphi_n)=\\
+=\frac{x_0^2}{2}(\varphi_n,(2\hat N+1)\varphi_n)=x_0^2\left(n+\frac{1}{2}\right);\\
+\left<\hat p^2\right>=-\frac{\hbar^2}{2x_0^2}(\varphi_n,(\hat b^+-\hat b)^2\varphi_n)=\frac{\hbar^2}{2x_0^2}(\varphi_n,(\hat b^+\hat b+\hat b\hat b^+)\varphi_n)=\\
+=\frac{\hbar^2}{x_0^2}\left(n+\frac{1}{2}\right).
+\end{gather*}
+В итоге получаем выражение,согласующееся с Гейзенбергом:
+\begin{gather*}
+\Delta x\Delta p=\hbar\left(n+\frac{1}{2}\right)\ge\frac{\hbar}{2}
+\end{gather*}
+Вывод из его лекции: при больших квантовых числах $n$ классические результаты стыкуются с квантовой механикой.
 
 \end{document}

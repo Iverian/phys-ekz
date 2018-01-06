@@ -1,10 +1,56 @@
 \documentclass[__main__.tex]{subfiles}
-
 \begin{document}
 
 \qtitle{Ч}{16}
-Установка состоит из двух приборов Штерна-Герлаха. Неполяризованный пучок электронов направляется на прибор Штерна-Герлаха, ориентированный вдоль оси $Oz$, после прохождения которого выделяют электроны, состояние которых описывается кет-вектором $\left|+\right>$, и направляют их на следующий прибор Штерна-Герлаха, ориентация ко-\\ 
+Установка состоит из двух приборов Штерна-Герлаха. Неполяризованный пучок электронов направляется на прибор Штерна-Герлаха, ориентированный вдоль оси $Oz$, после прохождения которого выделяют электроны, состояние которых описывается кет-вектором $\left|+\right>$, и направляют их на следующий прибор Штерна-Герлаха, ориентация которого составляет $\frac{\pi}{4}$ с осью $Oz$. Предскажите, что будет наблюдаться на выходе из установки (т.е какая доля электронов исходного пучка окажется в каком состоянии)\\
 
-%%
+Измеряя проекции спина на направление $\vec{n}$, Вы ясное дело получите собственные значения оператора проекции спина на направление $\vec{n}$
+\begin{gather}
+    \llabel{ch-16-1}
+    \hat{S}\vec{n}|\nearrow \rangle = +\frac{\hbar}{2}|\nearrow \rangle\\
+    \hat{S}\vec{n}|\swarrow \rangle = -\frac{\hbar}{2}|\swarrow \rangle
+\end{gather}
+где $|\nearrow \rangle$ - вектор представляющий состояние в котором проекция спина ориентирована по $\vec{n}$, $|\swarrow \rangle$ -- соответственно против $\vec{n}$, $\hat{S}\vec{n}$ - оператор проекции спина на направление $\vec{n}$.\\\\
+Состояние на входе во второй прибор Штерна-Герлаха (до измерения) распишем в базисе $\left\{|\nearrow\rangle , |\swarrow \rangle \right\}$:
+\begin{gather*}
+    |+\rangle = \left(|\nearrow\rangle\langle\nearrow|+|\swarrow\rangle\langle\swarrow|\right)|+\rangle = |\nearrow\rangle\langle\nearrow|+\rangle+|\swarrow\rangle\langle\swarrow|+\rangle
+\end{gather*}
+где $\langle\nearrow|+\rangle$ - амплитуда вероятности того, что на выходе из 2-ого прибора Ш.-Г.(после измерения) проекция спина ориентирована по $\vec{n}$.\\\\
+Помножим обе части уравнения (\lref{ch-16-1}) на бра $\langle+|$ слева и воспользуемся определением тождественного оператора:
+\begin{gather}
+    \llabel{ch-16-2}
+    \langle+|\hat{S}\vec{n}|+\rangle\langle+|\nearrow\rangle+\langle+|\hat{S}\vec{n}|-\rangle\langle-|\nearrow\rangle = +\frac{\hbar}{2}\langle+|\nearrow\rangle
+\end{gather}
+Аналогично помножим на бра $\langle-|$ слева
+\begin{gather}
+    \llabel{ch-16-3}
+    \langle-|\hat{S}\vec{n}|+\rangle\langle+|\nearrow\rangle+\langle-|\hat{S}\vec{n}|-\rangle\langle-|\nearrow\rangle = +\frac{\hbar}{2}\langle-|\nearrow\rangle
+\end{gather}
+Обозначим $\lambda = \langle+|\nearrow\rangle$, $\rho = \langle-|\nearrow\rangle$, тогда из (\lref{ch-16-2}) и (\lref{ch-16-3}) получаем систему из двух уравнений с двумя неизвестными $\lambda$ и $\rho$ которую можно записать ввиде:
+\begin{gather}
+    \llabel{ch-16-4}
+    \begin{pmatrix} \hat{S}\vec{n} \end{pmatrix}\begin{pmatrix} \lambda \\ \rho \end{pmatrix} = \frac{\hbar}{2} \begin{pmatrix} \lambda \\ \rho\end{pmatrix}
+\end{gather}
+В сферических координатах $\hat{S}\vec{n}$ запишется следующим образом:
+\begin{gather*}
+    \hat{S}\vec{n} = \frac{\hbar}{2}\begin{pmatrix} cos\theta & sin\theta\cdot e^{-i\varphi} \\ sin\theta\cdot e^{i\varphi} & -cos\theta \end{pmatrix}
+\end{gather*}
+Тогда (\lref{ch-16-4}) запишется
+\begin{equation*}
+    \begin{cases}
+        \lambda cos\theta + \rho sin\theta\cdot e^{-i\varphi} = \lambda \\
+        \lambda sin\theta\cdot e^{i\varphi} - \rho cos\theta = \rho
+    \end{cases}
+    \Rightarrow
+    \begin{pmatrix} \lambda \\ \rho \end{pmatrix} = \lambda \begin{pmatrix} 1 \\ \frac{sin\theta}{1+cos\theta}\cdot e^{i\varphi}\end{pmatrix}
+\end{equation*}
+Условие нормировки нам даст:
+\begin{gather*}
+    \left(\lambda^{*}\rho^{*}\right)\begin{pmatrix}\lambda \\ \rho \end{pmatrix} = |\lambda|^2\left(1+\frac{sin^2\theta}{(1+cos\theta)^2}\right) = |\lambda|^2\frac{2+2cos\theta}{(1+cos\theta)^2} = \frac{2}{1+cos\theta}|\lambda|^2 = 1  \Rightarrow \; |\lambda|^2 = \left|\langle+|\nearrow\rangle\right|^2 = \frac{1+cos\theta}{2}
+\end{gather*}
+В итоге получаем, что при $\theta = \frac\pi4$ имеем:
+\begin{gather*}
+    \frac{1+cos\left(\frac{\pi}{4}\right)}{2} = \frac{2+\sqrt{2}}{4} \approx 0.8536
+\end{gather*}
 
 \end{document}
