@@ -65,21 +65,18 @@ T\indices{^\alpha_\beta}
 =
 \frac{1}{4}F^{\alpha\beta}F_{\alpha\beta},
 \end{gather}
-где $F_{\alpha\beta}=\partial_\alpha{A_\beta}-\partial_\beta{A_\alpha}$ -- тензор Максвелла. Для удобства будем вычислять контравариантные компоненты тензора $T$:
+где $F_{\alpha\beta}=\partial_\alpha{A_\beta}-\partial_\beta{A_\alpha}$ -- тензор Максвелла.
 \begin{flalign}
 \begin{split}
-\eta^{\beta\nu}T\indices{^\mu_\beta}
+T\indices{^\mu_\nu}
 =&
-\eta^{\beta\nu}
-\left(
-\frac{\partial\Lambda}{\partial(\partial_\mu{A_\lambda})}\partial_\beta{A_\lambda}
+\frac{\partial\Lambda}{\partial(\partial_\mu{A_\lambda})}\partial_\nu{A_\lambda}
 -
-\Lambda\delta\indices{^\mu_\beta}
-\right)
+\Lambda\delta\indices{^\mu_\nu}
 =\\
 =&
-\frac{\partial\Lambda}{\partial(\partial_\mu{A_\lambda})}\partial^\nu{A_\lambda}
--\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\eta^{\mu\nu}
+\frac{\partial\Lambda}{\partial(\partial_\mu{A_\lambda})}\partial_\nu{A_\lambda}
+-\frac{1}{4}F^{\alpha\beta}F_{\alpha\beta}\delta\indices{^\mu_\nu}
 \end{split}
 \end{flalign}
 Вычислим отдельно первое слагаемое:
@@ -179,8 +176,10 @@ F^{\mu\lambda}
 
 Получим выражение для \emph{канонического тензора энергии - импульса электромагнитного поля}:
 \begin{gather}
-\underset{emf}{T}^{\mu\nu}
+\underset{emf}{T\indices{^\mu_\nu}}
 =
-F^{\mu\lambda}\partial^{\nu}A_{\lambda}-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+F^{\mu\lambda}\partial_{\nu}A_{\lambda}
+-
+\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\delta\indices{^\mu_\nu}
 \end{gather}
 \end{document}
