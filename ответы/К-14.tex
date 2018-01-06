@@ -1,67 +1,71 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
-
-\qtitle{К}{14}
-Найдите волновые функции основного и первого возбуждённого состояний квантовомеханического гармонического осциллятора.\\
-
-
-$\forall n\in\mathbb{N}\cup\{0\}\colon|n\rangle$ образуют дискретное представление, называемое \textit{представлением чисел заполнения}. Вектора этого базиса можно получить из $|0\rangle$. Чтобы показать это, выведем рекуррентное соотношения для векторов базиса с учетом нормировки:
-
-Пусть $\langle n|n\rangle=1$, тогда для $|n+1\rangle$:
-\begin{gather*}
-    \langle n+1|n+1\rangle = \langle n|\hat{b}\hat{b}^\dagger|n\rangle = \langle n|\hat{n}+1|n\rangle
-    = n+1
-\end{gather*}
-Тогда $|n+1\rangle = \frac{1}{\sqrt{n+1}}\hat{b}^\dagger|n\rangle$ или
-\begin{gather*}
-    |n\rangle = \frac{1}{\sqrt{n!}}\left(\hat{b}^\dagger\right)^n|0\rangle
-\end{gather*}
-
-Тогда из уравнения $\hat{b}|0\rangle = 0$ найдем $|0\rangle$. Согласно (\lref{_10:b}) и т.к. $\hat{p}=-i\hbar\frac{d}{dx}$, получим:
-\begin{gather*}
-    \hat{b}
-    =
-    \left.
-    \sqrt{\frac{m\omega}{2\hbar}}x+\sqrt{\frac{\hbar}{2m\omega}}\frac{d}{dx}
-    \right|_{x_0=\sqrt{\frac{\hbar}{m\omega}}}
-    =
-    \frac{x}{\sqrt{2}x_0}+\frac{x_0}{\sqrt{2}}\frac{d}{dx}
-\end{gather*}
-Таким образом уравнение $\hat{b}|0\rangle = 0$ примет вид:
-\begin{gather*}
-    \frac{d}{dx}|0\rangle + \frac{x}{x_0^2}|0\rangle = 0
-\end{gather*}
-Решением этого линейного ОДУ первого порядка является функция:
-\begin{gather*}
-    |0\rangle = C\exp\left(-\frac{x^2}{2x_0^2}\right)
-\end{gather*}
-Константу $C$ найдем из условия нормировки:
-\begin{gather*}
-    C^2\int\limits_{-\infty}^{\infty}\exp\left(-\frac{x^2}{2x_0^2}\right)dx=1,
-\end{gather*}
-Этот интеграл можно вычислить из вероятностных соображений, сведением к плотности нормального распределения $N(0,\sigma)$: $p(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{x^2}{2\sigma^2}\right)$: $\int\limits_{-\infty}^{\infty}p(x)dx=1$.
-В итоге получим
-\begin{gather*}
-    |0\rangle = \frac{1}{\pi^{1/4}x_0^{1/2}}\exp\left(-\frac{x^2}{x_0^2}\right)
-\end{gather*}
-Вычислим $|1\rangle = \hat{b}^\dagger|0\rangle$
-\begin{gather*}
-    \hat{b}^\dagger
-    =
-    \frac{x}{\sqrt{2}x_0}-\frac{x_0}{\sqrt{2}}\frac{d}{dx}
-\end{gather*}
-Тогда
-\begin{gather*}
-    |1\rangle
-    =
-    \frac{1}{\sqrt{2x_0\sqrt{\pi}}}\left(\frac{x}{x_0}-x_0\frac{d}{dx}\right)\exp\left(-\frac{x^2}{x_0^2}\right)
-    =
-    \frac{\sqrt{2}}{\pi^{1/4}x_0^{3/2}}x\exp\left(-\frac{x^2}{x_0^2}\right) + \frac{x}{x_0}
-\end{gather*}
-
-В итоге получили, что собственный базис гамильтониана осциллятора образует \textit{представлением чисел заполнения} $\forall n\in\mathbb{N}\cup\{0\}\colon|n\rangle$, где $|n\rangle = \frac{1}{\sqrt{n!}}\left(\hat{b}^\dagger\right)^n|0\rangle$, а $|0\rangle$ находится из $\hat{b}|0\rangle = 0$.\\
-
-Волновая функция основного состояния: $|0\rangle = \frac{1}{\sqrt{x_0\sqrt{\pi}}}\exp\left(-\frac{x^2}{x_0^2}\right)$, первого возбужденного: $|1\rangle = \frac{\sqrt{2}}{\pi^{1/4}x_0^{3/2}}x\exp\left(-\frac{x^2}{x_0^2}\right) + \frac{x}{x_0}$
+	
+	\qtitle{К}{14}
+	Найдите волновые функции основного и первого возбуждённого состояний квантовомеханического гармонического осциллятора.\\ 
+	
+	\textit{Оператором числа элементарных возбуждений} $\hat{n}=\hat{b}^\dagger\hat{b}$, где $\hat{b}$ и $\hat{b}^\dagger$ -- операторы такие, что $[\hat{b},\hat{b}^\dagger]=1$.\\
+	
+	кет-вектор $|n\rangle$ - собственная функция оператора $\hat{n}$ , отвечающа значению n.\\
+	
+	Таким образом $\forall n\in\mathbb{N}\cup\{0\}\colon|n\rangle$ образуют дискретное представление, называемое \textit{представлением чисел заполнения}. Вектора этого базиса можно получить из $|0\rangle$. Чтобы показать это, выведем рекуррентное соотношения для векторов базиса с учетом нормировки:
+	
+	Пусть $\langle n|n\rangle=1$, тогда для $|n+1\rangle$:
+	\begin{gather*}
+		\langle n+1|n+1\rangle = \langle n|\hat{b}\hat{b}^\dagger|n\rangle = \langle n|\hat{n}+1|n\rangle
+		= n+1
+	\end{gather*}
+	Тогда $|n+1\rangle = \frac{1}{\sqrt{n+1}}\hat{b}^\dagger|n\rangle$ или
+	\begin{gather*}
+		|n\rangle = \frac{1}{\sqrt{n!}}\left(\hat{b}^\dagger\right)^n|0\rangle
+	\end{gather*}
+	
+	Тогда из уравнения $\hat{b}|0\rangle = 0$ найдем $|0\rangle$. Согласно (\lref{_10:b}) и т.к. $\hat{p}=-i\hbar\frac{d}{dx}$, получим:
+	\begin{gather*}
+		\hat{b}
+		=
+		\left.
+		\sqrt{\frac{m\omega}{2\hbar}}x+\sqrt{\frac{\hbar}{2m\omega}}\frac{d}{dx}
+		\right|_{x_0=\sqrt{\frac{\hbar}{m\omega}}}
+		=
+		\frac{x}{\sqrt{2}x_0}+\frac{x_0}{\sqrt{2}}\frac{d}{dx}
+	\end{gather*}
+	Таким образом уравнение $\hat{b}|0\rangle = 0$ примет вид:
+	\begin{gather*}
+		\frac{d}{dx}|0\rangle + \frac{x}{x_0^2}|0\rangle = 0
+	\end{gather*}
+	Решением этого линейного ОДУ первого порядка является функция:
+	\begin{gather*}
+		|0\rangle = C\exp\left(-\frac{x^2}{2x_0^2}\right)
+	\end{gather*}
+	Константу $C$ найдем из условия нормировки:
+	\begin{gather*}
+		C^2\int\limits_{-\infty}^{\infty}\exp\left(-\frac{x^2}{2x_0^2}\right)dx=1,
+	\end{gather*}
+	Этот интеграл можно вычислить из вероятностных соображений, сведением к плотности нормального распределения $N(0,\sigma)$: $p(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{x^2}{2\sigma^2}\right)$: $\int\limits_{-\infty}^{\infty}p(x)dx=1$.
+	В итоге получим
+	\begin{gather*}
+		|0\rangle = \frac{1}{\pi^{1/4}x_0^{1/2}}\exp\left(-\frac{x^2}{x_0^2}\right)
+	\end{gather*}
+	Вычислим $|1\rangle = \hat{b}^\dagger|0\rangle$
+	\begin{gather*}
+		\hat{b}^\dagger
+		=
+		\frac{x}{\sqrt{2}x_0}-\frac{x_0}{\sqrt{2}}\frac{d}{dx}
+	\end{gather*}
+	Тогда
+	\begin{gather*}
+		|1\rangle
+		=
+		\frac{1}{\sqrt{2x_0\sqrt{\pi}}}\left(\frac{x}{x_0}-x_0\frac{d}{dx}\right)\exp\left(-\frac{x^2}{x_0^2}\right)
+		=
+		\frac{\sqrt{2}}{\pi^{1/4}x_0^{3/2}}x\exp\left(-\frac{x^2}{x_0^2}\right) + \frac{x}{x_0}
+	\end{gather*}
+	
+	В итоге получили, что собственный базис гамильтониана осциллятора образует \textit{представлением чисел заполнения} $\forall n\in\mathbb{N}\cup\{0\}\colon|n\rangle$, где $|n\rangle = \frac{1}{\sqrt{n!}}\left(\hat{b}^\dagger\right)^n|0\rangle$, а $|0\rangle$ находится из $\hat{b}|0\rangle = 0$.\\
+	
+	Волновая функция основного состояния: $|0\rangle = \frac{1}{\sqrt{x_0\sqrt{\pi}}}\exp\left(-\frac{x^2}{x_0^2}\right)$, первого возбужденного: $|1\rangle = \frac{\sqrt{2}}{\pi^{1/4}x_0^{3/2}}x\exp\left(-\frac{x^2}{x_0^2}\right) + \frac{x}{x_0}$
+	
 
 \end{document}
