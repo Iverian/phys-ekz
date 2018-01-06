@@ -5,6 +5,49 @@
 \qtitle{П}{12}
 Убедитесь в инвариантности тензора Максвелла относительно калибровочных преобразований. Воспользуйтесь уравнениями Максвелла <<с источниками>>, чтобы получить закон сохранения электрического заряда.\\ 
 
-%%
+\textbf{Калибровочные преобразования}\\
+$$\mathcal A_\mu \longrightarrow \mathcal A'_\mu \equiv \mathcal A_\mu +\partial_\mu f(x)$$
+\textbf{Инвариантность тензора Максвелла относительно калибровочных преобразований}\\
+$$F_{\mu\nu} \longrightarrow F'_{\mu\nu} \equiv \partial_\mu \mathcal A'_\nu - \partial_\nu \mathcal A'_\mu = \partial_\mu \mathcal A_\nu + \partial_\mu \partial_\nu f(x) - \partial_\nu \mathcal A_\mu - \partial_\nu\partial_\mu f(x) = F_{\mu\nu}$$
+\textbf{Уравнение Максвелла «с источниками»}\\
+$\mathcal L$ - плотность лагранжиана. 
+\begin{gather*}
+\mathcal L = \mathcal L_{emf} + \mathcal L_{int}\\
+\mathcal L_{emf} = -\frac{1}{4} F \cdot\cdot F = -\frac{1}{4}F_{\mu \nu}F^{\nu\mu} = \frac{1}{4}F_{\mu\nu}F^{\mu\nu}\\
+\mathcal L_{int} = -j \cdot \mathcal A = -j_\mu \mathcal A^\mu\\
+\frac{\partial\mathcal L}{\partial \mathcal A^\alpha} = \frac{\partial\mathcal L_{int}}{\partial \mathcal A^\alpha} = -j_\mu \delta_\alpha^\mu = -j_\alpha;\\
+\frac{\partial \mathcal L}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{\partial \mathcal L_{emf}}{\partial(\partial_\beta\mathcal A^\alpha)} = \frac{1}{4} \cdot 2F_{\mu\nu}\frac{\partial F^{\mu \nu}}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{1}{2}F_{\mu\nu}\frac{\partial(\partial^\mu\mathcal A^\nu - \partial^\nu \mathcal A^\mu)}{\partial(\partial_\beta \mathcal A^\alpha)} = \frac{1}{2}\left(F^\mu_\nu\frac{\partial(\partial_\mu\mathcal A^\nu)}{\partial(\partial_\beta \mathcal A^\alpha)} - F^\nu_\mu\frac{\partial(\partial_\nu\mathcal A^\mu)}{\partial(\partial_\beta \mathcal A^\alpha)}\right) =\\ =  \frac{1}{2} \left( F^\mu_{\ \nu} \delta^\beta_\mu \delta^\nu_\alpha - F^{\ \nu}_\mu \delta^\beta_\nu \delta^\mu_\alpha \right) = \frac{1}{2} \left(F^\beta_{\ \alpha} - F^{\ \beta}_\alpha\right)
+\end{gather*}
+Подставляем полученные частные производные в полевые уравнения Эйлера - Лагранжа:
+\begin{gather*}
+-j_\alpha - \frac{1}{2} \partial_\beta\left(F^\beta_{\ \alpha} - F_\alpha^{\ \beta}\right) = 0 \rightarrow \partial^\beta F_{\beta\alpha} = -j_\alpha
+\end{gather*}
+Распишем подробнее:
+\begin{gather*}
+\partial^0F_{00} + \partial^1F_{10} + \partial^2 F_{20} + \partial^3F_{30} = -j_0 \rightarrow \partial_x E_x + \partial_y E_y + \partial_z E_z = \rho\\
+\begin{cases}
+\partial^0F_{01} + \partial^1F_{11} + \partial^2 F_{21} + \partial^3F_{31} = -j_1 \rightarrow -\partial_t(- E_x) - \partial_y B_z + \partial_z B_y = -j_x\\
+\partial^0F_{02} + \partial^1F_{12} + \partial^2 F_{22} + \partial^3F_{32} = -j_2 \rightarrow -\partial_t(- E_y) + \partial_x B_z - \partial_z B_x = -j_y\\
+\partial^0F_{03} + \partial^1F_{13} + \partial^2 F_{23} + \partial^3F_{33} = -j_3 \rightarrow -\partial_t(- E_z) - \partial_x B_y + \partial_y B_x = -j_z\\
+\end{cases}
+\end{gather*}
+Первое уравнение дает выражение для дивергенции электрического поля, остальные три - для ротора магнитного поля. Так получаем вторую пару уравнений Максвелла:
+\begin{gather*}
+\begin{cases}
+\nabla \cdot \vec E = \rho\\
+\nabla \times \vec B = \partial_t \vec E + \vec j
+\end{cases}
+\end{gather*}
+
+\textbf{Закон сохранения электрического заряда.}\\
+Из уравнений Максвелла <<с источниками>> :
+\begin{gather*}
+\partial^\beta F_{\beta\alpha} = -j_\alpha \longrightarrow \partial^\alpha\partial^\beta F_{\beta\alpha} = -\partial^\alpha j_\alpha\\
+\partial^\alpha\partial^\beta F_{\beta\alpha} = \partial^\beta\partial^\alpha F_{\alpha\beta} = \partial^\alpha\partial^\beta F_{\alpha\beta} = - \partial^\alpha\partial^\beta F_{\beta\alpha} \longrightarrow \partial^\alpha\partial^\beta F_{\beta\alpha} = 0
+\end{gather*}
+Получаем закон сохранения электрического заряда:
+$$\partial^\alpha j_\alpha = 0,$$
+или:
+$$\partial_t\rho + \nabla \cdot \vec j = 0$$
 
 \end{document}
