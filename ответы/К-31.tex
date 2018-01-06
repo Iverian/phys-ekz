@@ -5,6 +5,11 @@
 \qtitle{К}{31}
 Электрон находится в состоянии $\Psi(t,x)$, описываемом суперпозицией двух стационарных состояний, $\Psi_m(t,x)$ и $\Psi_n(t,x)$ с весами $c_m$ и $c_n$ соответственно ($m\neq n$, энергии $m$ и $n$ известны). Найдите квантовомеханическое среднее гамильтониана. Какова вероятность в результате измерения энергии получить значение $\varepsilon_m$?\\ 
 
-%%
+$$\Psi_m(t, x) = c_n \Psi_n(t, x) + c_m \Psi(t, x) = c_n e^{-i\frac{\varepsilon_n}{\hbar} t} \psi_n(x) + c_m e^{-i \frac{\varepsilon_m}{\hbar} t} \psi_m(x)$$
+
+$$<H> = (\Psi, \hat{H}\Psi) = ( c_n e^{-i\frac{\varepsilon_n}{\hbar} t} \psi_n(x) + c_m e^{-i \frac{\varepsilon_m}{\hbar} t} \psi_m(x),  c_n e^{-i\frac{\varepsilon_n}{\hbar} t} \hat{H} \psi_n(x) + c_m e^{-i \frac{\varepsilon_m}{\hbar} t} \hat{H} \psi_m(x)) =$$
+$$ = |c_n|^2\varepsilon_n(\psi_n, \psi_n) + |c_m|^2\varepsilon_m(\psi_n, \psi_m) = |c_n|^2\varepsilon_n + |c_m|^2\varepsilon_m$$
+
+Вероятность получить значение $\varepsilon_m$ равна $|c_m|^2$.
 
 \end{document}
