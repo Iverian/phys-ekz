@@ -3,8 +3,23 @@
 \begin{document}
 
 \qtitle{С}{15}
-Внутри диэлектрика известны его поляризованность $\vec{P}(x,y,z)=2\alpha x\vec{e}_1+4y\vec{e}_2+6z\vec{e}_3$ и напряжённость поля $\vec{E}(x,y,z)=\frac{\alpha}{\varepsilon_0}x\vec{e}_1+2y\vec{e}_2+3z\vec{e}_3$, где $\alpha=const$. Найдите плотность связанных и сторонних зарядов внутри диэлектрика, а также диэлектрическую проницаемость вещества.\\ 
+Внутри диэлектрика известны его поляризованность $\vec{P}(x,y,z)=\alpha (2x\vec{e}_1+4y\vec{e}_2+6z\vec{e}_3)$ и напряжённость поля $\vec{E}(x,y,z)=\frac{\alpha}{\varepsilon_0}(x\vec{e}_1+2y\vec{e}_2+3z\vec{e}_3)$, где $\alpha=const$. Найдите плотность связанных и сторонних зарядов внутри диэлектрика, а также диэлектрическую проницаемость вещества.\\ 
 
-%%
-
+Для начала, запишем связь между поляризованностью и плотностью связанных зарядов:\\
+\begin{gather}
+-div\vec{P} = \rho_{\text{связ.}};\\
+div \vec{P} = 2\alpha + 4\alpha +6\alpha = 12\alpha \Longrightarrow \rho_{\text{связ.}}=-12\alpha
+\end{gather}
+Запишем теперь теорему Гаусса:\\
+\begin{gather}
+div\vec{E} = \frac{\rho_{\text{стор.}}+\rho_{\text{связ.}}}{\epsilon_0};\\
+\rho_{\text{связ.}}= -div\vec{P};
+\rho_{\text{стор.}}= \epsilon_0div\vec{E}+div\vec{P}=\epsilon_0div\frac{\alpha}{\epsilon_0}(x\vec{e_1}+2y\vec{e_2}+3z\vec{e_3})+div(2x\vec{e_1}+4y\vec{e_2}+6z\vec{e_3})\\= \epsilon_0(\frac{\alpha}{\epsilon_0}6)+12\alpha = 18\alpha
+\end{gather}
+Формулы для электрической индукции $\vec{D} = \epsilon \epsilon_0 \vec{E}$ и $\vec{D} = \epsilon_0\vec{E}+\vec{P}$,значит:\\
+\begin{gather}
+\epsilon \epsilon_0 E = \epsilon_0 E+P;\\
+\epsilon = 1 +\frac{P}{\epsilon_0 E} = 1 - \frac{12\alpha}{\epsilon_0 \cdot 18\alpha} = \frac{3\epsilon_0 - 2}{3\epsilon_0}
+\end{gather}
+Здесь я не стал подставлять электрическую постоянную $\epsilon_0 =\frac{1}{4\pi c^2}10^7 = 8,85 \cdot 10^{-12} \ \ \text{Ф м}^{-1}$.
 \end{document}
