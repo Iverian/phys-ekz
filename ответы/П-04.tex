@@ -5,6 +5,42 @@
 \qtitle{П}{04}
 Действие для заряженной частицы в электромагнитном поле. 4-сила Лоренца. Релятивистски инвариантное действие для системы <<электромагнитное поле + заряженные частицы>>.\\ 
 
-%%
+Действие для заряда в электромагнитном поле имеет вид
+\begin{gather*}
+S = \int_{a}^{b}(-mcds - \frac{e}{c}A_idx^i).
+\end{gather*}
+
+\textbf{Уравнения движения заряженной массивной частицы в электромагнитном поле. 4-сила Лоренца.}
+
+\begin{gather*}
+\eta_{\alpha\beta} = diag(-1, 1, 1, 1)\qquad \mathcal A^{\beta}(x) = \left(\phi(x), \vec \mathcal A(x)\right)\\
+\text{Следовательно:}\\
+\mathcal A_\alpha = \eta_{\alpha\beta} \mathcal A^\beta = \left(-\phi, \vec \mathcal A\right)\\
+A = A^{prt} + A^{int} = -m\int dr - q\int \mathcal A_\alpha (x) \frac{dx^\alpha}{dr}dr\\
+\delta A = 0 \rightarrow -m\int\delta dr - q\int\delta\mathcal A_\alpha dx^\alpha - q\int\mathcal A_\alpha \delta dx^\alpha = 0
+\end{gather*}
+Выпишем выражение для $\delta dr$:
+\begin{gather*}
+\delta dr = -\eta_{\alpha\beta} u^\beta \delta dx^\alpha;\\
+u^\beta = \frac{dx^\beta}{dr} = \left(u^0, \vec u\right) = \left(\frac{dx^0}{dr}, \frac{d\vec x}{dr}\right) = \left(\gamma, \gamma \vec v\right),
+\end{gather*}
+где $\displaystyle\gamma \equiv \frac{1}{sqrt{1-v^2}}, \vec v \equiv \frac{d\vec x}{dt}$. Получаем:
+\begin{flalign*}
+&
+\int\left(mu_\alpha-q\mathcal{A_\alpha}\right)\delta x^\alpha-\int \delta x^\alpha d\left(mu_\alpha - q\mathcal A_\alpha\right) - q\int \delta \mathcal A_\alpha dx^\alpha
+=\\
+=&
+-\int \delta x^\alpha m\frac{du_\alpha}{dr}dr + \int\delta x^\alpha q \partial_\beta \mathcal A_\alpha dx^\beta \frac{dr}{dr} - \int q\partial_\beta \mathcal A_\alpha \delta x^\beta dx^\alpha
+=\\
+=&
+\int \delta x^\alpha \left(-m\frac{du_\alpha}{dr} + q\left(\partial_\alpha \mathcal A_\beta - \partial_\beta \mathcal A_\alpha\right)u^\beta\right)dr
+\end{flalign*}
+Уравнения движения заряженной массивной частицы в электромагнитном поле:
+$$m\frac{du_\alpha}{dr} = q\left(\partial_\alpha\mathcal A_\beta - \partial_\beta\mathcal A_\alpha\right)u^\beta$$
+или 
+$$\mathcal F_\alpha = qF_{\alpha\beta}u^\beta,$$
+где $\mathcal F_\alpha$ - 4-сила Лоренца 
+
+
 
 \end{document}

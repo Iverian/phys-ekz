@@ -1,10 +1,38 @@
 \documentclass[__main__.tex]{subfiles}
 
 \begin{document}
-
-\qtitle{Ч}{09}
-Покажите, что для системы из двух электронов, находящейся в запутанном состоянии $\left|Est\right>=\frac{\left|+-\right>-\left|-+\right>}{\sqrt{2}}$ не существует пары направлений (по одному для каждого электрона), в которых проекция спинов соответствующих электронов с определённостью положительна.\\ 
-
-%%
-
+	
+	\qtitle{Ч}{09}
+	Покажите, что для системы из двух электронов, находящейся в запутанном состоянии $\left|Est\right>=\frac{\left|+-\right>-\left|-+\right>}{\sqrt{2}}$ не существует пары направлений (по одному для каждого электрона), в которых проекция спинов соответствующих электронов с определённостью положительна.\\
+	
+	Посчитаем квантовомеханическое среднее(по запутаному состоянию) проекции спина 1-ого электрона на некоторое направление $\vec{n}$(средним будем считать $\hat{\sigma}\cdot\vec{n}$; множитель $\frac{\hbar}{2}$ при желании всегда можно восстановить, но не нужно):
+	\begin{gather*}
+		\left<Est|^1\hat{\sigma}\vec{n}_1|Est\right> = 
+			n_{1x}\left<Est|^1\hat{\sigma}_x|Est\right>+
+			n_{1y}\left<Est|^1\hat{\sigma}_y|Est\right>+
+			n_{1z}\left<Est|^1\hat{\sigma}_z|Est\right> = 0
+	\end{gather*}
+	\begin{proof}
+		\begin{gather*}
+			^1\hat{\sigma}_x|Est\rangle = \frac{|--\rangle-|++\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^1\hat{\sigma}_x|Est\right> = 0\\
+			^1\hat{\sigma}_y|Est\rangle = i\frac{|--\rangle+|++\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^1\hat{\sigma}_y|Est\right> = 0\\
+			^1\hat{\sigma}_z|Est\rangle = \frac{|+-\rangle+|-+\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^1\hat{\sigma}_z|Est\right> = \frac{\langle+-|-\langle-+|}{\sqrt{2}}\cdot \frac{|+-\rangle+|-+\rangle}{\sqrt{2}} = \frac{1-1}{2} =  0
+		\end{gather*}
+	\end{proof}
+	Из того, что $\left<Est|^1\hat{\sigma}\vec{n}_1|Est\right> = 0$ заключаем, что веротяность того, что можно намерять проекию спина 1-ого элемента по $\vec{n}_1$ равна вероятности того же самого против $\vec{n}_1$; а поскольку $\vec{n}_1$ - совершенно любое,то из сказанного следует, что не существует направления, на которое проекция первого спина 1-ого электрона имеет определенное значение.\\\\
+	Со вторым электроном поступаем аналогично:
+	\begin{gather*}
+		\left<Est|^2\hat{\sigma}\vec{n}_2|Est\right> = 
+		n_{2x}\left<Est|^2\hat{\sigma}_x|Est\right>+
+		n_{2y}\left<Est|^2\hat{\sigma}_y|Est\right>+
+		n_{2z}\left<Est|^2\hat{\sigma}_z|Est\right> = 0
+	\end{gather*}
+	\begin{proof}
+		\begin{gather*}
+			^2\hat{\sigma}_x|Est\rangle = \frac{|++\rangle-|--\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^2\hat{\sigma}_x|Est\right> = 0\\
+			^2\hat{\sigma}_y|Est\rangle = -i\frac{|++\rangle+|--\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^2\hat{\sigma}_y|Est\right> = 0\\
+			^2\hat{\sigma}_z|Est\rangle = -\frac{|+-\rangle+|-+\rangle}{\sqrt{2}}\;\;\;\Rightarrow \left<Est|^2\hat{\sigma}_z|Est\right> =  0
+		\end{gather*}
+	\end{proof} 
+	Вывод: Не существует направления, на которое проекция спина 2-ого электрона имеет определенного значение.
 \end{document}
