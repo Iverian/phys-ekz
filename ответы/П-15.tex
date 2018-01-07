@@ -5,6 +5,40 @@
 \qtitle{П}{15}
 Воспользуйтесь связью полей $\vec{E}$ и $\vec{B}$ с 4-векторным потенциалом, чтобы убедиться, что тензорная форма уравнений Максвелла <<без источников>> $\partial_{\alpha}F_{\beta\gamma}+\partial_{\gamma}F_{\alpha\beta}+\partial_{\beta}F_{\gamma\alpha}=0$ эквивалентна уравнениям $\nabla\times\vec{E}=-\partial_{t}\vec{B}$ и $\nabla\cdot\vec{B}=0$. Запишите два последних уравнения в интегральной форме.\\ 
 
-%%
+Выпишем тензор Максвелла:
+\begin{gather*}
+F_{\alpha\beta}=
+\begin{pmatrix}
+	0 & E_x & E_y & E_z\\
+	-E_x & 0 & B_z & -B_y\\
+	-E_y & -B_z & 0 & B_x\\
+	-E_z & B_y & -B_x & 0
+\end{pmatrix}
+\end{gather*}
 
+Введём обозначение:
+\begin{gather*}
+	\Phi_{\alpha\beta\gamma} = \partial_{\alpha}F_{\beta\gamma}+\partial_{\gamma}F_{\alpha\beta}+\partial_{\beta}F_{\gamma\alpha}
+\end{gather*}
+Из курса физики вам должно быть известно, что этот тензор равен нулю и полностью антисимметричен, потому нетривиальность возникает только тогда, когда все компоненты различны, потому выписать нужно будет только 4 соотношения, а именно( далее запись $F_{12,3}$ означает диффиренцирование компоненты 12 по 3 переменной ( 1-я компонента -- время )):
+\begin{gather*}
+	\Phi_{123} = 0 \Rightarrow	F_{12,3}+F_{31,2}+F_{23,1} = 0,\\
+	\Phi_{124} = 0 \Rightarrow F_{12,4}+F_{41,2}+F_{24,1} = 0,\\
+	\Phi_{134} = 0 \Rightarrow F_{13,4}+F_{41,3}+F_{34,1} = 0,\\
+	\Phi_{234} = 0 \Rightarrow F_{23,4}+F_{42,3}+F_{34,2} = 0 \Longrightarrow \\
+	-\partial_y E_x + \partial_x E_y + \partial_t B_z = 0,\\
+	-\partial_z E_x + \partial_x E_z - \partial_t B_y = 0,\\
+	-\partial_z E_y + \partial_y E_y + \partial_t B_x = 0,\\
+	\partial_z B_z + \partial_y B_y + \partial_x B_x = 0.
+\end{gather*}
+Первые три равенства дают нам $\nabla\times\vec{E} = -\partial_t\vec{B}$, а последнее очевидно $\nabla\cdot\vec{B} = 0.$ В интегральной форме они запишутся так:
+\begin{gather*}
+\int\limits_V \nabla\cdot B\;dV = \int\limits_S B\cdot dS = 0,\\
+\oint\limits_l E\cdot dl = -\frac{d}{dt}\int\limits_S B\cdot dS\;.
+\end{gather*}
+А звучат они так:
+\begin{itemize}
+	\item Поток магнитной индукции через замкнутую поверхность равен нулю (магнитные заряды не существуют).
+	\item Изменение потока магнитной индукции, проходящего через незамкнутую поверхность s, взятое с обратным знаком, пропорционально циркуляции электрического поля на замкнутом контуре l, который является границей поверхности s.
+\end{itemize}
 \end{document}
