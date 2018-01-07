@@ -5,6 +5,116 @@
 \qtitle{П}{06}
 Воспользуйтесь преобразованием компонент тензора Максвелла, чтобы получить выражение для магнитного поля равномерно медленно движущегося заряда, с помощью которого покажите справедливость соотношения Био-Савара-Лапласа, укажите границы его применимости.\\ 
 
+Рассмотрим заряд $q$, помещенный в начало координат ИСО $K_1$, движущейся относительно ИСО $K$ вдоль оси $Ox$ с быстротой $\nu=const$, тогда координаты заряда в $K$ примут вид:
+\begin{gather*}
+x^1 = c\nu t, \quad x^2 = 0, \quad x^3 = 0,
+\end{gather*}
+где $\nu = const$ -- быстрота $K_1$ относительно $K$.
+Из закона Кулона в ИСО $K_1$ потенциал поля, порождаемого зарядом $q$:
+$$
+A'_{\alpha} = (\varphi_1, \vec{A}_1) = (\frac{q}{x_1},\vec{0}),
+$$
+где $x_1=\sqrt{\left(x^1_1\right)^2+\left(x^2_1\right)^2+\left(x^3_1\right)^2}$.
+Тогда найдем потенциал поля частицы в ИСО $K$ из преобразований Лоренца:
+\begin{gather}
+\label{e-05-potlorenz}
+\left(
+\begin{matrix}
+\varphi\\ A^1\\ A^2\\ A^3
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+\gamma    & \gamma\nu & 0 & 0 \\
+\gamma\nu &    \gamma & 0 & 0 \\
+0 &         0 & 1 & 0 \\
+0 &         0 & 0 & 1
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+\varphi_1 \\ 0\\ 0\\ 0
+\end{matrix}
+\right) \qquad \Rightarrow \qquad
+\left(
+\begin{matrix}
+\varphi\\ A^1\\ A^2\\ A^3
+\end{matrix}
+\right) =
+\left(
+\begin{matrix}
+\gamma \varphi_1\\ \gamma \nu \varphi_1\\ 0\\ 0
+\end{matrix}
+\right),
+\end{gather}
+теперь найдем координаты $x_1$ в $K$:
+$$
+\left(
+\begin{matrix}
+ct_1 \\ x^1_1 \\x^2_1 \\ x^3_1
+\end{matrix}
+\right) = 
+\left(
+\begin{matrix}
+\gamma & -\gamma\nu & 0 & 0 \\
+-\gamma\nu &     \gamma & 0 & 0 \\
+0 &          0 & 1 & 0 \\
+0 &          0 & 0 & 1
+\end{matrix}
+\right)
+\left(
+\begin{matrix}
+ct \\ x^1 \\ x^2 \\ x^3
+\end{matrix}
+\right) \qquad \Rightarrow \qquad
+\left(
+\begin{matrix}
+ct_1 \\ x^1_1 \\x^2_1 \\ x^3_1
+\end{matrix}
+\right) =
+\left(
+\begin{matrix}
+\gamma ct - \gamma\nu x^1 \\
+-\gamma\nu ct + \gamma x^1 \\
+x^2 \\
+x^3
+\end{matrix}
+\right),
+$$
+тогда из $x_1$ примет вид:
+\begin{gather}
+\label{e-05-rasst}
+\left(x_1\right)^2 = \left(x^1_1\right)^2+\left(x^2_1\right)^2+\left(x^3_1\right)^2 =
+\gamma^2\left(x^1-\nu ct\right)^2+\left(x^2\right)^2+\left(x^3\right)^2.
+\end{gather}
+Находим вектор магнитной индукции $\vec{B} $, порождаемый зарядом $q$ из
+(\ref{e-05-potlorenz}) и (\ref{e-05-rasst}):
+\begin{flalign*}
+\begin{split}
+\vec{B} &=
+\nabla \times \vec A =
+\frac{\partial A^1}{\partial x^3}\vec{e}_2 - \frac{\partial A^1}{\partial x^2}\vec{e}_3 =
+-\frac{\gamma\nu q x^3}{\left(x_1\right)^3}\vec{e}_2 + \frac{\gamma\nu q x^2}{\left(x_1\right)^3}\vec{e}_3 = \\
+&= \frac{\gamma\nu q}{\left(x_1\right)^3}(-x^3\vec{e}_2+x^2\vec{e}_3) =
+\frac{\gamma q}{\left(x_1\right)^3}\vec \nu \times \vec x,
+\end{split}
+\end{flalign*}
+где 
+$\displaystyle \vec \nu = \frac{1}{c}\vec v = \nu\vec{e}_1 = \frac{1}{c}v\vec{e}_1$ -- вектор быстроты ИСО $K_1$ относительно $K$.
+Положим $\nu \ll c$, тогда $\gamma \approx 1$ и $\vec{B}$ примет вид:
+$$
+\vec{B}=
+\frac{q}{c\left(\left(x^1-vt\right)^2+\left(x^2\right)^2+\left(x^3\right)^2\right)^{3/2}}
+\vec v \times \vec x = 
+\frac{q}{c\left| \vec x - \vec v t \right|^3}\vec v \times \vec x 
+$$ 
+\textbf{(Здесь идёт догадка автора)}
+Продифференцируем обе части уравнения (по времени?). Знаем, что производная заряда по времени это ток, а производная координаты по времени это скорость. Тогда получим:
+
+$$d\vec{B} = \frac{1}{c} \frac{I [\vec{v},\vec{r}]}{r^3}.$$
+
+Полученный результат есть ни что иное как закон Био-Савара-Лапласа.
+
 %%
 
 \end{document}
