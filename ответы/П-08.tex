@@ -5,6 +5,52 @@
 \qtitle{П}{08}
 Покажите, что компоненты тензора энергии-импульса системы заряженных частиц $T\indices{^\mu_\nu}$ в электромагнитном поле удовлетворяет соотношению $\partial^{\nu}T\indices{^\mu_\nu}=F\indices{^\mu_\nu}j^{\nu}$, где $F\indices{^\mu_\nu}$ компоненты тензора Максвелла, $j^\nu$ компоненты 4-вектора плотности тока.\\ 
 
-%%
+
+Запишем \emph{канонический тензор энергии - импульса системы частицы}:
+\begin{gather}
+\underset{prt}{T}^{\mu\nu}
+=
+\sum_{i}
+p\indices{^\mu_i}\frac{dx\indices{^\nu_i}}{dt}\delta\left(\vec{x}-\vec{x}_i(t)\right)
+\end{gather}
+Тогда искомое выражение примет вид:
+\begin{flalign}
+\partial_{\nu}\underset{prt}{T}^{\mu\nu}
+=&
+\sum_{i}
+\partial_{\nu}
+\left(
+p\indices{^\mu_i}\frac{dx\indices{^\nu_i}}{dt}
+\right)
+\delta\left(\vec{x}-\vec{x}_i(t)\right)
+\llabel{p08:1}
+\end{flalign}
+Рассмотрим действие электромагнитного поля $F^{\mu\nu}$ на систему частиц, с такой стороны можно записать в сумму плотность силы Лоренца:
+\begin{gather}
+\mathscr{F}^\mu
+=
+{q}F\indices{^\mu_\nu}u^\nu,
+\llabel{p08:2}
+\end{gather}
+Тогда перепишем (\lref{p08:1}) при помощи (\lref{p08:2}) и перейдем к рассмотрению системы зарядов как сплошного поля с объемной плотностью тока $\rho$:
+\begin{flalign}
+\begin{split}
+\partial_{\nu}\underset{prt}{T}^{\mu\nu}
+=&
+\sum_{i}
+q_{i}F\indices{^\mu_\nu}u\indices{^\nu_i}\delta\left(\vec{x}-\vec{x}_i(t)\right)
+=
+F\indices{^\mu_\nu}
+\sum_{i}
+q_{i}u\indices{^\nu_i}\delta\left(\vec{x}-\vec{x}_i(t)\right)
+=\\
+=&
+F\indices{^\mu_\nu}
+\int{d(\rho{u^\nu})}
+=\\
+=&
+F\indices{^\mu_\nu}j^\nu
+\end{split}
+\end{flalign}
 
 \end{document}
