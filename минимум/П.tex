@@ -1,0 +1,223 @@
+\documentclass[__minimum__.tex]{subfiles}
+
+\begin{document}
+
+\ssection{П Теория поля}
+
+\paragraph{4-вектор потенциала поля:} потенциал $A^\mu=\left(\varphi, \vec{A}\right)$.
+
+\paragraph{Векторные характеристики поля:} электромагнитное поле характеризуется $\vec{E}$ -- \emph{напряженностью электрического поля}, $\vec{B}$ -- \emph{индукцией магнитного поля}, где:
+\begin{flalign}
+    &\vec{E}=-\partial_{t}\vec{A}-\nabla\varphi,\\
+    &\vec{B}=\nabla\times\vec{A},
+\end{flalign}
+
+\paragraph{Тензор Максвелла:} основной тензор электродинамики $F_{\alpha\beta}$:
+\begin{gather}
+    F_{\alpha\beta}=\partial_{\alpha}A_\beta-\partial_{\beta}A_\alpha,
+\end{gather}
+в матричной форме получим:
+\begin{gather}
+    F_{\alpha\beta}
+    =
+    \left[
+        \begin{matrix}
+            0    & E_x  & E_y  & E_z  \\
+            -E_x & 0    & -B_z & B_y  \\
+            -E_y & B_z  & 0    & -B_x \\
+            -E_z & -B_y & B_y  & 0    \\
+        \end{matrix}
+        \right],
+    \qquad
+    F^{\alpha\beta}
+    =
+    \left[
+        \begin{matrix}
+            0   & -E_x & -E_y & -E_z \\
+            E_x & 0    & -B_z & B_y  \\
+            E_y & B_z  & 0    & -B_x \\
+            E_z & -B_y & B_x  & 0    \\
+        \end{matrix}
+        \right],
+\end{gather}
+
+\paragraph{Инварианты электромагнитного поля:} коэффициенты характеристического многочлена тензора Максвелла:
+\begin{gather}
+    I_{1}
+    =
+    F^{\alpha\beta}F_{\alpha\beta}
+    =
+    2(\vec{E}^2-\vec{B}^2),
+    \qquad
+    I_{2}
+    =
+    \operatorname{det}F_{\alpha\beta}
+    =
+    \left<\vec{E},\vec{B}\right>^2,
+\end{gather}
+
+\paragraph{Уравнение движения заряда в поле: }
+\begin{gather}
+    m\frac{du_\alpha}{dt}
+    =
+    qF_{\alpha\beta}u^\beta
+\end{gather}
+
+\paragraph{Действие для заряда $q$ в электромагнитном поле:}
+\begin{gather}
+    \mathscr{A}
+    =
+    \int
+    \left[
+    -mds-qA_{i}dx^{i}
+    \right],
+\end{gather}
+
+\paragraph{Уравнения Максвелла:} в тензорной форме:
+\begin{gather}
+    \begin{cases}
+        \partial_{\gamma}F_{\alpha\beta}+\partial_{\beta}F_{\gamma\alpha}+\partial_{\alpha}F_{\beta\gamma}=0 \\
+        \partial^{\alpha}F_{\alpha\beta}=-j_{\beta}
+    \end{cases}
+\end{gather}
+
+в векторной форме:
+\begin{gather}
+    \begin{cases}
+        \nabla\times\vec{E}=-\partial_{t}\vec{B} \\
+        \nabla\vec{B}=0
+    \end{cases}
+    \qquad
+    \begin{cases}
+        \nabla\vec{E}=\rho \\
+        \nabla\times\vec{B}=\partial_{t}\vec{E}+\vec{j}
+    \end{cases}
+\end{gather}
+
+\paragraph{Закон сохранения электрического заряда:}
+Из второго уравнения Максвелла $\partial^{\alpha}F_{\alpha\beta}=-j_{\beta}$:
+\begin{flalign*}
+    \begin{split}
+        &
+        \partial^{\alpha}F_{\alpha\beta}=-j_{\beta}
+        \Longrightarrow
+        \partial^{\alpha\beta}F_{\alpha\beta}=-\partial^{\alpha}j_{\alpha}
+        \Longrightarrow\\
+        \Longrightarrow&
+        \partial^{\alpha}j_{\alpha}=0,
+    \end{split}
+\end{flalign*}
+$\partial^{\alpha\beta}F_{\alpha\beta}=0$ т.к. это свертка кососимметрического тензора $F_{\alpha\beta}$ и симметрического $\partial^{\alpha\beta}$. В векторной форме имеет вид:
+\begin{gather}
+    \partial_{t}\rho + \nabla\vec{j}=0,
+\end{gather}
+
+\paragraph{Действие для поля:}
+\begin{gather}
+    \mathscr{A}
+    =
+    \int{Ldt}
+    =
+    \int\limits_{\Omega}\Lambda(q_{i},\partial_{\mu}q_{i}){dV}{dt},
+\end{gather}
+где $\Lambda(q_{i},\partial_{\mu}q_{i})$ -- \emph{<<плотность лагранижиана>>}. Для электромагнитного поля функция $\Lambda$ примет вид:
+\begin{gather}
+    \underset{emf}\Lambda
+    =
+    \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta},
+    \label{p:lemf}
+\end{gather}
+для свободных зарядов и токов $\Lambda$ примет вид:
+\begin{gather}
+    \underset{int}\Lambda
+    =
+    -j^{\alpha}A_{\alpha},
+\end{gather}
+где $j^\mu=\rho\frac{dx^{\mu}}{dt}$ -- \emph{4-вектор плотности тока}.
+
+\paragraph{Полевые уравнения Лагранжа:}
+\begin{gather}
+    \frac{\partial{\Lambda}}{\partial{q^{i}}}
+    -
+    \partial_\beta\frac{\partial\Lambda}{\partial(\partial_\beta{q^i})}
+    =
+    0
+\end{gather}
+
+\paragraph{Сохраняющийся Нетеровский ток (относительно симметрии трансляции)}
+
+\begin{theorem}[Нётер]
+    Инвариантность действия относительно некоторой непрерывной группы симметрии приводит к соответствующему закону сохранения.
+\end{theorem}
+
+\begin{gather}
+    \mathscr{J}^{\mu}
+    =
+    \left[
+        \Lambda\delta\indices{^\mu_\nu}
+        -
+        \frac{\partial\Lambda}{\partial(\partial_\mu{A})}
+        \right]\delta{x^\nu}
+    +
+    \frac{\partial\Lambda}{\partial(\partial_\mu{A})}
+    \delta{A}
+\end{gather}
+
+\paragraph{Канонический тензор энергии - импульса}
+\begin{gather}
+    T\indices{^\alpha_\beta}
+    =
+    \frac{\partial\Lambda}{\partial(\partial_\alpha{q^i})}\partial_\beta{q^i}
+    -
+    \Lambda\delta\indices{^\alpha_\beta},
+\end{gather}
+для электромагнитного поля получим из (\ref{p:lemf}):
+\begin{gather}
+    \underset{emf}{T\indices{^\mu_\nu}}
+    =
+    F^{\mu\lambda}\partial_{\nu}A_{\lambda}
+    -
+    \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\delta\indices{^\mu_\nu},
+\end{gather}
+\emph{канонический тензор энергии - импульса не инвариантен относительно калибровочных преобразований}, чтобы сделать его таковым вводят \emph{симметризованный тензор энергии - импульса}
+
+
+Запишем \emph{канонический тензор энергии - импульса системы частицы}:
+\begin{gather}
+    \underset{prt}{T}^{\mu\nu}
+    =
+    \sum_{i}
+    p\indices{^\mu_i}\frac{dx\indices{^\nu_i}}{dt}\delta\left(\vec{x}-\vec{x}_i(t)\right)
+\end{gather}
+
+\paragraph{Симметризованный тензор энергии - импульса электромагнитного поля:}
+\begin{gather}
+    \underset{emf}{\Theta\indices{^\mu_\nu}}
+    =
+    F^{\mu\lambda}F\indices{_\nu_\lambda}
+    -
+    \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\delta\indices{^\mu_\nu}
+\end{gather}
+
+В матричном виде имеет вид:
+\begin{gather*}
+    \underset{emf}{\Theta^{\mu\nu}} =
+    \left[
+        \begin{array}{cccc}
+            W   & S_x         & S_y         & S_z         \\
+            S_x & \sigma_{xx} & \sigma_{xy} & \sigma_{xz} \\
+            S_y & \sigma_{yx} & \sigma_{yy} & \sigma_{yz} \\
+            S_z & \sigma_{zx} & \sigma_{zy} & \sigma_{zz} \\
+        \end{array}
+        \right],
+\end{gather*}
+где $\vec{S}=\vec{E}\times\vec{B}$ -- вектор Пойнтинга, $W$ -- плотность энергии, $\sigma_{ij}$ -- тензор напряжений.
+
+\begin{theorem}[Теорема Пойнтинга]
+    \begin{gather}
+        \frac{\partial\varepsilon}{\partial{t}}+\nabla\vec{S}=-\left<\vec{j},\vec{E}\right>,
+    \end{gather}
+    где $\varepsilon=\frac{1}{2}\left(\vec{E}^2+\vec{B}^2\right)$ -- плотность энергии, $\vec{S}=\vec{E}\times\vec{B}$ -- вектор Пойнтинга.
+\end{theorem}
+
+\end{document}
