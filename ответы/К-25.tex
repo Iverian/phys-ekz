@@ -11,7 +11,68 @@
 T_n = \frac{R_H}{n^2}, \qquad n=1,2...
 \end{gather}
 где $R_H$ - постоянная Ритберга.\\
-
-%%
-
+\textbf{Собственные значения и собственные функции операторов $\hat{L}^2$ и $\hat{L}_z$}\\
+Так как оператор $\hat{L}^2$ коммутирует со всеми проекциями оператора момента количества движения:
+\begin{gather}
+[\hat{L}^2,\hat{L}_x] = [\hat{L}^2,\hat{L}_y] = [\hat{L}^2,\hat{L}_z] = 0
+\end{gather}
+Следовательно, у операторов $\hat{L}^2$ и $\hat{L}_z$ должны существовать общие собственные состояния $\left|\lambda,\mu\right>$
+\begin{gather}
+\begin{cases}
+\hat{L}_z \left|\lambda,\mu\right> = \mu\left|\lambda,\mu\right>\\
+\hat{L}^2 \left|\lambda,\mu\right> = \lambda\left|\lambda,\mu\right>\\
+\end{cases}
+\end{gather}
+где $\lambda$ - собственное значение квадрата момента количества движения; $\mu$ - собственное значение оператора проекции момента количества движения на координатную ось $z$.\\
+Так как
+\begin{gather}
+\hat{L}_z = x\hat{p}_y-y\hat{p}_x
+\end{gather}
+Рассмотрим функцию $\Psi = \Psi(r,\theta,\phi)$, зависящую от сферических координат. Тогда при повороте системы на угол $\delta \phi$:
+\begin{gather}
+\Psi(r,\theta,\phi+\delta\phi) = \Psi(r,\theta,\psi)+\delta \phi \frac{\partial \Psi}{\partial \phi} = \left(1+\delta \phi \frac{\partial}{\partial \phi}\right) \Psi
+\end{gather}
+По определению оператора поворота:
+\begin{gather}
+\Psi(r,\theta,\psi+\delta \phi) = \left(1+\frac{i}{\hbar}\delta \phi \hat{L}_z\right)\Psi
+\end{gather}
+Тогда выражение для $\hat{L_z}$ выглядит следующим образом:
+\begin{gather}
+\hat{L}_z = -i\hbar\frac{\partial}{\partial \phi}
+\end{gather}
+Следовательно
+\begin{gather}
+-i\hbar \frac{\partial \Psi}{\partial \phi} = \mu \Psi \Longrightarrow \frac{\partial \Psi}{\Psi} = \frac{i}{\hbar}\mu \delta \phi\\
+\Psi = \Phi(r,\theta)e^{\frac{i}{\hbar}\mu \phi}
+\end{gather}
+Функция $\Psi$, выраженная таким образом, является собственной функцией проекции момента. Зависимость от угла $\phi$ в сферической системе координат, где
+\begin{gather}
+0 \leq \phi \leq 2\pi \qquad 0\leq \theta \leq \pi
+\end{gather}
+выражается экспонентой с мнимым показателем.\\
+Рассмотрим уравнение:
+\begin{gather}
+\hat{H}\Psi(r,\theta,\phi) = \epsilon \Psi(r,\theta,\phi)
+\end{gather}
+Разделим углавые и радиальную переменные $\Psi(r,\theta,\phi) = \rho(r)Y(\theta,\phi)$
+\begin{gather}
+\frac{2mr^2}{\hbar^2\rho Y} \left(-Y\frac{\hbar^2}{2mr^2}\partial_r(r^2\partial_r \rho) + \rho \frac{\hat{L}^2Y}{2mr^2} + (V_{(r)}-\epsilon)\rho Y\right) = 0\\
+[-\frac{1}{\rho} \partial_r(r^2\partial_r \rho) + \frac{2mr^2}{\hbar^2}(V_{(r)}-\epsilon) ]+[ \frac{\hat{L}^2 Y(\theta,\phi)}{\hbar Y(\theta,\phi)}] = 0
+\end{gather}
+где выражение в первых квадратных и во вторых квадратных скобках просто числа, тогда $Y(\theta,\phi)$ есть собственная функция оператора $\hat{L}^2$, а поскольку $[\hat{L}^2,\hat{L}_z] = 0$, то является и собственной функцией оператора $\hat{L}_z$.\\
+\textbf{Кратность вырождения энергетического уровня, отвечающего заданному главному квантовому числу $n$}\\
+\begin{definition}
+$l$ - орбитальное квантовое число\\
+$m$ - магнитное квантовое число\\
+$n$ - главное квантовое число\\
+\end{definition}
+Состояние с определенной энергией и моментом импульса принято указывать $nl$\\
+\begin{gather}
+n = l + n_r + 1 \qquad l = 0,1,2...; \ \ n_r = 0,1,2... \Longrightarrow n = 0,1,2...
+\end{gather}
+где $n_r$ - число узлов радиальной части волновой функции. Теперь зафиксируем $n$ и посмотрим на $n_r$, можно увидеть, что $l = 0,1,2...n-1$. Так же $m = -l,-l+1 ... l-1,l$. Теперь посчитаем кратность вырождения энергетического уровня, отвечающего заданому главному квантовому числу $n$:\\
+\begin{gather}
+\gamma \sum_{l=0..n-1}(2l+1) = \gamma (2\frac{n(n-1)}{2}+n) = \gamma n^2
+\end{gather}
+где $\gamma$ - число возможных значений проекции спина на выделенное направление.\\
 \end{document}

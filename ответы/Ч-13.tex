@@ -5,6 +5,72 @@
 \qtitle{Ч}{13}
 Электрон находится в состоянии, описываемом кет-вектором $\frac{\left|+\right>+\left|-\right>}{\sqrt{2}}$. Найдите вероятность того, что проекция его спина на направление $\vec{n}$, составляющее угол $\frac{\pi}{4}$ с осями $Ox$, $Oy$, $Oz$, окажется равной $+\frac{\hbar}{2}$.\\ 
 
-%%
+Наверное, Никифоров имел ввиду, что $\vec{n}$ имеет равные углы со всеми осями, т.е.
+\begin{gather}
+\vec{n}=\frac{1}{\sqrt{3}}\vec{i}+\frac{1}{\sqrt{3}}\vec{j}+\frac{1}{\sqrt{3}}\vec{k},
+\end{gather}
+Распишем $\hat{\sigma}$ в базисе $\vec{i}$, $\vec{j}$, $\vec{k}$.
+\begin{flalign}
+&
+\hat{\sigma}
+=
+\hat{\sigma}_{x}\vec{i}+\hat{\sigma}_{y}\vec{j}+\hat{\sigma}\vec{k}, \text{ где:}
+\\
+&
+\begin{array}{lll}
+\hat{\sigma}_{x}\left|+\right>=\left|-\right>
+&
+\hat{\sigma}_{y}\left|+\right>=i\left|-\right>
+&
+\hat{\sigma}_{z}\left|+\right>=\left|+\right>
+\\
+\hat{\sigma}_{x}\left|-\right>=\left|+\right>
+&
+\hat{\sigma}_{y}\left|-\right>=-i\left|+\right>
+&
+\hat{\sigma}_{z}\left|-\right>=-\left|-\right>
+\end{array}
+
+\end{flalign}
+Применим к нашему состоянию оператор проекции спина на направление $\vec{n}$:
+\begin{flalign}
+\begin{split}
+(\hat{\sigma}\vec{n})\left|\Psi\right>
+=&
+\left(
+n_{x}\hat{\sigma}_{x}+n_{y}\hat{\sigma}_{y}+n_{z}\hat{\sigma}_z
+\right)\frac{\left|+\right>+\left|-\right>}{\sqrt{2}}
+=\\
+=&
+\frac{1}{\sqrt{6}}
+\left(
+\left|-\right>+\left|+\right>
+\right)
++
+\frac{i}{\sqrt{6}}
+\left(
+\left|-\right>-\left|+\right>
+\right)
++
+\frac{1}{\sqrt{6}}
+\left(
+\left|+\right>-\left|-\right>
+\right)
+=\\
+=&
+\left(
+\sqrt{\frac{2}{3}}-i\frac{1}{\sqrt{6}}
+\right)
+\left|+\right>
+\left(
+\sqrt{\frac{2}{3}}+i\frac{1}{\sqrt{6}}
+\right)
+\left|-\right>
+=\\
+=&
+a\left|+\right>+b\left|-\right>
+\end{split}
+\end{flalign}
+т.к. $|a|^2=|b|^2$, то вероятность того, что после измерения электрон перейдет в состояние $\left|+\right>$ равна $0.5$.
 
 \end{document}
