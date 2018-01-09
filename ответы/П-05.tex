@@ -3,92 +3,92 @@
 \begin{document}
 
 \qtitle{П}{05}
-Воспользуйтесь полевыми уравнениями Эйлера-Лагранжа чтобы получить уравнения Максвелла <<с источниками>>.\\ 
+Воспользуйтесь полевыми уравнениями Эйлера-Лагранжа чтобы получить уравнения Максвелла <<с источниками>>.\\
 
-	Выражение для действия (функция $\mathcal{L}$ в данном случае - плотность лагранжиана ): 
+Выражение для действия (функция $\mathcal{L}$ в данном случае - плотность лагранжиана ):
 \begin{gather}
-\label{P5-1}
-A=\int \mathcal{L}dt=\int \mathcal{L}( A^{\alpha},\partial_\beta  A^{\alpha})d^4x
+    \label{P5-1}
+    A=\int \mathcal{L}dt=\int \mathcal{L}( A^{\alpha},\partial_\beta  A^{\alpha})d^4x
 \end{gather}
 
 \begin{gather}
-\label{P5-2}
-0=\delta A=
-\int d^4x\left(
-\frac{\partial \mathcal{L}}{\partial A^\alpha}\delta A^\alpha+\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}\delta(\partial_\beta A^\alpha)\right)=
-\int d^4x(\frac{\partial \mathcal{L}}{\partial  A^\alpha}\delta A^\alpha-\partial\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}\delta(\partial_\beta A^\alpha)) 
+    \label{P5-2}
+    0=\delta A=
+    \int d^4x\left(
+    \frac{\partial \mathcal{L}}{\partial A^\alpha}\delta A^\alpha+\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}\delta(\partial_\beta A^\alpha)\right)=
+    \int d^4x(\frac{\partial \mathcal{L}}{\partial  A^\alpha}\delta A^\alpha-\partial\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}\delta(\partial_\beta A^\alpha))
 \end{gather}
 Принимая во внимание произвольность, переходим к полевому уравнению Эйлера-Лагранжа: \\
 \begin{gather}
-\label{P5-3}
-\frac{\partial \mathcal{L}}{\partial  A^\alpha}-\partial_\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}=0
+    \label{P5-3}
+    \frac{\partial \mathcal{L}}{\partial  A^\alpha}-\partial_\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}=0
 \end{gather}
 Расмотрим подробнее плотность лагранжиана: $ \mathcal{L} = \mathcal{L}_{emf}+ \mathcal{L}_{int}.$\\
 \begin{gather}
-\label{P5-4}
-\mathcal{L}_{emf}=-\frac{1}{4}F\cdot\cdot F=-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}=\frac{1}{4}F_{\alpha\beta}F^{\beta\alpha}\\
-\label{P5-5}
-\mathcal{L}_{int}=- A\jmath=-\jmath_\alpha A^\alpha
+    \label{P5-4}
+    \mathcal{L}_{emf}=-\frac{1}{4}F\cdot\cdot F=-\frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}=\frac{1}{4}F_{\alpha\beta}F^{\beta\alpha}\\
+    \label{P5-5}
+    \mathcal{L}_{int}=- A\jmath=-\jmath_\alpha A^\alpha
 \end{gather}
 $\jmath$-плотность тока. Из пунктов \ref{P5-4} и \ref{P5-5} получаем, что:
 \begin{gather}
-\label{P5-6}
-\mathcal{L}=\frac{1}{4}F_{\alpha\beta}F^{\beta\alpha}-\jmath_\alpha A^\alpha
+    \label{P5-6}
+    \mathcal{L}=\frac{1}{4}F_{\alpha\beta}F^{\beta\alpha}-\jmath_\alpha A^\alpha
 \end{gather}
-Подсчитаем $\frac{\partial \mathcal{L}}{\partial  A^\alpha}$ и $\partial\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta\beta A^\alpha)}$ и подставим их в уравнение Эйлера-Лагранжа.
+Подсчитаем $\frac{\partial \mathcal{L}}{\partial  A^\alpha}$ и $\partial_\beta\frac{\partial  \mathcal{L}}{\partial(\partial_\beta\beta A^\alpha)}$ и подставим их в уравнение Эйлера-Лагранжа.
 \begin{gather}
-\label{P5-7}
-\frac{\partial \mathcal{L}}{\partial A^\alpha}=
-\frac{\partial \mathcal{L}_{int}}{\partial  A^\alpha}=
--j_\nu\delta\indices{^\nu_\alpha} = -j_\alpha\\
-\label{P5-8}
-\frac{\partial  \mathcal{L}}{\partial(\partial_\beta A^\alpha)}=\frac{\partial  \mathcal{L}_{emf}}{\partial(\partial_\beta A^\alpha)}=
-\frac{\partial\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)} =
-\frac{\partial\frac{1}{4}F_{\mu\nu}}{\partial(\partial_\beta A^\alpha)}F^{\mu\nu}+F_{\mu\nu}\frac{\partial\frac{1}{4}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)}
+    \label{P5-7}
+    \frac{\partial \mathcal{L}}{\partial A^\alpha}=
+    \frac{\partial \mathcal{L}_{int}}{\partial  A^\alpha}=
+    -j_\nu\delta\indices{^\nu_\alpha} = -j_\alpha\\
+    \label{P5-8}
+    \frac{\partial\mathcal{L}}{\partial(\partial_\beta A^\alpha)}=\frac{\partial  \mathcal{L}_{emf}}{\partial(\partial_\beta A^\alpha)}=
+    \frac{\partial\frac{1}{4}F_{\mu\nu}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)} =
+    \frac{\partial\frac{1}{4}F_{\mu\nu}}{\partial(\partial_\beta A^\alpha)}F^{\mu\nu}+F_{\mu\nu}\frac{\partial\frac{1}{4}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)}
 \end{gather}
-Заметим, что 
+Заметим, что
 $F_{\mu\nu}\frac{\partial\frac{1}{4}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)}=\frac{\partial\frac{1}{4}F_{\mu\nu}}{\partial(\partial_\beta A^\alpha)}F^{\mu\nu}$, тогда $\frac{\partial\frac{1}{4}F_{\mu\nu}F^{\nu\mu}}{\partial(\partial_\beta A^\alpha)}=2F_{\mu\nu}\frac{\partial\frac{1}{4}F^{\mu\nu}}{\partial(\partial_\beta A^\alpha)}$
 . Вернемся к \ref{P5-8}:\\
 \begin{gather}
-\label{P5-9}
-\frac{1}{2}F_{\mu\nu}\frac{\partial^\mu A^\nu-\partial^\nu A^\mu}{{\partial(\partial_\beta A^\alpha)}}=
-\frac{1}{2}F\indices{^{\mu}_\nu}\frac{\partial_\mu A^\nu}{{\partial(\partial_\beta A^\alpha)}}-\frac{1}{2}F\indices{^{\nu}_\mu}\frac{\partial_\nu A^\mu}{{\partial(\partial_\beta A^\alpha)}}=
-\frac{1}{2}\tensor{F}{^{\mu}_\nu}\tensor{\delta}{^{\beta}_\mu}\tensor{\delta}{^{\nu}_\alpha}-\frac{1}{2}\tensor{F}{^{\nu}_\mu}\tensor{\delta}{^{\beta}_\nu}\tensor{\delta}{^{\mu}_\alpha}
+    \label{P5-9}
+    \frac{1}{2}F_{\mu\nu}\frac{\partial^\mu A^\nu-\partial^\nu A^\mu}{{\partial(\partial_\beta A^\alpha)}}=
+    \frac{1}{2}F\indices{^{\mu}_\nu}\frac{\partial_\mu A^\nu}{{\partial(\partial_\beta A^\alpha)}}-\frac{1}{2}F\indices{^{\nu}_\mu}\frac{\partial_\nu A^\mu}{{\partial(\partial_\beta A^\alpha)}}=
+    \frac{1}{2}\tensor{F}{^{\mu}_\nu}\tensor{\delta}{^{\beta}_\mu}\tensor{\delta}{^{\nu}_\alpha}-\frac{1}{2}\tensor{F}{^{\nu}_\mu}\tensor{\delta}{^{\beta}_\nu}\tensor{\delta}{^{\mu}_\alpha}
 \end{gather}
 Итак, получаем:
 $\frac{\partial \mathcal{L}}{\partial(\partial_\beta\Alpha^\alpha)}=
-\frac{1}{2}(F^\beta_{\ \ \alpha}-F_\alpha^{\ \beta})$
+    \frac{1}{2}(F^\beta_{\ \ \alpha}-F_\alpha^{\ \beta})$
 \\
-Подставляем \ref{P5-7} предыдущее равенство в \ref{PS-3} и получаем уравнения " с источниками":\\
+Подставляем \ref{P5-7} предыдущее равенство в \ref{P5-3} и получаем уравнения " с источниками":\\
 \begin{gather}
-\label{P5-10}
--j-\frac{1}{2}\partial_\beta(\frac{1}{2}F^\beta_\alpha-F_\alpha^\beta)=0\\
-\label{P5-11}
-\partial^\beta F_{\beta\alpha}=-j_\alpha
+    \label{P5-10}
+    -j-\frac{1}{2}\partial_\beta(\frac{1}{2}F^\beta_\alpha-F_\alpha^\beta)=0\\
+    \label{P5-11}
+    \partial^\beta F_{\beta\alpha}=-j_\alpha
 \end{gather}
 Рассмотрим подробнее систему \ref{P5-11}:\\
 \begin{gather}
-\label{P5-12}
-\begin{cases}
-\partial^0F_{00}+\partial^1F_{10}+\partial^2F_{20}+\partial^3F_{30}=-\jmath_0\\
-\partial^0F_{01}+\partial^1F_{11}+\partial^2F_{21}+\partial^3F_{31}=-\jmath_1\\
-\partial^0F_{02}+\partial^1F_{12}+\partial^2F_{22}+\partial^3F_{32}=-\jmath_2\\
-\partial^0F_{03}+\partial^1F_{13}+\partial^2F_{23}+\partial^3F_{33}=-\jmath_3
-\end{cases}
-\begin{cases}
-\partial_xE_x+\partial_yE_y+\partial_zE_z=\rho\\
--\partial_t(-E_x)-\partial_yB_z+\partial_zB_y=-\jmath_x\\
--\partial_t(-E_y)+\partial_xB_z+\partial_zB_x=-\jmath_y\\
--\partial_t(-E_z)-\partial_xB_y+\partial_yB_x=-\jmath_z
-\end{cases}
+    \label{P5-12}
+    \begin{cases}
+        \partial^0F_{00}+\partial^1F_{10}+\partial^2F_{20}+\partial^3F_{30}=-\jmath_0 \\
+        \partial^0F_{01}+\partial^1F_{11}+\partial^2F_{21}+\partial^3F_{31}=-\jmath_1 \\
+        \partial^0F_{02}+\partial^1F_{12}+\partial^2F_{22}+\partial^3F_{32}=-\jmath_2 \\
+        \partial^0F_{03}+\partial^1F_{13}+\partial^2F_{23}+\partial^3F_{33}=-\jmath_3
+    \end{cases}
+    \begin{cases}
+        \partial_xE_x+\partial_yE_y+\partial_zE_z=\rho          \\
+        -\partial_t(-E_x)-\partial_yB_z+\partial_zB_y=-\jmath_x \\
+        -\partial_t(-E_y)+\partial_xB_z+\partial_zB_x=-\jmath_y \\
+        -\partial_t(-E_z)-\partial_xB_y+\partial_yB_x=-\jmath_z
+    \end{cases}
 \end{gather}
 Окончательный вид уравнений <<с источниками>>:\\
 \begin{gather}
-\label{P5-13}
-\begin{cases}
-\nabla\bar{E}=\rho\\
-\nabla\times\bar{B}=\partial_t\bar{E}+\bar{j}
-\end{cases}
+    \label{P5-13}
+    \begin{cases}
+        \nabla\bar{E}=\rho \\
+        \nabla\times\bar{B}=\partial_t\bar{E}+\bar{j}
+    \end{cases}
 \end{gather}
 где $\rho$ - плотность стороннего электрического заряда, а $\bar{j}$ - плотность электрического тока.
 
