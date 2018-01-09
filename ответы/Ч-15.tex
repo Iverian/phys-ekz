@@ -5,6 +5,62 @@
 \qtitle{Ч}{15}
 Магнитный момент атома, связанный с орбитальным моментом импульса электрона: квазиклассическое и квантовомеханическое рассмотрения.\\ 
 
-%%
+\textbf{Квазиклассическое рассмотрение}\\
+Квазиклассическая модель атома -- тяжелое ядро и вращающийся вокруг него со скоростью $\vec{v}$ электрон, радиус-вектор которого занимает за время $T$ площадку $S$. На достаточно больших временных масштабах это вращение выглядит как круговой ток:
+\begin{gather*}
+I=-\frac{e}{T},
+\end{gather*}
+величина магнитного момента которого составляет
+\begin{gather*}
+\mu=\frac{e}{T}S=\frac{ev}{2\pi r}\pi r^2=\frac{evr}{2}.
+\end{gather*}
+Момент импульса электрона также содержит в себе произведение $rv$:
+\begin{gather*}
+L=rm_ev.
+\end{gather*}
+Так что магнитный момент тока $\vec{\mu}$ можно естесственным образом связать с моментом импульса электрона $\vec{L}$:
+\begin{gather*}
+\vec{\mu}=-\frac{e}{2m_e}\vec{L}=-\frac{e\hbar}{2m_e}\frac{\vec{L}}{\hbar} =\mu_B\frac{\vec{L}}{\hbar},
+\end{gather*}
+где $\mu_B\equiv \dfrac{e\hbar}{2m_e}$ -- магнетон Бора.\\
 
+\textbf{Квантовомеханическое рассмотрение}\\
+В квантовой механике можно попытаться записать величину, близкую по смыслу к плотности тока ($\vec{j}=qn\vec{v}$, где $q$ -- заряд частицы, $n$ -- объемная плотность числа частиц), порождаемого вращающимся вокруг ядра электроном:
+\begin{gather*}
+-e\vec{j}=e\operatorname{Re}\left[\Psi^*(t, \vec{r})\frac{\hbar}{im_e}\nabla\Psi(t, \vec{r})\right]
+\end{gather*}
+$\vec{j}$ -- вектор плотности тока вероятности, $\Psi^*(t, \vec{r})\Psi(t, \vec{r})$ --- аналог плотности числа частиц, $\frac{\hbar}{im_e}\nabla$ -- аналог скорости $\frac{\hat{p}}{m_e}$. Мы интересуемся стационарным состоянием, т.е. $\Psi(t, \vec{r})=e^{i\frac{\varepsilon}{\hbar}t}\psi(\vec{r})$, поэтому 
+\begin{gather*}
+-e\vec{j}=e\operatorname{Re}\left[\psi^*(\vec{r})\frac{\hbar}{im_e}\nabla\psi(\vec{r})\right]=-\frac{e\hbar}{2m_ei}\left(\psi^*\nabla\psi-\psi\nabla\psi^*\right)=-\frac{e\hbar}{2m_ei}\vec{d}^r\left(\psi^*\partial_r\psi-\psi\partial_r\psi^*\right)-\\-\frac{e\hbar}{2m_ei}\vec{d}^\theta\frac{1}{r}\left(\psi^*\partial_\theta\psi-\psi\partial_\theta\psi^*\right)-\frac{e\hbar}{2m_ei}\vec{d}^\varphi\frac{1}{rsv}\left(\psi^*\partial_\varphi\psi-\psi\partial_\varphi\psi^*\right), 
+\end{gather*}
+где $\vec{d}^r, \vec{d}^\theta, \vec{d}^\varphi$ -- единичные векторы, направленные вдоль координатных линий $r, \theta, \varphi$. Мы думаем об атоме водорода, поэтому $\Psi_{nzm}(r, \theta, \varphi)=\rho_{nz}(r)f_{zm}(\theta)e^{im\varphi}$. Так как $\rho, f$ -- вещественные, то первые два слашаемых обнулются и мы получаем:
+\begin{gather*}
+-e\vec{j}=-\frac{e\hbar}{2m_ei}\vec{d}^\varphi\frac{2im}{rs\theta}|\psi|^2=-\frac{e\hbar}{m_e}\vec{d}^\varphi\frac{m}{rs\theta}|\psi|^2
+\end{gather*}
+Магнитный момент атома, обусловленный током:
+\begin{gather*}
+dI=-e\vec{j}\cdot d\vec{A},
+\end{gather*}
+где $d\vec{A}$ -- элемент площадки, перпендикулярной координатной линии $\varphi$ ($r=\operatorname{const}, \theta=\operatorname{const}$).\\
+Проекция на ось $z$ магнитного момента атома, обусловленного орбитальным моментом импульса электрона:
+\begin{gather*}
+\mu_z=\int dJ S=-\frac{e\hbar m}{m_e}\int \frac{|\psi|^2\pi r^2s^2\theta^2}{rs\theta}dA=-\frac{e\hbar m}{2m_e}\int |\psi|^2 2\pi rs\theta dA=-\frac{e\hbar m}{2m_e}\int |\psi|^2dV
+\end{gather*}
+$\hbar m$ -- СЗ оператора $\hat{L}_z$. Благодаря удивительной штуке под названием <<нормировка>> мы можем сказать, что интегральчик равен единице, и поэтому:
+\begin{gather*}
+\mu_z=-\frac{e\hbar }{2m_e}m=-\mu_B m
+\end{gather*}
+Для $x$ и $y$ получается такая же хрень, поэтому:
+\begin{gather*}
+\hat{\mu}=-\mu_B\frac{\hat{L}}{\hbar}
+\end{gather*}
+Можно определить отдельно оператор $\hat{\mu}_z$ и $\hat{L}_z$, которые связаны следующим образом:
+\begin{gather*}
+\hat{\mu}_z=-\mu_B\frac{\hat{L}_z}{\hbar}
+\end{gather*}
+Кет $|zm\rangle$, являясь собственным вектором оператора $\hat{L}_z$, является собственным вектором оператора $\hat{\mu}_z$:
+\begin{gather*}
+\hat{\mu}_z |zm\rangle = -\mu_B \frac{\hat{L}_z}{\hbar}|zm\rangle=-\mu_B \frac{m\hbar |zm\rangle}{\hbar}=-\mu_B m |zm\rangle,
+\end{gather*}
+где $\mu_B m$ -- СЗ оператора $\hat{\mu}_z$ (то, что получится, если мы будем измерять магнитный момент атома)
 \end{document}
