@@ -3,8 +3,29 @@
 \begin{document}
 
 \qtitle{П}{17}
-Тензор энергии-импульса системы частиц имеет вид $T^{\alpha\beta}=\sum_{A}p\indices{^\alpha_A}\frac{dx\indices{^\beta_A}}{dt}\delta(\vec{x}-\vec{x}_A)t$, где $A$ индекс частицы, $\delta$ -- дельта-функция Дирака. Убедитесь в справедливости соотношения $\partial_{\beta}T^{\alpha\beta}=\sum_{A}\frac{d\vec{p}_A}{dt}\delta(\vec{x}-\vec{x}_A)$. Интерпретируйте результат. Покажите, что если заряженные частицы находятся в электромагнитном поле, то последнее выражение принимает форму $\partial_{\beta}T\indices{^\alpha^\beta}=F\indices{^\alpha_\beta}j^\beta$, где $j$ -- 4-вектор плотности тока.\\ 
+Тензор энергии-импульса системы частиц имеет вид $T^{\alpha\beta}=\sum_{A}p\indices{^\alpha_A}\frac{dx\indices{^\beta_A}}{dt}\delta(\vec{x}-\vec{x}_A)t$, где $A$ индекс частицы, $\delta$ -- дельта-функция Дирака. Убедитесь в справедливости соотношения $\partial_{\beta}T^{\alpha\beta}=\sum_{A}\frac{d\vec{p}_A}{dt}\delta(\vec{x}-\vec{x}_A)$. Интерпретируйте результат. Покажите, что если заряженные частицы находятся в электромагнитном поле, то последнее выражение принимает форму $\partial_{\beta}T\indices{^\alpha^\beta}=F\indices{^\alpha_\beta}j^\beta$, где $j$ -- 4-вектор плотности тока.\\
 
-%%
+Начнём дифференцирование:
+\begin{gather*}
+    \frac{\partial T^{\alpha\beta}}{\partial x^\beta} = \sum\limits_A p_A^\alpha\frac{dx_A^\beta}{dt}\frac{\partial}{\partial x^\beta}\delta(\vec x - \vec x_A) = \sum\limits_A p_A^\alpha\frac{dx_A^\beta}{dt}\left(-\frac{\partial}{\partial x_A^\beta}\delta(\vec x - \vec x_A)\right) = \\
+    \sum\limits_A p_A^\alpha\left(-\frac{\partial}{\partial t}\delta(\vec x - \vec x_A)\right) = \sum\limits_A\left(-\frac{\partial p_A^\alpha}{\partial t}\delta(\vec x - \vec x_A)+\frac{dp_A^\alpha}{dt}\delta(\vec x - \vec x_A)\right) = \\
+    -\frac{\partial T^{\alpha 0}}{\partial x^0} + \sum_{A}\frac{d\vec{p}_A}{dt}\delta(\vec{x}-\vec{x}_A)\Rightarrow \\
+    \partial_{\beta}T^{\alpha\beta}=\sum_{A}\frac{d\vec{p}_A^\alpha}{dt}\delta(\vec{x}-\vec{x}_A) = f^\alpha - плотность\;4-силы.
+\end{gather*}
+С интерпретацией дела похуже. Можно отметить, что если частицы свободны, то $\forall A \frac{dp_A^\alpha}{dt} = 0 \rightarrow f^\alpha = 0.$\\
+Теперь поместим частицы в ЭМП:
+\begin{flalign*}
+    \begin{split}
+        \partial_{\beta}T^{\alpha\beta}
+        =&
+        \sum_{A}\left(q_A F^{\alpha\beta}\frac{dx_A^\beta}{dt}\right)\delta(\vec{x}-\vec{x}_A)
+        =
+        F^{\alpha\beta}\sum_{A}q_A \frac{dx_A^\beta}{dt}\delta(\vec{x}-\vec{x}_A)
+        =\\
+        =&
+        F\indices{^\alpha_\beta} j^\beta,
+    \end{split}
+\end{flalign*}
+где $j^\beta$ -- 4-вектор плотности тока.
 
 \end{document}

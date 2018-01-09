@@ -15,10 +15,31 @@
     \langle p'|\widehat{p}|p\rangle = \langle p'|p|p\rangle = p\langle p'|p\rangle = p\delta(p-p')
 \end{gather*}
 Попытаемся найти матричные элементы оператора импульса $\widehat{p}$
-\begin{gather*}
-    \langle x'|\widehat{p}|x\rangle = \langle x'|\widehat{1}\widehat{p}\widehat{1}|x\rangle =  \langle x'|\int{dp'|\rangle\langle p'|\widehat{p}\int{dp|p\rangle\langle p||x\rangle}}\rangle =\\ \int{dp'}\int{dp\langle x'|p'\rangle\langle p'|\widehat{p}|p\rangle\langle p|x\rangle} =\\ \frac{1}{\sqrt{2\pi\hbar}}\frac{1}{\sqrt{2\pi\hbar}}\int{dp}\int{dp'}e^{i\frac{p'}{\hbar}x'}p\delta(p - p')e^{-i\frac{p}{\hbar}x} = \frac{1}{2\pi\hbar}\int{dp}e^{i\frac{p}{\hbar}x'}pe^{-i\frac{p}{\hbar}x} = \frac{1}{2\pi\hbar}(-\frac{\hbar}{i}\frac{d}{dx})\int{dpe^{i\frac{p}{\hbar}(x' - x)}} =\\
-    \int{dpe^{i\frac{p}{\hbar}(x' - x)}} = 2\pi\delta(\frac{x' - x}{\hbar}) = 2\pi\hbar\delta(x'-x) = -\frac{h}{i}\frac{d}{dx}\delta(x' - x)
-\end{gather*}
+\begin{flalign*}
+    \left<x'\right|\hat{p}\left|x\right>
+    =&
+    \left<x'\right|\hat{1}\hat{p}\hat{1}\left|x\right>
+    =\\
+    =&
+    \left<x'\right|\int{dp'}\left|p'\right>\left<p'\right|\hat{p}\int{dp}\left|p\right>\left<p\right|\left|x\right>
+    =
+    \int{dp'}\int{dp}\left<x'|p'\right>\left<p'\right|\hat{p}\left|p\right>\left<p|x\right>
+    =\\
+    =&
+    \frac{1}{\sqrt{2\pi\hbar}}\frac{1}{\sqrt{2\pi\hbar}}\int{dp'}\int{dp}
+    \exp\left(\frac{ip'x'}{\hbar}\right)p\cdot\delta\left(p-p'\right)\exp\left(-\frac{ipx}{\hbar}\right)
+    =\\
+    =&
+    \frac{1}{2\pi\hbar}\int{dp}\exp\left(\frac{ipx'}{\hbar}\right)
+    {p\exp\left(-\frac{ipx}{\hbar}\right)}
+    =\\
+    =&
+    \frac{1}{2\pi\hbar}\left(i\hbar\frac{d}{dx}\right)
+    \int{dp}\exp\frac{ip(x'-x)}{\hbar}
+    =\\
+    =&
+    i\hbar\frac{d}{dx}\delta\left(x'-x\right),
+\end{flalign*}
 Хотя индексы $x' и x$ в $\langle x'|\widehat{p}|x\rangle$ меняются непрерывно, совокупность всех матричных элементов удобно рассматривать как матрицу бесконечного ранга, число столбцов которой несчётно. При таком толковании правую часть равенства
 \begin{gather*}
     \underset{\Psi_w(x')}{\langle x'|w\rangle} = \int{dx\langle x'|\widehat{p}|x\rangle\underset{\Psi_v(x)}{\langle x|v\rangle}}
@@ -38,13 +59,30 @@
 \end{gather*}
 Мы видим, что в координатном представлении оператор $\widehat{p}$ действует как $\frac{h}{i}\frac{d}{dx}$ \\
 Теперь выясним, что представляют из себя матричные элементы оператора $\widehat{x}$ в имупльсном представлении. Вычислим
-\begin{gather*}
-    \langle p'|\widehat{x}|p\rangle = \langle p'|\widehat{1}\widehat{x}\widehat{1}|p\rangle = \langle p'|\int{dx'}|x'\rangle\langle x'|\widehat{x}\int{dx}|x\rangle\langle x||p\rangle = \\
-    \int{dx'}\int{dx}\langle p'|x'\rangle\langle x'|\widehat{x}|x\rangle\langle x|p\rangle = \\
-    \int{dx}\int{dx'}\varphi_{p'}^{*}(x')x\delta(x - x')\varphi_{p}(x) = \int{dx}\varphi_{p'}^{*}(x)x\varphi_{p(x)} =\\
-    \frac{1}{2\pi\hbar}\int{dx}e^{-i\frac{p'}{\hbar}x}xe^{i\frac{p}{\hbar}x} =\\
-    \frac{1}{2\pi\hbar}\frac{\hbar}{i}\frac{d}{dp}\int{dx}e^{i\frac{p - p'}{\hbar}x} = 2\pi\delta(\frac{p - p'}{\hbar}) = 2\pi\hbar\delta(p - p') = \frac{\hbar}{i}\frac{d}{dp}\delta(p - p')
-\end{gather*}
+\begin{flalign*}
+\left<p'\right|\hat{x}\left|p\right>
+=&
+\left<p'\right|\hat{1}\hat{x}\hat{1}\left|p\right>
+=
+\left<p'\right|\int{dx'}\left|x'\right>\left<x'\right|\hat{x}\int{dx}\left|x\right>\left<x\right|\left|p\right>
+=\\
+=&
+\int{dx'}\int{dx}\left<p'|x'\right>\left<x'\right|\hat{x}\left|x\right>\left<x|p\right>
+=\\
+=&
+\int{dx'}\int{dx}\Phi^{*}_{p'}(x')x\delta\left(x-x'\right)\Phi_{p}(x)
+=
+\int{dx}\Phi^{*}_{p'}(x)x\Phi_{p}(x)
+=\\
+=&
+\frac{1}{2\pi\hbar}\int{dx}\exp\left(-\frac{ip'x}{\hbar}\right)x\exp\left(\frac{ipx}{h}\right)
+=\\
+=&
+\frac{1}{2\pi\hbar}\frac{\hbar}{i}\frac{d}{dp}\int{dx}\exp\left(\frac{ix(p-p')}{\hbar}\right)
+=\\
+=&
+-i\hbar\frac{d}{dp}\delta\left(p-p'\right),
+\end{flalign*}
 Давайте рассмотрим кет
 \begin{gather*}
     |w\rangle = \widehat{x}|v\rangle
