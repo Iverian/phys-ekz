@@ -3,40 +3,40 @@
 \begin{document}
 
 \qtitle{П}{11}
-Симметризованный тензор энергии-импульса электромагнитного поля, вектор Пойнтинга, интенсивность излучения.\\ 
+Симметризованный тензор энергии-импульса электромагнитного поля, вектор Пойнтинга, интенсивность излучения.\\
 
 \begin{definition}
-	Вектор Пойтинга: $\vec{S} = [\vec{E} \vec{B}]$ 
+    Вектор Пойтинга: $\vec{S} = [\vec{E} \vec{B}]$
 \end{definition}
 
 Канонический тензор энергии-импульса имеет вид:
 \begin{gather*}
-\underset{emf}{T}^{\mu\nu} = F^{\mu\lambda}\partial^\nu A_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
+    \underset{emf}{T}^{\mu\nu} = F^{\mu\lambda}\partial^\nu A_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}
 \end{gather*}
 \begin{gather*}
-\underset{emf}{T^{\mu\nu}} - F^{\mu\lambda}\partial_\lambda A^\nu = F^{\mu\lambda}(\partial^\nu A_x - \partial_\lambda A^\nu) - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu} = F^{\mu\lambda}F^\nu_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}\equiv \underset{emf}{\Theta}^{\mu\nu}
+    \underset{emf}{T^{\mu\nu}} - F^{\mu\lambda}\partial_\lambda A^\nu = F^{\mu\lambda}(\partial^\nu A_x - \partial_\lambda A^\nu) - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu} = F^{\mu\lambda}F^\nu_\lambda - \frac{1}{4}F_{\alpha\beta}F^{\alpha\beta}\eta^{\mu\nu}\equiv \underset{emf}{\Theta}^{\mu\nu}
 \end{gather*}
 $\underset{emf}{\Theta}^{\mu\nu}$ - симметризованый тензор энергии-импульса электромагнитного поля.\\
-Выразим компоненты тензора $T^{\mu\nu}$ через напряжённости электрического и магнитного полей.  
-$F_{\mu\nu}= 
-\begin{bmatrix}
-0 & E_x & E_y & E_z\\
--E_x & 0 & -H_z & H_y\\
--E_y & H_z & 0 & -H_x\\
--E_z & -H_y & H_x & 0
-\end{bmatrix},
-\quad F^{\mu\nu} = 
-\begin{bmatrix}
-0 & -E_x & -E_y & -E_z\\
-E_x & 0 & -H_z & H_y\\
-E_y & H_z & 0 & -H_x\\
-E_z & -H_y & H_x & 0
-\end{bmatrix}
-$
+Выразим компоненты тензора $T^{\mu\nu}$ через напряжённости электрического и магнитного полей.
+\begin{gather}
+    F_{\mu\nu}=
+    \begin{bmatrix}
+        0    & E_x  & E_y  & E_z  \\
+        -E_x & 0    & -H_z & H_y  \\
+        -E_y & H_z  & 0    & -H_x \\
+        -E_z & -H_y & H_x  & 0
+    \end{bmatrix},
+    \quad F^{\mu\nu} =
+    \begin{bmatrix}
+        0   & -E_x & -E_y & -E_z \\
+        E_x & 0    & -H_z & H_y  \\
+        E_y & H_z  & 0    & -H_x \\
+        E_z & -H_y & H_x  & 0
+    \end{bmatrix}
+\end{gather}
 
 \begin{definition}
-	Интенсивность излучения\\
-	$I(t)=\frac{1}{T}\int^{t+T}_{t} |\vec{S}(t)| dt$
-	\end{definition}
+    Интенсивность излучения $I(t)=\frac{1}{T}\int^{t+T}_{t} |\vec{S}(t)| dt$
+\end{definition}
 
 \end{document}
