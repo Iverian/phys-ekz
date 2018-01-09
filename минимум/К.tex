@@ -1,0 +1,436 @@
+\documentclass[__minimum__.tex]{subfiles}
+
+\begin{document}
+
+\begin{comment}
++ 1) Закон Киргофа
++ 2) Закон смещения Вина
++ 3) Закон Стефана Больцмана
++ 4) Формула Рэлея-Джинса
++ 5) Формула Планка
++ 6) Соотношение неопределенностей Гейзенберга
++ 7) Постулаты квантовой механики
++ 8) Коммутатор
++ 9) Эрмитов оператор
++ 10) Постулат о вещественных велечинах
++ 11) Постулат об измерениях
++ 12) Наблюдаемый оператор
++ 13) Равенство Парсевалля
++ 14) Квантомеханические средние
++ 15) Временное и стационарное уравнения Шредингера
++ 16) Вектор плотности тока вероятности
++ 17) Теорема Эренфеста
++ 18) Дуальное пространство
++ 19) Коммутационные соотношения
++ 20) Кванто-механический гармонический осцилятор
++ 21) Постулаты Бора
++ 22) Полный и собственный момент импульса
+23) Матрицы Паули
+\end{comment}
+
+\ssection{К Квантовая механика}
+
+\begin{definition}
+  Абсолютно черное тело (АЧТ) -- это тело, способное поглощать при любой температуре все падающее на него излучение всех частот.
+\end{definition}
+
+\paragraph{Законы теплового излучения.}
+\begin{enumerate}
+  \item
+        \emph{Закон Кирхгофа.} Пусть $r_{\omega}$ --- испускающая способность. Тогда энергия, которую площадка $ds$ испускает за единицу времени на интервале частот $[\omega; \omega+d\omega]$ равна $r_\omega d\omega ds$. Поглощающая способность $a_\omega$ определяется как отношение поглощенной площадкой $ds$ на интервале $[\omega;\omega+d\omega]$ энергии к падающей на эту же площадку на том же интервале энергии ($E_{\text{пад}}$). Тогда в состоянии равновесия:
+        $$
+          a_\omega \cdot E_{\text{пад}} = r_\omega d\omega ds \Longrightarrow a_\omega\cdot \frac{1}{4}cu_\omega(\tau)d\omega ds = r_\omega d\omega ds,
+        $$
+        где $cu_\omega(\tau)d\omega$ --- плотность потока энергии в частотном интервале $[\omega; \omega+d\omega]$. Из этого и следует закон Кирхгофа:
+        $$
+          \frac{1}{4}cu_\omega(\tau)=\frac{r_\omega}{a_\omega}
+        $$
+  \item
+        \emph{Закон смещения Вина.} Из термодинамических соображений:
+        $$
+          u_\omega(\tau)=\omega^3f\left(\frac{\omega}{\tau}\right),
+          \qquad
+          \omega\rightarrow\infty
+          \colon
+          f\left(\frac{\omega}{\tau}\right)\rightarrow{0},
+        $$
+        Пусть $x\equiv \frac{\omega}{\tau}$. Найдем частоту $\omega_m$, доставляющую $\max(u_\omega)$.
+        $$
+          3\omega_m^2f(x_m)+\frac{\omega^3}{\tau}f'(x_m)=0 \Longrightarrow x_m=C,
+        $$
+        где $C$ --- число, не зависящее от $\tau$ и $\omega$, следовательно:
+        $$
+          \lambda_m\tau=\sigma=2.90\cdot 10^{-3}\text{м}\cdot K.
+        $$
+  \item
+        \emph{Закон Стефана - Больцмана.} Энергетическая светимость АЧТ:
+        $$
+          R^*=\int\limits^{\infty}\limits_0 r^*_\omega d\omega \sim \int\limits^{\infty}\limits_0 u_\omega(\tau)d\omega =\tau^4 \int\limits^{\infty}\limits_0 \frac{\omega^3}{\tau^3}f\left(\frac{\omega}{\tau}\right)d\frac{\omega}{\tau}
+        $$
+        $$
+          R^*=\sigma \tau^4,
+          \qquad
+          \sigma = 5.67\cdot 10^{-8} \frac{\text{Вт}}{\text{м}^2\cdot\text{К}^4},
+        $$
+\end{enumerate}
+
+\paragraph{Выражения для спектральной плотности $u_\omega(T)$}
+\begin{enumerate}
+  \item
+        \emph{Формула Рэлея - Джинса} (получена из классической теоремы о равнораспределении энергии по степеням свободы)
+        \begin{flalign}
+          u_\omega(T)
+          =
+          \frac{\omega^2k_BT}{c^3 \pi^2}
+        \end{flalign}
+  \item
+        \emph{Формула Планка} (получена из предположения квантуемости энергии: энергия испускается порциями $\hbar\omega$)
+        \begin{flalign}
+          u(\omega,T)
+          =
+          \frac{\omega^2}{\pi^2 \cdot  c^3}\cdot
+          \frac{\hbar\omega}{e^\frac{\hbar\omega}{kT}-1}
+        \end{flalign}
+\end{enumerate}
+
+\begin{definition}
+  \llabel{k:def:erm}
+  Оператор $\hat{A}$ называется эрмитовым (самосопряженным), если для любых волновых функций $\xi$ и $\eta$ выполняется $\left(\hat{A}\xi,\eta\right)=\left(\xi,\hat{A}\eta\right)$
+\end{definition}
+
+\paragraph{Постулаты квантовой механики:}
+\begin{itemize}
+  \item
+        \textit{постулат о квантовых состояниях:} квантовое состояние полностью задается $\psi$ -- функцией из пространства волновых функций. $\psi$ -- функции, отличающиеся только комплексным множителем, задают одно и то же состояние;
+  \item
+        \textit{постулат о физических величинах:} каждой физической величине ставится в соответствие эрмитов оператор, обладающий полной системой собственных функций;
+  \item
+        \textit{постулат об измерениях:} пусть измеряется некоторая величина $A$ и ей в соответствие поставлен оператор $\hat{A}: A \rightarrow \hat{A}$. Если оператор эрмитов (т.е. $\hat{A}^{+}=\hat{A}$, то его собственные значения вещественны и $\hat{A}\varphi_n=a_n\varphi_n$);
+  \item
+        \textit{динамический постулат:} все предсказания, которые могут быть сделаны относительно различных свойств системы в данный момент времени, следуют из значения $\psi$ -- функции в этот момент времени;
+\end{itemize}
+
+\begin{definition}
+  Коммутатором операторов $\hat{A}$ и $\hat{B}$ называют оператор $\left[\hat{A},\hat{B}\right]=\hat{A}\hat{B}-\hat{B}\hat{A}$.
+\end{definition}
+
+\paragraph{Обобщенное соотношение неопределенностей Гейзенберга} для двух наблюдаемых $A$ и $B$ соотношение неопределенностей имеет вид:
+\begin{flalign}
+  \begin{split}
+    &
+    \Delta{A}\Delta{B}
+    \ge
+    \left|\left<\frac{\left[\hat{A},\hat{B}\right]}{2}\right>\right|,
+    \\
+    &
+    \Delta{A}=\sqrt{D[A]}
+    =
+    \sqrt{\left<(A-\left<A\right>)^2\right>},
+    \\
+  \end{split}
+\end{flalign}
+
+\paragraph{Примеры соотношений неопределенности:}
+\begin{enumerate}
+  \item
+        \emph{соотношение неопределенностей Гейзенберга}
+        \begin{gather}
+          \Delta x\Delta p_{x}\geq\frac{\hbar}{2},
+        \end{gather}
+\end{enumerate}
+
+\paragraph{Равенство Парсевалля:} для гильбертова пространства $H$ со скалярным произведением $\left<\cdot,\cdot\right>$ верно:
+\begin{gather}
+  \forall{x\in H}\colon\Vert{x}\Vert^2=\sum_{i=1}^{\infty}\left|\left<x,e_k\right>\right|^2,
+\end{gather}
+где $\Vert\cdot\Vert=\sqrt{\left<\cdot,\cdot\right>}$ -- норма, индуцированная скалярным произведением, $\left\{e_k\right\}$ -- ортонормированный базис $H$. К примеру, для пространства $C[0,l]$ с скалярным произведением:
+\begin{gather}
+  \forall{f,g\in{C[0,l]}}\left<f,g\right>=\int\limits_{0}^{l}f(x)g(x)dx,
+\end{gather}
+имеем ортонормированный базис $\left\{\frac{2}{l}\sin\frac{\pi{kx}}{l}\right\}$, тогда:
+\begin{gather}
+  \Vert{f}\Vert^2=\int\limits_{0}^{l}f^2(x)dx
+  =
+  \sum_{k=1}^{\infty}
+  \left(\frac{2}{l}\int\limits_{0}^{l}f(x)\sin\frac{\pi{kx}}{l}dx\right)^2
+\end{gather}
+
+\paragraph{Уравнение Шредингера:} основное уравнение квантовой механики, описывающее изменение во времени состояния квантовомеханической системы, задаваемого волновой функцией $\Psi$:
+\begin{gather}
+  \hat{H}\Psi=i\hbar\partial_{t}\Psi,
+  \llabel{k:shred}
+\end{gather}
+где $\hat{H}$ -- эрмитов \emph{оператор полной энергии системы (гамильтониан)}. Для одного электрона этот оператор примет вид:
+\begin{gather}
+  \hat{H}=\frac{\hat{p}}{2m}+\hat{U}(t,\vec{r}),
+\end{gather}
+где $\hat{U}$ -- оператор потенциальной энергии.
+
+В случае, когда состояние квантовомеханической системы характеризуется определенной энергией $\varepsilon$ волновую функцию можно представить в виде:
+\begin{gather}
+  \Psi(t,\vec{r})=\exp\left(-\frac{i\varepsilon{t}}{\hbar}\right)\psi(\vec{r}),
+\end{gather}
+тогда уравнение Шредингера относительно $\psi$ примет вид:
+\begin{gather}
+  \hat{H}\psi=\varepsilon\psi,
+  \llabel{k:stat-sh}
+\end{gather}
+уравнение (\lref{k:stat-sh}) называется \emph{стационарным уравнением Шредингера}.
+
+\paragraph{Квантовомеханическое среднее:} в квантовой системе в состоянии $\Psi$ \emph{квантовомеханическим средним} наблюдаемой $A$ называется величина:
+\begin{gather}
+  \left<A\right>=\left<\Psi,\hat{A}\Psi\right>,
+\end{gather}
+\emph{временная эволюция квантовомеханического среднего} выражается в виде:
+\begin{flalign}
+  \begin{split}
+    \frac{d}{dt}\left<A\right>
+    =
+    \frac{d}{dt}\left<\Psi,\hat{A}\Psi\right>
+    =&
+    \left.
+    \left<\partial_{t}\Psi,\hat{A}\Psi\right>
+    +
+    \left<\Psi,\left(\partial_t\hat{A}\right)\Psi\right>
+    +
+    \left<\Psi,\hat{A}\partial_t{\Psi}\right>
+    \right|_{\partial_{t}\Psi=\frac{1}{i\hbar}\hat{H}\Psi}
+    =\\
+    =&
+    \left.
+    \left<\frac{1}{i\hbar}\hat{H}\Psi,\hat{A}\Psi \right>
+    +
+    \left<\partial_{t}A\right>
+    +
+    \left<\Psi,\frac{1}{i\hbar}\hat{A}\hat{H}\Psi\right>
+    \right|_{\left<\hat{H}\xi,\eta\right>=\left<\xi,\hat{H}\eta\right>}
+    =\\
+    =&
+    \left.
+    \left<\partial_{t}A\right>
+    +
+    \frac{1}{i\hbar}
+    \left(
+    \left<\Psi,\hat{A}\hat{H}\Psi\right>
+    -
+    \left<\Psi,\hat{H}\hat{A}\Psi\right>
+    \right)
+    \right|_{\left[\hat{A},\hat{B}\right]=\hat{A}\hat{B}-\hat{B}\hat{A}}
+    =\\
+    =&
+    \left<\partial_{t}A\right>
+    +\frac{1}{i\hbar}\left<\left[A,H\right]\right>
+  \end{split}
+\end{flalign}
+, согласно Опр.\lref{k:def:erm} и (\lref{k:shred}).
+\begin{definition}
+  Наблюдаемая $A$ называется интегралом движения, если
+  \begin{gather}
+    \frac{d}{dt}\left<A\right>=0.
+  \end{gather}
+\end{definition}
+
+\paragraph{Вектор плотности тока вероятности:} рассмотрим квантовомеханическую систему с гамильтонианом
+\begin{gather}
+  \hat{H}=-\frac{\hbar^2}{2m}\Delta+U(t,\vec{r}),
+\end{gather}
+тогда обозначим $\rho=\Psi^{*}\Psi$ -- \emph{плотность вероятности}, следовательно
+\begin{flalign}
+  \begin{split}
+    \partial_t{\rho}
+    =&
+    \left.
+    \Psi\partial_{t}\Psi^{*}+\Psi^{*}\partial_{t}\Psi
+    \right|_{\partial_{t}\Psi=\frac{1}{i\hbar}\hat{H}\Psi}
+    =\\
+    =&
+    \left.
+    -\frac{1}{i\hbar}\Psi\hat{H}\Psi^{*}+\frac{1}{i\hbar}\Psi^{*}\hat{H}\Psi
+    \right|_{\hat{H}=-\frac{\hbar^2}{2m}\Delta+U(t,\vec{r})}
+    =\\
+    =&
+    \frac{i\hbar}{2m}
+    \left(\Psi^{*}\Delta{\Psi}-\Psi\Delta{\Psi^{*}}\right)
+    =\\
+    =&
+    -\nabla\operatorname{Re}\left(\Psi^{*}\frac{\hbar}{im}\nabla\Psi\right)
+    =\\
+    =&
+    -\nabla\vec{j}\left(t, \vec{r}\right),
+  \end{split}
+\end{flalign}
+где $\vec{j}=\operatorname{Re}\left(\Psi^{*}\frac{\hbar}{im}\nabla\Psi\right)$ -- \emph{вектор плотности тока вероятности}, из вышесказанного получим \emph{уравнение непрерывности}:
+\begin{gather}
+  \partial_{t}{\rho}+\nabla\vec{j}=0,
+\end{gather}
+
+\paragraph{Теорема Эренфеста:} квантовомеханические средние удовлетворяют тем же уравнения движения, что и классические величины:
+\begin{gather}
+  \frac{d}{dt}\left<q_{i}\right>=\left<\frac{dH}{d\Pi_i}\right>,
+\end{gather}
+где $q_{i}$ -- обобщенные координаты, $\Pi_{i}$ -- обобщенный импульс, соответствующий обобщенной координате $q_{i}$.
+
+\begin{definition}
+  Пространство $\bar{\mathbb{V}}$ называется \emph{комплекно - сопряженным} векторному пространству $\mathbb{V}$ над полем $\mathrm{C}$, если они совпадают поэлементно, имеют одинаковые операции сложения, отличается лишь операция умножения на число $\circ$:
+  \begin{gather}
+    \forall\alpha\in\mathbb{C}\forall\vec{x}\in\bar{\mathbb{V}}\colon\alpha\circ\vec{x}=\bar{\alpha}\cdot\vec{x},
+  \end{gather}
+  где $\cdot$ -- операция умножения на число в $\mathbb{V}$.
+\end{definition}
+
+\paragraph{Сопряженное (дуальное) пространство:} вспомним, что в случае вещественных евклидовых пространств сопряженное пространство $\mathrm{V}^{*}$ совпадает с $\mathrm{V}$. В случае комплексного гильбертова пространства $H$ сопряженное ему $H^{*}$ совпадает с \emph{комплексно - сопряженным пространством $\bar{H}$}.
+
+В квантовой механике дуальное пространство используется для построения \emph{бра - кет} формализма: положим $\Psi$ -- волновая функция из гильбертова пространства $H$, такая функция называется \emph{кет - вектором} и обозначается $\left|\Psi\right>$, соотвествующая ей $\Psi^{*}$ из сопряженного пространства $H^{*}$ называется \emph{бра - вектором} и обозначается $\left<\Psi\right|$. Тогда скалярное произведение получит очень красивое обозначение: $\left.\left<\Psi_1\right|\Psi_2\right>$, а если вписать сюда эрмитов оператор $\hat{A}\colon(x,\hat{A}y)=(\hat{A}x,y)$, то естественным выглядит его ключевое свойство $\left<x\right|\hat{A}\left|y\right>$
+
+\paragraph{Коммутационные соотношения:} как известно согласно \emph{постулату о измерениях} существуют наблюдаемые, которые нельзя измерить точно в один и тот же момент времени, классический пример $\Delta{x}\Delta{p_x}\ge\frac{\hbar}{2}$, из \emph{обобщенного соотношения неопределенностей} получим, что величины можно измерить сколь угодно точно в один и тот же момент времени, когда они коммутируют, приведем несколько известных коммутационных соотношений:
+\begin{gather}
+  \left[\hat{x},\hat{p}_x\right]=-i\hbar,
+  \qquad
+  \left[\hat{y},\hat{p}_x\right]=0,
+  \\
+  \left[\hat{L}_z,\hat{L}_x\right]=i\hbar\hat{L}_y,
+  \qquad
+  \left[\hat{L}_z,\hat{L}_y\right]=-i\hbar\hat{L}_x,
+\end{gather}
+где $\hat{L}$ -- оператор момента импульса ($\hat{L}_z=\hat{x}\hat{p}_y-\hat{y}\hat{p}_x$)
+
+\paragraph{Квантовомеханический осциллятор}
+Рассмотрим классический гармонический осциллятор: его полная механическая энергия примет вид
+\begin{gather*}
+  E = \frac{kx^2}{2}+\frac{p^2}{2m},
+\end{gather*}
+для перехода к квантовому аналогу заменим жесткость пружины $k$ (какие еще пружины в микромире?) на ее выражение через собственную частоту $\omega$: $k=m\omega^2$, теперь по аналогии с классическим выражением запишем квантовомеханический гамильтониан (оператор полной энергии системы):
+\begin{gather*}
+  \hat{H} = \frac{m\omega^2\hat{x}^2}{2}+\frac{\hat{p}^2}{2m}
+\end{gather*}
+Теперь для нахождения энергетического спектра нужно найти собственные значения $\hat{H}$:
+\begin{gather*}
+  \hat{H}|v\rangle = E|v\rangle
+\end{gather*}
+Для решения этой задачи воспользуемся \textit{оператором числа элементарных возбуждений} $\hat{n}=\hat{b}^{+}\hat{b}$, где $\hat{b}$ и $\hat{b}^{+}$ -- операторы такие, что $[\hat{b},\hat{b}^{+}]=1$. Введем для этой задачи оператор $\hat{b}$:
+\begin{gather}
+  \hat{b} = \sqrt{\frac{m\omega}{2\hbar}}\hat{x} + i\sqrt{\frac{1}{2m\omega\hbar}}\hat{p}
+  \llabel{_50:b}
+\end{gather}
+Т.к. $\hat{x}$ и $\hat{p}$ эрмитово самосопряженные, то
+\begin{gather*}
+  \hat{b}^{+} = \sqrt{\frac{m\omega}{2\hbar}}\hat{x} - i\sqrt{\frac{1}{2m\omega\hbar}}\hat{p}
+\end{gather*}
+Проверим $[\hat{b},\hat{b}^{+}]=1$:
+\begin{gather*}
+  [\hat{b},\hat{b}^{+}]
+  =
+  \left.
+  -\frac{i}{2\hbar}[\hat{x},\hat{p}]+\frac{i}{2\hbar}[\hat{p},\hat{x}]
+  \right|_{[\hat{x},\hat{p}]=-[\hat{p},\hat{x}]}
+  =
+  \left.
+  -\frac{i}{\hbar}[\hat{x},\hat{p}]
+  \right|_{[\hat{x},\hat{p}]=i\hbar}
+  =
+  1
+\end{gather*}
+Оператор $\hat{n}$ примет вид:
+\begin{gather*}
+  \hat{n}=\hat{b}^{+}\hat{b}=\frac{m\omega\hat{x}^2}{2\hbar}+\frac{\hat{p}^2}{2m\omega\hbar}-\frac{1}{2}
+\end{gather*}
+Тогда получим:
+\begin{gather*}
+  \hbar\omega\left(\hat{n}+\frac{1}{2}\right)
+  =
+  \frac{m\omega^2\hat{x}^2}{2}+\frac{\hat{p}^2}{2m}
+  =
+  \hat{H}
+\end{gather*}
+Обозначим за $|n\rangle$ собственные функции оператора $\hat{n}$, тогда:
+\begin{gather*}
+  \hat{H}|n\rangle
+  =
+  \hbar\omega\left(\hat{n}+\frac{1}{2}\right)|n\rangle
+  =
+  \hbar\omega\left(n+\frac{1}{2}\right)|n\rangle
+  =
+  E_n|n\rangle
+\end{gather*}
+Получим, что собственные функции $\hat{H}$ совпадают с СФ оператора $\hat{n}$. Несложно показать, что \emph{СЗ оператора $\hat{n}$ -- натуральные числа}, а СФ $\hat{n}$ имеют вид:
+\begin{gather}
+  \left|n\right>
+  =
+  \frac{2^{-n/2}}{x_0\sqrt{n!}}\left(x-x_0^2\partial_{x}\right)\left|0\right>,
+  \qquad
+  \left|0\right>
+  =
+  \frac{1}{\sqrt{x_0\sqrt{\pi}}}\exp\left(-\frac{x^2}{2x_0^2}\right),
+\end{gather}
+где $x_0=\frac{\hbar}{m\omega}$.
+
+\paragraph{Постулаты Бора:}
+\begin{enumerate}
+  \item
+        Атом может длительно пребывать только в стационарных состояниях, характеризующихся определенной энергией $E_1,E_2,...$. В таких состояниях атомы не излучают электромагнитных волн.
+  \item
+        Излучение света происходит при переходе атома из состояния с большей энергией в состояние с меньшей энергией. Энергия излученного фотона равна разности энергий стационарных состояний.
+        \begin{gather*}
+          \hbar\omega_{n_1 \rightarrow n_2} = E_{n_2} - E_{n_1}
+        \end{gather*}
+  \item
+        \textit{Правило квантования круговых орбит электрона:} момент импульса электрона, вращающегося на стационарной орбите атома водорода может принимать только дискретные значения
+        \begin{gather*}
+          \forall n\in\mathbb{N}\colon L = n\hbar
+        \end{gather*}
+\end{enumerate}
+
+\paragraph{Полный и собственный момент импульса:} определим оператор \emph{полного момента импульса $\hat{J}$} из коммутационных соотношений:
+\begin{gather}
+  \left[\hat{J}_{x},\hat{J}_{y}\right]=-i\hbar\hat{J}_{z},
+  \\
+  \left[\hat{J}_{y},\hat{J}_{z}\right]=-i\hbar\hat{J}_{x},
+  \\
+  \left[\hat{J}_{z},\hat{J}_{x}\right]=-i\hbar\hat{J}_{y},
+\end{gather}
+по классической логике новый оператор $\hat{J}$ должен совпадать с ранее введенным оператором момента импульса $\hat{L}$, хрен вам, оператор $\hat{J}$ выражается как:
+\begin{gather}
+  \hat{J}=\hat{L}+\hat{S},
+\end{gather}
+где $\hat{S}$ -- оператор \emph{собственного момента импульса (спина)}. Этот оператор вводится из-за того, что из-за херни с неопределенностями классического аналога момента импульса -- оператора $\hat{L}$ недостаточно для описания вращения квантовых систем.
+
+Полученный оператор $\hat{S}$ не связан с движением частицы в пространстве, а связан только с ее внутренним строением.
+
+\begin{theorem}
+  Собственные значения квадрата эрмитова оператора неотрицательны.
+\end{theorem}
+\begin{proof}
+  Пусть $|v>$ - собственный вектор оператора $\hat{A}^2$, отвечающий собственному значению $\alpha_v$: $\hat{A}^2|v> = \alpha_v|v>$\\
+  Учитывая, что $\hat{A}^{+} = \hat{A}$ имеем:
+  \begin{gather*}
+    0 \leq \left<v|\hat{A}^2|v\right>
+    =
+    \left<v|\hat{A}^{+}\hat{A}|v\right>
+    =
+    \left<v|\alpha_v|v\right>
+    =
+    \alpha_v\left<v|v\right>
+    \geq
+    0
+    \quad
+    \Rightarrow
+    \alpha_v \geq 0
+  \end{gather*}
+\end{proof}
+
+На СЗ $\hat{J}$ накладываются ограничения: т.к. $\left[\hat{J}^2,\hat{J}_z\right]=0$, то их СФ $\left|jm\right>$ совпадают, тогда если:
+\begin{flalign}
+  \begin{split}
+    &
+    \hat{J}^2\left|jm\right>=j(j+1)\left|jm\right>,
+    \\
+    &
+    \hat{J}_z\left|jm\right>=m\left|jm\right>,
+  \end{split}
+\end{flalign}
+тогда
+\begin{gather}
+  -j\le m \le j,
+\end{gather}
+
+\end{document}
