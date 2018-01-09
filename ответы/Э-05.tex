@@ -8,14 +8,14 @@
 Вывод для Гениев!\\
 Формулы для пацанов!\\
 
-\textbf{Уравнения Максвела-Лоренца}
+\textbf{Уравнения Максвела-Лоренца в дифференциальной форме}
 \begin{gather*}
     \begin{cases}
-        \oint\vec{E}d\vec{l}
+        \operatorname{rot} \vec{E} 
         =
-        \frac{1}{c}\frac{\partial}{\partial t}\int\vec{H}d\vec{f},           \\
-        \oint\vec{H}df
-        =
+        -\frac{1}{c}\frac{\partial \vec{H}}{\partial t},           \\
+        \operatorname{div} \vec{H} 
+        = 
         0,                                                                   \\
         \operatorname{div}\vec{E}
         =
@@ -23,6 +23,16 @@
         \operatorname{rot}\vec{H}=
         \frac{1}{c}\frac{\partial\vec{E}}{\partial t}+\frac{4\pi}{c}\vec{j}, \\
     \end{cases}
+\end{gather*}
+
+\textbf{Уравнения Максвела-Лоренца в интегральной форме}
+\begin{gather*}
+	\begin{cases}
+		\oint \vec{E} dl = \frac{1}{c}\frac{\partial}{\partial t}\int \vec{H} df,\\
+		\oint \vec{H} df = 0, \\
+		\oint \vec{H} dl = \frac{1}{c}\frac{\partial}{\partial t}\int \vec{E} df + \frac{4\pi}{c}\int \vec{j} df,\\
+		\oint \vec{E} df = 4\pi\int \rho dV
+	\end{cases}
 \end{gather*}
 
 \textbf{Материальные уравнения}
